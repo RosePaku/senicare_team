@@ -1,4 +1,4 @@
-package com.java.copy;
+package com.java.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
