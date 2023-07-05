@@ -1,4 +1,4 @@
-package com.java.copy.mapper;
+package com.java.mapper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
