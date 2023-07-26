@@ -1,0 +1,30 @@
+package com.java.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Controller
+@RequestMapping("/member")
+public class MemberController {
+
+    private List<String> members = new ArrayList<>();
+
+    @GetMapping("/list")
+    public String memberList(Model model) {
+        model.addAttribute("members", members);
+        return "member-list";
+    }
+
+    @PostMapping("/add")
+    public String addMember(@RequestParam("name") String name) {
+        members.add(name);
+        return "redirect:/member/list";
+    }
+}

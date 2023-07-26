@@ -1,0 +1,18 @@
+package com.java.service;
+
+import javax.servlet.http.HttpSession;
+
+import com.java.dto.MemberDto;
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	@Autowired HttpSession session;
+	@Autowired MemberMapper memberMapper;
+	
+	@Override
+	public String selectOne(String id, String pw) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

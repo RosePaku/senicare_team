@@ -1,0 +1,40 @@
+1689554791059	Copy package
+1689554797388	Rename package 'com.java.copy'
+1689554860016	Rename compilation unit 'Spring0717Application.java'
+1689555126677	Rename package 'com.java'
+1689555134430	Rename type 'Spring0717Application'
+1689555158563	Rename package 'com.controller'
+1689555337996	Copy package
+1689555351239	Rename compilation unit 'UploadConfig.java'
+1689555481205	Move file
+1689555828251	Copy compilation unit
+1689555843326	Rename compilation unit 'FController2.java'
+1689555850549	Rename compilation unit 'ErrorController.java'
+1689555857599	Delete element
+1689556050873	Copy compilation unit
+1689556109418	Copy compilation unit
+1689556194031	Rename resource 'sub_header'
+1689556218732	Rename resource 'sub_header.jsp'
+1689556221144	Copy file
+1689556226525	Rename resource 'sub_footer2.jsp'
+1689556241275	Delete element
+1689556242089	Delete element
+1689556252624	Rename resource 'NewFile.jsp'
+1689556258713	Copy file
+1689558089291	Rename resource 'NewFile.xml'
+1689558353782	Delete element
+1689558355550	Delete element
+1689558492460	Copy package
+1689558496383	Delete elements
+1689558835850	Delete element
+1689558871115	Rename resource 'login.html'
+1689561429799	Copy package
+1689561452235	Rename type 'Spring0717Application'
+1689561474049	Rename type 'Memberdto'
+1689561530716	Copy package
+1689561538080	Rename package 'com.java.Service'
+1689561551705	Rename type 'MemberDto'
+1689561627564	Rename type 'mapper'
+1689561637004	Rename package 'com.java.mapper.copy'
+1689561641692	Copy compilation unit
+1689562637134	Rename type 'Membermapper'

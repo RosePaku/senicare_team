@@ -1,0 +1,30 @@
+input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  /* 실제 radio 버튼의 레이블을 가리기 위한 가상 요소 */
+  input[type="radio"]::before {
+    content: "";
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 3px; /* 여백을 설정하여 가시성을 높임 */
+  }
+  
+  input[type="radio"]:checked::before {
+    background-color: #333; /* 선택된 라디오 버튼의 배경색을 변경합니다. */
+  }
+
+ 
+
+  

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.A_B_WorkMapper">
+    <select id="getAll" resultType="com.java.dto.A_B_Work">
+        SELECT *
+        FROM A_B_Work
+    </select>
+
+    <select id="getByNo" parameterType="Long" resultType="com.java.dto.A_B_Work">
+        SELECT *
+        FROM A_B_Work
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </select>
+
+    <insert id="insert" parameterType="com.java.dto.A_B_Work">
+        INSERT INTO A_B_Work (
+            auth_business_work_no,
+            auth_bw_gu_1,
+            auth_bw_si,
+            auth_bw_loc_1
+        )
+        VALUES (
+            #{auth_business_work_no},
+            #{auth_bw_gu_1},
+            #{auth_bw_si},
+            #{auth_bw_loc_1}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.java.dto.A_B_Work">
+        UPDATE A_B_Work
+        SET
+            auth_bw_gu_1 = #{auth_bw_gu_1},
+            auth_bw_si = #{auth_bw_si},
+            auth_bw_loc_1 = #{auth_bw_loc_1}
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM A_B_Work
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </delete>
+</mapper>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.AuthMapper">
+    <select id="select" resultType="com.java.dto.Auth">
+        SELECT *
+        FROM auth
+        WHERE auth_id = #{auth_id} AND auth_password = #{auth_password}
+        
+    </select>
+
+
+    <!-- 회원 정보 조회 쿼리 -->
+    <!-- <select id="select" resultType="com.java.dto.Auth">
+        SELECT *
+        FROM auth
+        WHERE auth_id = #{auth_id} AND auth_password = #{auth_password}
+    </select> -->
+
+    <insert id="insert" parameterType="com.java.dto.Auth">
+    INSERT INTO auth (
+        auth_id,
+        auth_password,
+        auth_sex,
+        auth_birth,
+        auth_name,
+        auth_nickname,
+        auth_email,
+        auth_address,
+        auth_address_detail,
+        auth_phone_number,
+        auth_clause_yn,
+        auth_personal_yn,
+        auth_join_dt,
+        auth_del_dt,
+        auth_user_status,
+        auth_user_type,
+        auth_under_disease,
+        auth_info
+    )
+    VALUES (
+        #{auth_id},
+        #{auth_password},
+        #{auth_sex, jdbcType=VARCHAR},
+        #{auth_birth, jdbcType=DATE},
+        #{auth_name, jdbcType=VARCHAR},
+        #{auth_nickname, jdbcType=VARCHAR},
+        #{auth_email, jdbcType=VARCHAR},
+        #{auth_address, jdbcType=VARCHAR},
+        #{auth_address_detail, jdbcType=VARCHAR},
+        #{auth_phone_number, jdbcType=VARCHAR},
+        #{auth_clause_yn, jdbcType=VARCHAR},
+        #{auth_personal_yn, jdbcType=VARCHAR},
+        #{auth_join_dt, jdbcType=TIMESTAMP},
+        #{auth_del_dt, jdbcType=TIMESTAMP},
+        #{auth_user_status, jdbcType=VARCHAR},
+        #{auth_user_type, jdbcType=VARCHAR},
+        #{auth_under_disease, jdbcType=VARCHAR},
+        #{auth_info, jdbcType=VARCHAR}
+    )
+    <!-- INSERT INTO auth (
+        auth_id,
+        auth_password,
+        auth_sex,
+        auth_birth,
+        auth_name,
+        auth_nickname,
+        auth_email,
+        auth_address,
+        auth_address_detail,
+        auth_phone_number,
+        auth_clause_yn,
+        auth_personal_yn,
+        auth_join_dt,
+        auth_del_dt,
+        auth_user_status,
+        auth_user_type,
+        auth_under_disease,
+        auth_info
+    )
+    VALUES (
+        #{auth_id, jdbcType=VARCHAR},
+        #{auth_password, jdbcType=VARCHAR},
+        #{auth_sex, jdbcType=VARCHAR},
+        #{auth_birth, jdbcType=DATE},
+        #{auth_name, jdbcType=VARCHAR},
+        #{auth_nickname, jdbcType=VARCHAR},
+        #{auth_email, jdbcType=VARCHAR},
+        #{auth_address, jdbcType=VARCHAR},
+        #{auth_address_detail, jdbcType=VARCHAR},
+        #{auth_phone_number, jdbcType=VARCHAR},
+        #{auth_clause_yn, jdbcType=VARCHAR},
+        #{auth_personal_yn, jdbcType=VARCHAR},
+        #{auth_join_dt, jdbcType=TIMESTAMP},
+        #{auth_del_dt, jdbcType=TIMESTAMP},
+        #{auth_user_status, jdbcType=VARCHAR},
+        #{auth_user_type, jdbcType=VARCHAR},
+        #{auth_under_disease, jdbcType=VARCHAR},
+        #{auth_info, jdbcType=VARCHAR}
+    ) -->
+
+</insert>
+
+    <update id="update" parameterType="com.java.dto.Auth">
+        UPDATE auth
+        SET
+            auth_password = #{auth_password},
+            auth_sex = #{auth_sex},
+            auth_birth = #{auth_birth},
+            auth_name = #{auth_name},
+            auth_nickname = #{auth_nickname},
+            auth_email = #{auth_email},
+            auth_address = #{auth_address},
+            auth_address_detail = #{auth_address_detail},
+            auth_phone_number = #{auth_phone_number},
+            auth_clause_yn = #{auth_clause_yn},
+            auth_personal_yn = #{auth_personal_yn},
+            auth_join_dt = #{auth_join_dt},
+            auth_del_dt = #{auth_del_dt},
+            auth_user_status = #{auth_user_status},
+            auth_user_type = #{auth_user_type},
+            auth_under_disease = #{auth_under_disease},
+            auth_info = #{auth_info}
+        WHERE auth_id = #{auth_id}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        DELETE FROM auth
+        WHERE auth_id = #{auth_id}
+    </delete>
+</mapper>

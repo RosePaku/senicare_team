@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<select id="selectOne" resultType="com.java.dto.MemberDto">
+	select * from member where ${id}=#{id} and pw=#{pw}
+</select>

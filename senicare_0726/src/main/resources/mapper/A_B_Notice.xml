@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.A_B_NoticeMapper">
+    <select id="getAll" resultType="com.java.dto.A_B_Notice">
+        SELECT *
+        FROM A_B_Notice
+    </select>
+
+    <select id="getByNo" parameterType="Long" resultType="com.java.dto.A_B_Notice">
+        SELECT *
+        FROM A_B_Notice
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </select>
+
+    <insert id="insert" parameterType="com.java.dto.A_B_Notice">
+        INSERT INTO A_B_Notice (
+            auth_business_work_no,
+            auth_business_id,
+            auth_business_ko_1,
+            auth_business_ko_pe_1,
+            auth_business_position_1,
+            auth_business_des_2,
+            auth_business_salary_2,
+            auth_business_employ_close_2,
+            auth_business_keyword_2,
+            auth_business_qualification_2,
+            auth_business_schedule_2,
+            auth_business_process_2,
+            auth_business_policy_2,
+            auth_business_employ_start,
+            auth_business_hit,
+            auth_business_vol,
+            auth_business_question_2,
+            auth_business_application_2,
+            auth_business_work_si
+        )
+        VALUES (
+            #{auth_business_work_no},
+            #{auth_business_id},
+            #{auth_business_ko_1},
+            #{auth_business_ko_pe_1},
+            #{auth_business_position_1},
+            #{auth_business_des_2},
+            #{auth_business_salary_2},
+            #{auth_business_employ_close_2},
+            #{auth_business_keyword_2},
+            #{auth_business_qualification_2},
+            #{auth_business_schedule_2},
+            #{auth_business_process_2},
+            #{auth_business_policy_2},
+            #{auth_business_employ_start},
+            #{auth_business_hit},
+            #{auth_business_vol},
+            #{auth_business_question_2},
+            #{auth_business_application_2},
+            #{auth_business_work_si}
+        )
+    </insert>
+
+    <update id="update" parameterType="com.java.dto.A_B_Notice">
+        UPDATE A_B_Notice
+        SET
+            auth_business_id = #{auth_business_id},
+            auth_business_ko_1 = #{auth_business_ko_1},
+            auth_business_ko_pe_1 = #{auth_business_ko_pe_1},
+            auth_business_position_1 = #{auth_business_position_1},
+            auth_business_des_2 = #{auth_business_des_2},
+            auth_business_salary_2 = #{auth_business_salary_2},
+            auth_business_employ_close_2 = #{auth_business_employ_close_2},
+            auth_business_keyword_2 = #{auth_business_keyword_2},
+            auth_business_qualification_2 = #{auth_business_qualification_2},
+            auth_business_schedule_2 = #{auth_business_schedule_2},
+            auth_business_process_2 = #{auth_business_process_2},
+            auth_business_policy_2 = #{auth_business_policy_2},
+            auth_business_employ_start = #{auth_business_employ_start},
+            auth_business_hit = #{auth_business_hit},
+            auth_business_vol = #{auth_business_vol},
+            auth_business_question_2 = #{auth_business_question_2},
+            auth_business_application_2 = #{auth_business_application_2},
+            auth_business_work_si = #{auth_business_work_si}
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </update>
+
+    <delete id="delete" parameterType="Long">
+        DELETE FROM A_B_Notice
+        WHERE auth_business_work_no = #{auth_business_work_no}
+    </delete>
+</mapper>

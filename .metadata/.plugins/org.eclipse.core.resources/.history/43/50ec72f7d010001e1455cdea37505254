@@ -1,0 +1,10 @@
+package com.java.controller;
+import org.springframework.stereotype.*;
+import org.springframework.web.bind.annotation.*;
+
+
+@Controller
+public class BoardController {
+	@RequestMapping("/member/member1")
+	public
+}

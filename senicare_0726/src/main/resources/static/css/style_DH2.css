@@ -1,0 +1,567 @@
+* {
+    font-size: 17px;
+    line-height: 24px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    /* color: #000; */
+    font-weight: bold;
+}
+div {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+#join_wrapper {
+    position: relative;
+    margin: 0 auto;
+    width: 360px;
+}
+.cont_division {
+    position: relative;
+    margin-top: 24px;
+    width: 360px;
+    box-sizing: border-box;
+}
+element.style {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.login_input_wrap .loginform {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:stretch;
+}
+.write_base .item {
+    clear: both;
+    position: relative;
+    padding-top: 24px;
+}
+.write_base .item .wrap_collection_basis {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+write_base .item label {
+    display: block;
+}
+button, label {
+    cursor: pointer;
+}
+.write_base .item label strong {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #373f57;
+    font-size: 16px;
+}
+write_base .item .TypoBox.invalid {
+    border-color: #dc3434;
+}
+.write_base .item .TypoBox {
+    width: 100%;
+}
+.TypoBox {
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid var(--gray70);
+    border-radius: 4px;
+    font-family: "Malgun Gothic",gulim,dotum,sans-serif;
+    letter-spacing: -1px;
+    background-color: var(--white);
+}
+.TypoBox .Typo {
+    box-sizing: border-box;
+    color: var(--gray100);
+    letter-spacing: -1px;
+    border: 0;
+    border-radius: 4px;
+    background: none;
+}
+.TypoBox .Typo.SizeL {
+    padding: 12px;
+    height: 46px;
+    font-size: 16px;
+    line-height: 24px;
+}
+.write_base .item .msgInvalid {
+    display: block;
+    clear: both;
+    margin-top: 8px;
+    color: #d64141;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 20px;
+}
+.write_base .item .alert_column.good_txt {
+    color: #2d65f2;
+}
+.write_base .item .alert_column {
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 20px;
+}
+.write_base .item .pass_box {
+    position: relative;
+}
+.write_base .item input {
+    width: 100%;
+}
+.write_base .item .pass_box .field_eye {
+    position: absolute;
+    top: 0;
+    right: 12px;
+    height: 50px;
+    line-height: 54px;
+}
+button {
+    overflow: visible;
+    /* background-color: transparent; */
+}
+.write_base .item .alert_column.focus_txt {
+    color: #5c667b;
+}
+.write_base .item .alert_column {
+    margin-top: 8px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 20px;
+}
+.write_base .item .pass_safety.easy {
+    color: #d63131;
+}
+write_base .item .pass_safety {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+}
+.write_base .item .txt_move {
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: #5c667b;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 24px;
+}
+/* *, ::after, ::before {
+    box-sizing: border-box;
+} */
+p.login_1{
+  text-align: center;
+    font-size: 15px;
+    color: #5c667b;
+    line-height: 24px;
+    letter-spacing: -1px;
+}
+.login_tab {
+    padding: 0 0px;
+    border-bottom: none;
+}
+.tabList {
+    display: table;
+    position: static;
+    width: 100%;
+    height: 47px;
+    box-sizing: border-box;
+    table-layout: fixed;
+}
+.tabList li.select {
+    position: relative;
+    z-index: 1;
+}
+.login_tab li {
+    border-bottom: 1px solid #e5e5e7;
+}
+.tabList li {
+    display: table-cell;
+    box-sizing: border-box;
+}
+/* 개인 */
+.tabList li.select .inTab {
+    border-bottom: 2px solid black;
+    color: #000;
+    background-color: rgb(253, 138, 105);
+    font-weight: bold;
+    height: 50px;
+}
+
+.login_tab li .inTab {
+    margin: 0;
+    width: 100%;
+}
+
+/* 기업 */
+.tabList li .inTab {
+    border-bottom: 1px solid black;
+    color: #000(255, 255, 255);
+    height: 50px;
+    background-color: rgb(175, 212, 133);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+/* 변경 후 */
+.tabList li.select .inTab {
+    border-bottom: 1px solid black;
+    color: #fff;
+    background-color: rgb(253, 138, 105);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+}
+button {
+    background: none;
+    cursor: pointer;
+}
+.login_content {
+    padding: 20px;
+    min-height: 640px;
+    letter-spacing: -1px;
+    background: #fff;
+}
+.login_content {
+    padding: 20px;
+    min-height: 640px;
+    letter-spacing: -1px;
+    background: #fff;
+}
+.pc_keyboard {
+    margin-bottom: 7px;
+    text-align: center;
+}
+.special_keyboard {
+    margin-bottom: 7px;
+    text-align: center;
+}
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    box-sizing: border-box;
+}
+input[type="hidden" i] {
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+}
+input {
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+input {
+    padding: 0;
+    border-radius: 0;
+    font-size: 14px;
+    border: 0;
+}
+input.inpTypoBox2 {
+    padding: 12px 16px;
+    height: 48px;
+    color: #373f57;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    border: 1px solid #d7dce5;
+    border-radius: 4px;
+}
+.hide, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.login_content .input_login_info .pw_text {
+    margin-top: 8px;
+}
+input[class*="inpTypo"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+label {
+    cursor: default;
+}
+.login_content .input_login_info p {
+    padding: 0;
+    font-weight: bold;
+}
+.input_login_info .ck_login_opt .lbl:first-of-type {
+    margin-right: 24px;
+}
+.login_content .input_login_info p label.off {
+    display: inline-block;
+    height: 23px;
+    line-height: 25px;
+    background: url(//www.saraminimage.co.kr/ui/mobile_login/check_off_img.png) no-repeat 0 50%;
+    background-size: 23px 23px;
+}
+span[class^="inpChk2"] {
+    display: inline-block;
+    vertical-align: top;
+    -webkit-tap-highlight-color: transparent;
+}
+span[class^="inpChk2"]>input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #909191;
+    margin: 0;
+}
+.login_content .input_login_info .login_btn {
+    margin-top: 11px;
+    width: 100%;
+}
+[class*="btnType"].colorBlue {
+    border: 1px solid #4876ef;
+    color: #fff;
+    background: #4876ef;
+}
+[class*="btnType"].sizeL {
+    padding: 0 24px;
+    height: 48px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 48px;
+}
+/* 회원정보완료버튼 */
+.btnType {
+    display: inline-block;
+    letter-spacing: -0.5px;
+    text-align: center;
+    border-radius: 4px;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: white;
+}
+.login_content .extra_func, .login_content .extra_func_company {
+    position: relative;
+    margin-top: 16px;
+    color: #5c667b;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.login_content .extra_func_company {
+    display: none;
+}
+
+/* ㅇㅇ */
+/* ㅇㅇ */
+
+/* 지인 */
+
+.login_1::before {
+  width: 60px;
+  height: 1px;
+  background-color: #eaedf4;
+  display: inline-block;
+  vertical-align: super;
+  content: '';
+}
+
+
+
+.login_1:after {
+  width: 60px;
+  height: 1px;
+  background-color: #eaedf4;
+  display: inline-block;
+  vertical-align: super;
+  content: '';
+}
+
+.button_login {
+    margin: 40px 0;
+}
+/* 소셜 로그인 */
+
+.social_login li .wrap_icon {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid #96a0b5;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+.write_base .item .wrap_collection_basis .btn_link {
+    display: inline-block;
+    padding-left: 18px;
+    color: #5c667b;
+    font-size: 13px;
+    line-height: 20px;
+    background: url(data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16C12.4183 16 16 12.4183 16 8ZM1.2 8C1.2 4.24446 4.24446 1.2 8 1.2C11.7555 1.2 14.8 4.24446 14.8 8C14.8 11.7555 11.7555 14.8 8 14.8C4.24446 14.8 1.2 11.7555 1.2 8ZM9 5C9 5.552 8.552 6 8 6C7.448 6 7 5.552 7 5C7 4.4475 7.448 4 8 4C8.552 4 9 4.4475 9 5ZM8.79462 7.9067C8.74841 7.50883 8.41027 7.2 8 7.2C7.55817 7.2 7.2 7.55817 7.2 8V11.6L7.20538 11.6933C7.25159 12.0912 7.58973 12.4 8 12.4C8.44183 12.4 8.8 12.0418 8.8 11.6V8L8.79462 7.9067Z' fill='%238491A7'/%3E%3C/svg%3E) 0 50% no-repeat;
+    background-size: 14px 14px;
+}
+.write_base .item .wrap_collection_basis .social_tooltip {
+    top: -20px
+}
+.TipBox {
+    position: relative;
+}
+.TipBox .TipCont.BottomCenter {
+    bottom: calc(100% + 17px);
+    left: 50%;
+    transform: tr
+}
+
+.TipBox.Click .TipCont {
+    padding-top: 28px;
+}
+.TipCont {
+    display: none;
+    position: absolute;
+    padding: 24px;
+    white-space: nowrap;
+    border: 1px solid var(--gray70);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: var(--white);
+    box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.08);
+}
+.TipCont.BottomCenter .Tail {
+    bottom: -18px;
+    left: 50%;
+    margin-left: -16px;
+    transform: rotate(180deg);
+}
+.TipCont.TopCenter .Tail, .TipCont.RightCenter .Tail, .TipCont.BottomCenter .Tail, .TipCont.LeftCenter .Tail {
+    background: url(data:image/svg+xml,%3Csvg width='28' height='19' viewBox='0 0 28 19' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.05949 16.5645L14 0.850979L26.9405 16.5645H1.05949Z' fill='white' stroke='%238491A7'/%3E%3Cpath d='M2.49997 15.5935H25.5L27.5 18.0645H0.5L2.49997 15.5935Z' fill='white'/%3E%3C/svg%3E) 50% 0 no-repeat;
+}
+.TipCont .Tail {
+    position: absolute;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+}
+.TipCont .TipTxt {
+    color: var(--gray100);
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 20px;
+    white-space: nowrap;
+}
+.TipBox.Click .BtnClose {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+button {
+    overflow: visible;
+    background-color: transparent;
+}
+body, input, button, textarea, select, table {
+    font-family: "Malgun Gothic",dotum, sans-serif;
+    line-height: 1.0;
+}
+img, fieldset, button, input {
+    border: 0 none;
+}
+
+
+.icon {
+  width: 22px;
+  height : 22px;
+}
+
+.social_login .login_kakao .wrap_icon {
+  background-color: #fee500;
+  border-color: #fee500;
+}
+
+.social_login .login_naver .wrap_icon {
+  background-color: #03cf5d;
+  border-color: #03cf5d;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+.social_login {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.radio-container label {
+    display: block;
+    color: #777777;
+}
+
+input#gender_female,
+input#gender_male {
+    margin: 10px;
+    width: 25px;
+    /* 가로 사이즈 조정 */
+    height: 25px;
+    /* 가로 사이즈와 동일하게 설정 */
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .radio-container label {
+    display: block;
+    color: #777777;
+  }
+  
+  input#gender_female,
+  input#gender_male {
+    margin: 10px;
+    width: 25px; /* 가로 사이즈 조정 */
+    height: 25px; /* 가로 사이즈와 동일하게 설정 */
+}

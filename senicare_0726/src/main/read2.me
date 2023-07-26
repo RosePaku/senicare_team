@@ -1,0 +1,394 @@
+﻿CREATE TABLE NOTICE_BOARD (
+	board_no	NUMBER(4)		NOT NULL,
+	auth_id	VARCHAR2(40)		NOT NULL,
+	board_category	VARCHAR2(40)		NOT NULL,
+	board_title	VARCHAR2(40)		NOT NULL,
+	board_contents	VARCHAR2(1000)		NOT NULL,
+	board_created	TIMESTAMP		NOT NULL,
+	board_modified	TIMESTAMP		NULL,
+	board_file	VARCHAR2(1000)		NULL,
+	board_view	NUMBER(4)		NULL,
+	board_like	NUMBER(4)		NOT NULL
+);
+
+COMMENT ON COLUMN NOTICE_BOARD.board_no IS '게시판번호';
+
+COMMENT ON COLUMN NOTICE_BOARD.auth_id IS '아이디';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_category IS '게시판 카테고리';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_title IS '게시판 제목';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_contents IS '게시판 내용';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_created IS '게시판 생성일';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_modified IS '게시판 수정일';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_file IS '게시판 파일';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_view IS '게시판 조회수';
+
+COMMENT ON COLUMN NOTICE_BOARD.board_like IS '게시판 좋아요';
+
+CREATE TABLE NOTICE_COMMENT (
+	comment_no	NUMBER(4)		NOT NULL,
+	board_no	NUMBER(4)		NOT NULL,
+	auth_id	VARCHAR2(40)		NOT NULL,
+	comment_content	VARCHAR2(100)		NOT NULL,
+	comment_date	TIMESTAMP		NOT NULL,
+	comment_modify	TIMESTAMP		NULL,
+	comment_private	NUMBER(1)		NULL
+);
+
+COMMENT ON COLUMN NOTICE_COMMENT.comment_no IS '댓글번호';
+
+COMMENT ON COLUMN NOTICE_COMMENT.board_no IS '게시판번호';
+
+COMMENT ON COLUMN NOTICE_COMMENT.auth_id IS '아이디';
+
+COMMENT ON COLUMN NOTICE_COMMENT.comment_content IS '댓글 내용';
+
+COMMENT ON COLUMN NOTICE_COMMENT.comment_date IS '댓글 작성일';
+
+COMMENT ON COLUMN NOTICE_COMMENT.comment_modify IS '댓글 수정일';
+
+COMMENT ON COLUMN NOTICE_COMMENT.comment_private IS '비밀 댓글 여부';
+
+CREATE TABLE HOS_DATA (
+	hno	NUMBER(6)		NOT NULL,
+	hosNm	VARCHAR2(300)		NOT NULL,
+	clNm	VARCHAR2(100)		NULL,
+	sbjCd	NUMBER(2)		NULL,
+	sbjNm	VARCHAR2(100)		NULL,
+	sdNm	VARCHAR2(100)		NULL,
+	sggNm	VARCHAR2(100)		NULL,
+	emdNm	VARCHAR2(100)		NULL,
+	addr	VARCHAR2(300)		NULL,
+	tel	VARCHAR2(100)		NULL,
+	drCnt	NUMBER(4)		NULL,
+	estDate	NUMBER(8)		NULL,
+	xPos	VARCHAR2(100)		NULL,
+	yPos	VARCHAR2(100)		NULL
+);
+
+COMMENT ON COLUMN HOS_DATA.hno IS '테이블번호';
+
+COMMENT ON COLUMN HOS_DATA.hosNm IS '병원명';
+
+COMMENT ON COLUMN HOS_DATA.clNm IS '종별이름';
+
+COMMENT ON COLUMN HOS_DATA.sbjCd IS '진료과목코드';
+
+COMMENT ON COLUMN HOS_DATA.sbjNm IS '진료과목명';
+
+COMMENT ON COLUMN HOS_DATA.sdNm IS '시도명';
+
+COMMENT ON COLUMN HOS_DATA.sggNm IS '시군구명';
+
+COMMENT ON COLUMN HOS_DATA.emdNm IS '읍면동명';
+
+COMMENT ON COLUMN HOS_DATA.addr IS '주소';
+
+COMMENT ON COLUMN HOS_DATA.tel IS '전화번호';
+
+COMMENT ON COLUMN HOS_DATA.drCnt IS '의사수';
+
+COMMENT ON COLUMN HOS_DATA.estDate IS '설립일자';
+
+COMMENT ON COLUMN HOS_DATA.xPos IS 'x좌표';
+
+COMMENT ON COLUMN HOS_DATA.yPos IS 'y좌표';
+
+CREATE TABLE AUTH (
+	auth_id	VARCHAR2(40)		NOT NULL,
+	auth_password	VARCHAR2(40)		NOT NULL,
+	auth_sex	VARCHAR2(1)		NOT NULL,
+	auth_birth	DATE		NOT NULL,
+	auth_name	VARCHAR2(40)		NOT NULL,
+	auth_nickname	VARCHAR2(40)		NOT NULL,
+	auth_email	VARCHAR2(40)		NOT NULL,
+	auth_address	VARCHAR2(40)		NULL,
+	auth_address_detail	VARCHAR2(40)		NULL,
+	auth_phone_number	VARCHAR2(40)		NULL,
+	auth_clause_yn	VARCHAR2(1)		NOT NULL,
+	auth_personal_yn	VARCHAR2(1)		NOT NULL,
+	auth_join_dt	TIMESTAMP		NOT NULL,
+	auth_del_dt	TIMESTAMP		NULL,
+	auth_user_status	VARCHAR2(1)		NOT NULL,
+	auth_user_type	VARCHAR2(10)		NOT NULL,
+	auth_under_disease	VARCHAR2(100)		NULL,
+	auth_certi	VARCHAR2(100)		NULL,
+	auth_career	VARCHAR2(1000)		NULL,
+	auth_info	VARCHAR2(10)		NOT NULL
+);
+
+COMMENT ON COLUMN AUTH.auth_id IS '아이디';
+
+COMMENT ON COLUMN AUTH.auth_password IS '패스워드';
+
+COMMENT ON COLUMN AUTH.auth_sex IS '성별';
+
+COMMENT ON COLUMN AUTH.auth_birth IS '생년월일';
+
+COMMENT ON COLUMN AUTH.auth_name IS '이름';
+
+COMMENT ON COLUMN AUTH.auth_nickname IS '닉네임';
+
+COMMENT ON COLUMN AUTH.auth_email IS '이메일';
+
+COMMENT ON COLUMN AUTH.auth_address IS '주소';
+
+COMMENT ON COLUMN AUTH.auth_address_detail IS '상세주소';
+
+COMMENT ON COLUMN AUTH.auth_phone_number IS '휴대폰번호';
+
+COMMENT ON COLUMN AUTH.auth_clause_yn IS '약관동의여부';
+
+COMMENT ON COLUMN AUTH.auth_personal_yn IS '개인정보동의여부';
+
+COMMENT ON COLUMN AUTH.auth_join_dt IS '가입일자';
+
+COMMENT ON COLUMN AUTH.auth_del_dt IS '탈퇴일자';
+
+COMMENT ON COLUMN AUTH.auth_user_status IS '유저 상태';
+
+COMMENT ON COLUMN AUTH.auth_user_type IS '유저 종류';
+
+COMMENT ON COLUMN AUTH.auth_under_disease IS '기저질환';
+
+COMMENT ON COLUMN AUTH.auth_certi IS '자격증';
+
+COMMENT ON COLUMN AUTH.auth_career IS '경력사항';
+
+COMMENT ON COLUMN AUTH.auth_info IS '정보보유기간';
+
+CREATE TABLE SELF_CARE (
+	scno	NUMBER(4)		NOT NULL,
+	auth_id	VARCHAR2(40)		NOT NULL,
+	demen	NUMBER(2)		NULL,
+	arth	NUMBER(2)		NULL,
+	hyper	NUMBER(2)		NULL,
+	diabet	NUMBER(2)		NULL,
+	cerebro	NUMBER(2)		NULL
+);
+
+COMMENT ON COLUMN SELF_CARE.scno IS '자가진단번호';
+
+COMMENT ON COLUMN SELF_CARE.auth_id IS '아이디';
+
+COMMENT ON COLUMN SELF_CARE.demen IS '치매 점수';
+
+COMMENT ON COLUMN SELF_CARE.arth IS '퇴행성관절염 점수';
+
+COMMENT ON COLUMN SELF_CARE.hyper IS '고혈압 점수';
+
+COMMENT ON COLUMN SELF_CARE.diabet IS '당뇨병 점수';
+
+COMMENT ON COLUMN SELF_CARE.cerebro IS '뇌혈관질환 점수';
+
+CREATE TABLE AUTH_BUSINESS (
+	auth_business_id	VARCHAR2(40)		NOT NULL,
+	auth_business_password	VARCHAR2(40)		NOT NULL,
+	auth_business_sex	VARCHAR2(1)		NOT NULL,
+	auth_business_birth	DATE		NOT NULL,
+	auth_business_ceo_name	VARCHAR2(40)		NOT NULL,
+	auth_business_nickname	VARCHAR2(40)		NOT NULL,
+	auth_business_email	VARCHAR2(40)		NOT NULL,
+	auth_business_address	VARCHAR2(40)		NOT NULL,
+	auth_business_address_detail	VARCHAR2(40)		NOT NULL,
+	auth_business_phone_number	VARCHAR2(40)		NOT NULL,
+	auth_business_clause_yn	VARCHAR2(1)		NOT NULL,
+	auth_business_personal_yn	VARCHAR2(1)		NOT NULL,
+	auth_business_join_dt	TIMESTAMP		NOT NULL,
+	auth_business_del_dt	TIMESTAMP		NULL,
+	auth_business_user_status	VARCHAR2(1)		NOT NULL,
+	auth_business_name	VARCHAR2(40)		NOT NULL,
+	auth_business_img	VARCHAR2(100)		NOT NULL,
+	auth_business_no	VARCHAR2(100)		NOT NULL
+);
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_id IS '기업 회원 아이디';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_password IS '패스워드';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_sex IS '성별';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_birth IS '생년월일';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_ceo_name IS '대표자 이름';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_nickname IS '닉네임';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_email IS '이메일';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_address IS '기업 주소';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_address_detail IS '기업 상세 주소';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_phone_number IS '휴대폰번호';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_clause_yn IS '약관동의여부';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_personal_yn IS '개인정보동의여부';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_join_dt IS '가입일자';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_del_dt IS '탈퇴일자';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_user_status IS '유저 상태';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_name IS '사업자명';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_img IS '사업자 이미지';
+
+COMMENT ON COLUMN AUTH_BUSINESS.auth_business_no IS '사업자 번호';
+
+CREATE TABLE JOB_BOARD (
+	board_no	NUMBER(4)		NOT NULL,
+	auth_business_id	VARCHAR2(40)		NOT NULL,
+	board_category	VARCHAR2(40)		NOT NULL,
+	board_title	VARCHAR2(40)		NOT NULL,
+	board_contents	VARCHAR2(1000)		NOT NULL,
+	board_created	TIMESTAMP		NOT NULL,
+	board_modified	TIMESTAMP		NULL,
+	board_file	VARCHAR2(1000)		NULL,
+	board_view	NUMBER(4)		NULL,
+	board_like	NUMBER(4)		NOT NULL
+);
+
+COMMENT ON COLUMN JOB_BOARD.board_no IS '게시판번호';
+
+COMMENT ON COLUMN JOB_BOARD.auth_business_id IS '기업 회원 아이디';
+
+COMMENT ON COLUMN JOB_BOARD.board_category IS '게시판 카테고리';
+
+COMMENT ON COLUMN JOB_BOARD.board_title IS '게시판 제목';
+
+COMMENT ON COLUMN JOB_BOARD.board_contents IS '게시판 내용';
+
+COMMENT ON COLUMN JOB_BOARD.board_created IS '게시판 생성일';
+
+COMMENT ON COLUMN JOB_BOARD.board_modified IS '게시판 수정일';
+
+COMMENT ON COLUMN JOB_BOARD.board_file IS '게시판 파일';
+
+COMMENT ON COLUMN JOB_BOARD.board_view IS '게시판 조회수';
+
+COMMENT ON COLUMN JOB_BOARD.board_like IS '게시판 좋아요';
+
+CREATE TABLE JOB_COMMENT (
+	comment_no	NUMBER(4)		NOT NULL,
+	board_no2	NUMBER(4)		NOT NULL,
+	auth_id	VARCHAR2(40)		NOT NULL,
+	board_no_reference	NUMBER(4)		NOT NULL,
+	comment_content	VARCHAR2(100)		NOT NULL,
+	comment_date	TIMESTAMP		NOT NULL,
+	comment_modify	TIMESTAMP		NULL,
+	comment_private	NUMBER(1)		NULL
+);
+
+COMMENT ON COLUMN JOB_COMMENT.comment_no IS '댓글번호';
+
+COMMENT ON COLUMN JOB_COMMENT.board_no2 IS '게시판번호';
+
+COMMENT ON COLUMN JOB_COMMENT.auth_id IS '아이디';
+
+COMMENT ON COLUMN JOB_COMMENT.board_no_reference IS '게시판 번호 참조';
+
+COMMENT ON COLUMN JOB_COMMENT.comment_content IS '댓글 내용';
+
+COMMENT ON COLUMN JOB_COMMENT.comment_date IS '댓글 작성일';
+
+COMMENT ON COLUMN JOB_COMMENT.comment_modify IS '댓글 수정일';
+
+COMMENT ON COLUMN JOB_COMMENT.comment_private IS '비밀 댓글 여부';
+
+ALTER TABLE NOTICE_BOARD ADD CONSTRAINT PK_NOTICE_BOARD PRIMARY KEY (
+	board_no,
+	auth_id
+);
+
+ALTER TABLE NOTICE_COMMENT ADD CONSTRAINT PK_NOTICE_COMMENT PRIMARY KEY (
+	comment_no,
+	board_no,
+	auth_id
+);
+
+ALTER TABLE HOS_DATA ADD CONSTRAINT PK_HOS_DATA PRIMARY KEY (
+	hno
+);
+
+ALTER TABLE AUTH ADD CONSTRAINT PK_AUTH PRIMARY KEY (
+	auth_id
+);
+
+ALTER TABLE SELF_CARE ADD CONSTRAINT PK_SELF_CARE PRIMARY KEY (
+	scno,
+	auth_id
+);
+
+ALTER TABLE AUTH_BUSINESS ADD CONSTRAINT PK_AUTH_BUSINESS PRIMARY KEY (
+	auth_business_id
+);
+
+ALTER TABLE JOB_BOARD ADD CONSTRAINT PK_JOB_BOARD PRIMARY KEY (
+	board_no,
+	auth_business_id
+);
+
+ALTER TABLE JOB_COMMENT ADD CONSTRAINT PK_JOB_COMMENT PRIMARY KEY (
+	comment_no,
+	board_no2,
+	auth_id
+);
+
+ALTER TABLE NOTICE_BOARD ADD CONSTRAINT FK_AUTH_TO_NOTICE_BOARD_1 FOREIGN KEY (
+	auth_id
+)
+REFERENCES AUTH (
+	auth_id
+);
+
+ALTER TABLE NOTICE_COMMENT ADD CONSTRAINT FK_NOTICE_BOARD_TO_NOTICE_COMMENT_1 FOREIGN KEY (
+	board_no
+)
+REFERENCES NOTICE_BOARD (
+	board_no
+);
+
+ALTER TABLE NOTICE_COMMENT ADD CONSTRAINT FK_AUTH_TO_NOTICE_COMMENT_1 FOREIGN KEY (
+	auth_id
+)
+REFERENCES AUTH (
+	auth_id
+);
+
+ALTER TABLE SELF_CARE ADD CONSTRAINT FK_AUTH_TO_SELF_CARE_1 FOREIGN KEY (
+	auth_id
+)
+REFERENCES AUTH (
+	auth_id
+);
+
+ALTER TABLE JOB_BOARD ADD CONSTRAINT FK_AUTH_BUSINESS_TO_JOB_BOARD_1 FOREIGN KEY (
+	auth_business_id
+)
+REFERENCES AUTH_BUSINESS (
+	auth_business_id
+);
+
+ALTER TABLE JOB_COMMENT ADD CONSTRAINT FK_JOB_BOARD_TO_JOB_COMMENT_1 FOREIGN KEY (
+	board_no2
+)
+REFERENCES JOB_BOARD (
+	board_no
+);
+
+ALTER TABLE JOB_COMMENT ADD CONSTRAINT FK_AUTH_TO_JOB_COMMENT_1 FOREIGN KEY (
+	auth_id
+)
+REFERENCES AUTH (
+	auth_id
+);
+

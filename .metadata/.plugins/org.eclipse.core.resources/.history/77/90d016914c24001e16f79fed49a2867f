@@ -1,0 +1,9 @@
+package com.java.service;
+
+
+@Service
+public class MemberServiceImpl implements MemberService {
+	
+	@Autowired MemberMapper memberDto;
+	
+}

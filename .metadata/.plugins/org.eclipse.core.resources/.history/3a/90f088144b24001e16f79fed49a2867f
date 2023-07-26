@@ -1,0 +1,12 @@
+package com.java.Service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MemberDto {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MemberDto.class, args);
+	}
+}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.AuthVolMapper">
+<select id="getAuthVol" parameterType="com.java.dto.Auth_Vol" resultType="com.java.dto.Auth_Vol">
+    SELECT 
+        auth_vol_no as authVolNo,
+        auth_id as authId,
+        auth_self_intro as authSelfIntro,
+        auth_certi as authCerti,
+        auth_port as authPort,
+        auth_work_date as authWorkDate,
+        auth_other_note as authOtherNote,
+        auth_keyword as authKeyword,
+        auth_career as authCareer,
+        auth_school as authSchool
+    FROM 
+        auth_vol 
+    WHERE 
+        auth_vol_no = #{authVolNo, jdbcType=BIGINT}
+</select>
+
+    <insert id="insertAuthVol" parameterType="com.java.dto.Auth_Vol">
+        INSERT INTO AUTH_VOL (auth_vol_id, auth_vol_password, ...)
+        VALUES (#{auth_vol_id}, #{auth_vol_password}, ...)
+    </insert>
+
+    <update id="updateAuthVol" parameterType="com.java.dto.Auth_Vol">
+        UPDATE AUTH_VOL SET
+        auth_vol_password = #{auth_vol_password},
+        ...
+        WHERE auth_vol_id = #{auth_vol_id}
+    </update>
+
+    <delete id="deleteAuthVol" parameterType="int">
+        DELETE FROM AUTH_VOL WHERE auth_vol_id = #{id}
+    </delete>
+</mapper>

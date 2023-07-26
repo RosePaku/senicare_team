@@ -1,0 +1,138 @@
+.text-center mt-4>a {font-size: 200px;}
+
+    /* 스타일링 예시 */
+    body {
+        font-family: "Roboto", sans-serif;
+      }
+      .page-content-type2 {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .page-content-type2 h1 {
+        text-align: center;
+        font-size: 60px;
+      }
+      .page-content-type2 .join-c-txt {
+        font-size: 25px;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+      .page-content-type2 .input-table3 {
+        width: 100%;
+        font-size: 30px;
+        margin-bottom: 40px;
+      }
+      .page-content-type2 .input-table3 th {
+        width: 200%;
+        margin-right: -170px;
+      }
+      .page-content-type2 .input-table3 td {
+        width: 260%;
+      }
+      .page-content-type2 .t-light {
+        font-size: 16px;
+        color: #999;
+        margin-top: 5px;
+      }
+      .page-content-type2 .btn {
+        display: block;
+        width: 70%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        padding: 10px;
+        background-color: #4baeff;
+        color: white;
+        font-size: 25px;
+        border: none;
+        border-radius: 15px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .page-content-type2 .btn:hover {
+        background-color: #45a049;
+      }
+      .radio-agree {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+        font-size: 20px;
+        margin-bottom: 40px;
+        justify-content: center;
+      }
+      .radio-agree input[type="radio"] {
+        width: 20px;
+        height: 20px;
+        margin-right: 3px;
+      }
+      .radio-agree label {
+        font-size: 25px;
+      }
+  
+      .page-content-type2 .input-table3 input[type="text"] {
+        width: 80%;
+        padding: 8px;
+        font-size: 20px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 30px;
+      }
+  
+      .page-content-type2 .sort-table select {
+        width: 100px;
+        font-size: 20px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: -150px;
+      }
+      .page-content-type2 .sort-table input[type="text"] {
+        width: 110px;
+        font-size: 20px;
+        padding: 0 auto;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-top: 40px;
+      }
+  
+      .page-content-type2 .title-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: -40px;
+      }
+      .page-content-type2 .title-row span {
+        font-size: 30px;
+        
+      }
+      .page-content-type2 .name-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .page-content-type2 .name-row label {
+        font-size: 30px;
+        width: 50%;
+        padding-top: 100px; /* "이름" 글씨를 조금 아래로 이동시키는 값 */
+      }
+      .page-content-type2 .name-row input[type="text"] {
+        width: 50%;
+      }
+      .page-content-type2 .phoneForm-row {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      .page-content-type2 .phoneForm-row th {
+        font-size: 30px;
+        width: 30%;
+      }
+      .page-content-type2 .phoneForm-row td {
+        width: 70%;
+      }
