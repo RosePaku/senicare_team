@@ -85,7 +85,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="../senicare_main.html">
+					<a class="navbar-brand logo_h" href="../index">
 						<img class ="logo-h" src="../img/logo.png" alt="">
 					</a>
 					 
@@ -169,7 +169,7 @@
 												<a class="nav-link" href="../healths_folder/health_1">자가 진단 검사</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="../healths_folder/health_2">자가 진단 검사 결과</a>
+												<a class="nav-link" href="../healths_folder/health_2?auth_id=${sessionId}">자가 진단 검사 결과</a>
 											</li>
 										</ul>
 									</li>

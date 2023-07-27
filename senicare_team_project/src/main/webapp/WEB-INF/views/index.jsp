@@ -27,9 +27,11 @@
 			<h2><a href="/member/logout"><h2>로그아웃 </h2></a></h2>
 		  <ul>
 			<li><a href="/searchHoss_folder/searchHos_1">내 주변 의료기관 찾기</a></li>
-			<li><a href="/madangs_folder/madang_1_1">자유/일상게시판</a></li>
-			<li><a href="/madangs_folder/madang_2_1">취미/친목게시판</a></li>
-			<li><a href="/healths_folder/health_1">나의 건강관리</a></li>
+			<li><a href="/madangs_folder/madang_1_1">자유 / 일상 게시판</a></li>
+			<li><a href="/madangs_folder/madang_2_1">취미 / 친목 게시판</a></li>
+			<li><a href="/madangs_folder/madang_3_1">복지 혜택 안내</a></li>
+			<li><a href="/madangs_folder/madang_4_1">디지털 교육 안내</a></li>
+			<li><a href="/healths_folder/health_1">나의 건강 정보</a></li>
 		  </ul>
 		</div>
 	  </header>

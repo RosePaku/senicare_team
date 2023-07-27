@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.java</groupId>
-	<artifactId>spring0710_sample</artifactId>
+	<artifactId>ys_madang_pjt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring0710_sample</name>
+	<name>ys_madang_pjt</name>
 	<description>class</description>
 	<properties>
 		<java.version>1.8</java.version>

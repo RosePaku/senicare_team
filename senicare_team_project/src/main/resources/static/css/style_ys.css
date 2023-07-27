@@ -1,4 +1,24 @@
 /*========== 자가진단 css ==========*/
+.demenTest {
+	display: none;
+}
+
+.arthTest {
+	display: none;
+}
+
+.hyperTest {
+	display: none;
+}
+
+.diabetTest {
+	display: none;
+}
+
+.cerebroTest {
+	display: none;
+}
+
  /*뇌혈관질환 그림 */
  .row {
     display: flex;
@@ -281,7 +301,7 @@ button, input, select, textarea {
 }
 .contents>.row, .contents>.block {
     width: 740px;
-    margin: 0 auto;
+    margin: 0;
 }
 .contents .search-condition {
     position: relative;
@@ -807,7 +827,7 @@ input[type="checkbox"].replynum:enabled:hover {
 	float: left;
 }
 .gridList {
-	width: 260px;
+	width: 363px;
 	height: 250px;
 	float: left;
 	padding: 5px;

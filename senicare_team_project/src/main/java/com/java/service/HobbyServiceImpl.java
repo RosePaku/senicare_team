@@ -53,7 +53,7 @@ public class HobbyServiceImpl implements HobbyService {
 		
 		// 체크박스 배열값을 하나의 문자열로 변환( , 쉼표 구분)
 		if (pageDto.getS_loc() != null) { // 체크박스 배열에 값 들어오면
-			pageDto.setLocString2(String.join(",", pageDto.getS_loc())); // locString에 스트링 하나로 변환   
+			pageDto.setLocString2(String.join(",", pageDto.getS_loc())); // locString2에 스트링 하나로 변환   
 			// locString을 MyBatis 매개변수로 전달
 		}
 		

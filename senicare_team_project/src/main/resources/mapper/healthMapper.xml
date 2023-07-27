@@ -4,14 +4,14 @@
 
 <mapper namespace="com.java.mapper.HealthMapper">
 
-	<!-- 점수 저장 -->
+	<!-- DB에 점수 저장하기 -->
 	<insert id="insertOne">
 		INSERT INTO SELF_CARE VALUES(sc_seq.nextval,#{auth_id},#{demen},#{arth},#{hyper},#{diabet},#{cerebro},sysdate)
 	</insert>
 	
-	<!-- 점수 가져오기 -->
-	<select id="selectAll">
-		SELECT * FROM SELF_CARE WHERE AUTH_ID=#{auth_id} 
+	<!-- 사용자 점수 가져오기 -->
+	<select id="selectAll" resultType="com.java.dto.HealthDto">
+		SELECT * FROM SELF_CARE WHERE AUTH_ID=#{auth_id} ORDER BY SCNO ASC
 	</select>
 
 </mapper>

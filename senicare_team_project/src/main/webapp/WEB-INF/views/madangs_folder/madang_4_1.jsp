@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!-- 복지 혜택 안내 리스트 페이지 2023.07.24 영섭 -->
+<!-- 디지털 교육 안내 리스트 페이지 2023.07.25 시작 (영섭) -->
+<!-- 디지털 교육 안내 리스트 페이지 2023.07.25 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -82,8 +83,7 @@
 					<div class="content_box tab_menu_01">
 						<div class="boxtype1">
 							<p class="descript">
-							<li>에듀테크 캠퍼스에서 어르신 디지털 온라인 교육과 서울지역 내 스마트 클리닉 센터에서 어디나지원단 오프라인 교육을 병행하는 융합교육 정보를 제공합니다.</li>
-							<li>개인정보보호를 위해 주민등록번호, 운전면허번호, 연락처 등은 노출되지 않도록 주의하여 주시기 바랍니다.</li>
+							<li>에듀테크 캠퍼스에서 어르신 디지털 온라인 교육과<br>서울지역 내 스마트 클리닉 센터에서 어디나지원단 오프라인 교육을 병행하는 융합교육 정보를 제공합니다.</li>
 							<li>
 								( 더 자세한 내용을 보시려면
 								<a href="https://sdfedu.seoul.kr/course/course_list?cid=3&ch=course1"> → '에듀테크 캠퍼스' 홈페이지로 이동하기</a>
@@ -93,10 +93,17 @@
 						</div>
 						<script>
 							function searchBtn() {
+								if ($("#q_searchVal").val().length < 2) {
+									alert("2글자 이상부터 검색이 가능합니다.");
+									$("#q_searchVal").focus();
+									return false;
+								}
+
 								dataForm.submit();
+
 							}
 						</script>
-						<div class="col-md-9 contents">
+						<div class="col-md-9 contents" style="min-width:768px">
 							<div class="block text-center">
 								<form name="dataForm" id="dataForm" method="get" action="/madangs_folder/madang_4_1" class="form-inline">
 									<fieldset>
@@ -123,23 +130,24 @@
 
 							<c:forEach var="board" items="${list}">
 								<!-- 요기부터 -->
+								<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 								<li class="gridList">
 									<!-- 이미지 영역 -->
 									<div class="cimg">
-										<img src="../upload/${board.board_file}" style="width: 248px; position: absolute; clip: rect(0, 248px, 180px, 0); border-radius: 3%">
+										<img src="../upload/${board.board_file}" style="width: 351px; position: absolute; clip: rect(0, 351px, 180px, 0); border-radius: 3%">
 									</div>
 									<div class="ccont">
 										<div class="ccont00">
 											<!-- 버튼 -->
 											<p class="ctitle" style="text-overflow: ellipsis; overflow: hidden; white-space: nowrap;">
+												<c:if test="${today < board.board_created }">
+													<img class="bbsNewImage" src="/img/ico_new.gif" alt="New">
+												</c:if>
 												<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title}
 													<c:if test="${board.ccnt != 0}">
 										              &nbsp;[${board.ccnt}]
 										            </c:if>
 												</a>
-												<c:if test="${today < board.board_created }">
-													<img class="bbsNewImage" src="/img/ico_new.gif" alt="New">
-												</c:if>
 												<c:if test="${board.board_file != ',,'}">
 													<img class="bbsNewImage" src="/img/file.png" style="width: 17px" alt="file">
 												</c:if>
@@ -148,6 +156,7 @@
 										</div>
 									</div>
 								</li>
+								</a>
 								<!-- 요기까지 -->
 							</c:forEach>
 
@@ -157,9 +166,11 @@
 						<div class="row block btn-group-wrap" style="clear: both;">
 							<div class="col-sm-12 btn-group">
 								<div class="pull-right">
-									<a href="/madangs_folder/madang_4_3" class="btnType02 btn btn-info">
-										<span>글쓰기</span>
-									</a>
+									<c:if test="${sessionId == 'admin'}">
+										<a href="/madangs_folder/madang_4_3" class="btnType02 btn btn-info">
+											<span>글쓰기</span>
+										</a>
+									</c:if>
 								</div>
 							</div>
 						</div>
@@ -233,6 +244,7 @@
 			<!--====게시판====-->
 		</div>
 		</div>
+		
 	</section>
 
 	<!-- End Offered Services Area -->

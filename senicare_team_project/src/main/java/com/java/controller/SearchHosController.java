@@ -28,7 +28,6 @@ public class SearchHosController {
 	public ArrayList<HosDto> searchData(HosDto hosDto, Model model) {
 		ArrayList<HosDto> list = hosService.searchData(hosDto);
 		model.addAttribute("list", list);
-		
 		return list;
 	}
 	

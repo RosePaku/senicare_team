@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!-- 자유/일상 게시판 리스트 페이지 2023.07.20 영섭 -->
+<!-- 자유/일상 게시판 리스트 페이지 2023.07.17 시작 (영섭) -->
+<!-- 자유/일상 게시판 리스트 페이지 2023.07.20 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -33,9 +34,6 @@
 </head>
 
 <body>
-
-
-
 	<!--================Header Menu Area =================-->
 	<div data-include-path="../senicare_sub_header"></div>
 

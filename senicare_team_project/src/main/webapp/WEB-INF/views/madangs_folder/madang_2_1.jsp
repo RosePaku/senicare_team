@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!-- 취미/친목 게시판 리스트 페이지 2023.07.24 영섭 -->
+<!-- 취미/친목 게시판 리스트 페이지 2023.07.24 시작 (영섭) -->
+<!-- 취미/친목 게시판 리스트 페이지 2023.07.24 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -34,8 +35,6 @@
 </head>
 
 <body>
-
-
 
 	<!--================Header Menu Area =================-->
 	<div data-include-path="../senicare_sub_header"></div>
@@ -132,25 +131,24 @@
 											<br>
 											<div class="form-group">
 												<label for="q_searchLoc" class="sr-only">지역</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" />전국 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="서울" class="form-control" />서울 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="부산" class="form-control" />부산 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="대구" class="form-control" />대구 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="인천" class="form-control" />인천 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="광주" class="form-control" />광주 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="대전" class="form-control" />대전 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="울산" class="form-control" />울산 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="세종" class="form-control" />세종 </label><br>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경기" class="form-control" />경기 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="강원" class="form-control" />강원 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="충북" class="form-control" />충북 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="충남" class="form-control" />충남 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전북" class="form-control" />전북 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전남" class="form-control" />전남 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경북" class="form-control" />경북 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경남" class="form-control" />경남 </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="제주" class="form-control" />제주 </label>
-												<input type="hidden" name="locString" value="" id="locString"/> <!-- 체크박스 값을 받을 문자열 -->
+												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" />전국&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="서울" class="form-control" />서울&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="부산" class="form-control" />부산&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="대구" class="form-control" />대구&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="인천" class="form-control" />인천&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="광주" class="form-control" />광주&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="대전" class="form-control" />대전&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="울산" class="form-control" />울산&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="세종" class="form-control" />세종&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경기" class="form-control" />경기&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="강원" class="form-control" />강원&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="충북" class="form-control" />충북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="충남" class="form-control" />충남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전북" class="form-control" />전북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전남" class="form-control" />전남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경북" class="form-control" />경북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경남" class="form-control" />경남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="제주" class="form-control" />제주&nbsp;&nbsp;&nbsp;&nbsp;</label>
 											</div>
 											
 											<button type="button" class="btn btn-info btn-search" onclick="searchBtn()">검색</button>

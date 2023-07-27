@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 복지 혜택 안내 게시글 보기 페이지 2023.07.24 영섭 -->
+<!-- 복지 혜택 안내 게시글 보기 페이지 2023.07.24 시작 (영섭) -->
+<!-- 복지 혜택 안내 게시글 보기 페이지 2023.07.24 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -36,8 +37,6 @@
 </head>
 
 <body>
-
-
 
 	<!--================Header Menu Area =================-->
 	<div data-include-path="../senicare_sub_header"></div>
@@ -96,17 +95,15 @@
 					}
 				});// ajax
 				
-				
 				function applyBtn() {
 					alert("신청을 위해 '복지로' 사이트가 새로운 창에서 열립니다.");
 					window.open("https://www.bokjiro.go.kr/ssis-tbu/twataa/wlfareInfo/moveTWAT52005M.do");
 				}
 			</script>
 			
-			
 			<div class="right-area">
 				<div class="right_contents_wrap">
-					<h3>자유 / 일상 게시판</h3>
+					<h3>복지 혜택 안내</h3>
 					<div class="content_box tab_menu_01">
 						<div class="boxtype1">
 							<p class="descript">
@@ -239,6 +236,12 @@
 						<script>
 							// 1. 댓글 저장
 							function commentBtn() {
+
+								if (${sessionId == null}) {
+									alert("먼저 로그인을 해주세요.");
+									location.href ="/members_folder/member_2";
+									return false;
+								}
 								
 								let comment_private;
 								const replynumCheckbox = $(".replynum"); // replynum 클래스 이름을 가진 체크박스 요소를 가져옴
@@ -411,9 +414,6 @@
 
 							}// updateSave
 							
-							
-							
-							
 						</script>
 
 
@@ -429,7 +429,7 @@
 											비밀글 여부 &nbsp;<input role="switch" type="checkbox" class="replynum">
 										</p>
 									</label>
-									<textarea class="replyType" id="commentBox" val=""></textarea>
+									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50"></textarea>
 								</li>
 								<li class="btn">
 									<a onclick="commentBtn()" class="replyBtn">등록</a>
@@ -599,12 +599,6 @@
 				</div>
 			</div>
 			<!--====게시판====-->
-
-
-
-
-
-
 
 		</div>
 	</section>

@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 취미/친목 게시판 게시글 작성 페이지 2023.07.24 영섭 -->
+<!-- 취미/친목 게시판 게시글 작성 페이지 2023.07.24 시작 (영섭) -->
+<!-- 취미/친목 게시판 게시글 작성 페이지 2023.07.24 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -33,7 +34,12 @@
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/responsive.css">
 </head>
-
+<script>
+	if (${sessionId == null}) {
+		alert("먼저 로그인을 해주세요.");
+		location.href ="/members_folder/member_2";
+	}
+</script>
 <body>
 	<!--================Header Menu Area =================-->
 	<div data-include-path="../senicare_sub_header"></div>
@@ -117,11 +123,11 @@
 									</tr>
 									<tr>
 										<th>제목</th>
-										<td><input type="text" name="board_title"></td>
+										<td><input type="text" name="board_title" placeholder="제목을 입력하세요(최대 20자)" maxlength="20" required></td>
 									</tr>
 									<tr>
 										<th>내용</th>
-										<td><textarea name="board_contents" cols="50" rows="10"></textarea></td>
+										<td><textarea name="board_contents" cols="50" rows="10" placeholder="내용을 입력하세요(최대 500자)" maxlength="500" required></textarea></td>
 									</tr>
 									<tr>
 										<th>이미지</th>

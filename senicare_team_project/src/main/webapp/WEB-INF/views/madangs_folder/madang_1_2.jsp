@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!-- 자유/일상 게시판 게시글 보기 페이지 2023.07.21 영섭 -->
+<!-- 자유/일상 게시판 게시글 보기 페이지 2023.07.20 시작 (영섭) -->
+<!-- 자유/일상 게시판 게시글 보기 페이지 2023.07.20 완료 (영섭) -->
 <!doctype html>
 <html lang="en">
 
@@ -228,6 +229,12 @@
 							// 1. 댓글 저장
 							function commentBtn() {
 								
+								if (${sessionId == null}) {
+									alert("먼저 로그인을 해주세요.");
+									location.href ="/members_folder/member_2";
+									return false;
+								}
+								
 								let comment_private;
 								const replynumCheckbox = $(".replynum"); // replynum 클래스 이름을 가진 체크박스 요소를 가져옴
 								if (replynumCheckbox.prop("checked")==true) {
@@ -417,7 +424,7 @@
 											비밀글 여부 &nbsp;<input role="switch" type="checkbox" class="replynum">
 										</p>
 									</label>
-									<textarea class="replyType" id="commentBox" val=""></textarea>
+									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50"></textarea>
 								</li>
 								<li class="btn">
 									<a onclick="commentBtn()" class="replyBtn">등록</a>
@@ -587,12 +594,6 @@
 				</div>
 			</div>
 			<!--====게시판====-->
-
-
-
-
-
-
 
 		</div>
 	</section>
