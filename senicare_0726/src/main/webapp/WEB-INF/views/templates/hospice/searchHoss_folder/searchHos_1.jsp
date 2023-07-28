@@ -54,7 +54,7 @@
 		<div class="container">
 			<div id="searchList" style="width: 30%; float: left; position: relative; top: 0px">
 				<!-- <form name="searchData" method="get" action="../searchData" class="form-inline"> -->
-				<input type="text" name="hosnm" id="hosnm" style="width: 270px; height: 35px;">
+				<input type="text" name="hosnm" id="hosnm" style="width: 270px; height: 35px; border: 1px solid gray;">
 				<button type="button" onclick="searchBtn()" class="btn btn-info">검색</button>
 				<!-- </form> -->
 				<button type="button" onclick="hosBtn()" class="btn btn-info">병원</button>
@@ -895,7 +895,8 @@
 										}
 										
 										var mapContainer = document.getElementById('mapBox'), // 지도를 표시할 div  
-										mapOption = {center : new kakao.maps.LatLng(lat,lon), // 지도의 중심좌표
+										mapOption = {center : new kakao.maps.LatLng(data[0].xpos,
+												data[0].ypos), // 지도의 중심좌표
 											level : 5 // 지도의 확대 레벨
 										};
 										var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다

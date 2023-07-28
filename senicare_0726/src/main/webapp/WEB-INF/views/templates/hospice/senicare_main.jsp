@@ -65,7 +65,7 @@
 						<a class="main_btn mr-10 btn_width3" href="../jobs_folder/job_1">구인ㆍ구직<br>게시판</a>
 					</div>
 					<div class="col-lg-15" id="col-lg-15-id">						
-						<a class="main_btn mr-10 btn_width4" href="../healths_folder/healths_folder/health_1">나의<br>건강 정보</a>
+						<a class="main_btn mr-10 btn_width4" href="../healths_folder/health_1">나의<br>건강 정보</a>
 					</div>
 				</div>
 				</div>

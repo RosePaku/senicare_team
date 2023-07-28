@@ -67,47 +67,52 @@
 	<script>
 /* 여기 */
 </script>
-					<div class="row justify-content-center d-flex align-items-center">
+					<div style="display: flex; justify-content: space-around;">
 						<div class="col-lg-3 col-md-6 single-team mb-50">
-							<div class="thumb">
+							<div class="thumb" style="width:70%">
 								<img class="img-fluid" src="../img/demen.png" alt="">
-								<div class="align-items-end justify-content-center d-flex" onclick="selectDemen()">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectDemen()"
+									style="width: 120%; height: 120%; top: -15px; left: -15px">
 									<p>자가진단 하러가기 >></p>
 									<h4>치매</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 single-team mb-50">
-							<div class="thumb">
+							<div class="thumb" style="width:70%">
 								<img class="img-fluid" src="../img/arth.png" alt="">
-								<div class="align-items-end justify-content-center d-flex" onclick="selectArth()">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectArth()"
+									style="width: 120%; height: 120%; top: -15px; left: -15px">
 									<p>자가진단 하러가기 >></p>
 									<h4>퇴행성 관절염</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 single-team mb-50">
-							<div class="thumb">
+							<div class="thumb" style="width:70%">
 								<img class="img-fluid" src="../img/hyper.png" alt="">
-								<div class="align-items-end justify-content-center d-flex" onclick="selectHyper()">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectHyper()"
+									style="width: 120%; height: 120%; top: -15px; left: -15px">
 									<p>자가진단 하러가기 >></p>
 									<h4>고혈압</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 single-team mb-50">
-							<div class="thumb">
+							<div class="thumb" style="width:70%">
 								<img class="img-fluid" src="../img/diabet.png" alt="">
-								<div class="align-items-end justify-content-center d-flex" onclick="selectDiabet()">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectDiabet()"
+									style="width: 120%; height: 120%; top: -15px; left: -15px">
 									<p>자가진단 하러가기 >></p>
 									<h4>당뇨병</h4>
 								</div>
 							</div>
 						</div>
 						<div class="col-lg-3 col-md-6 single-team mb-50">
-							<div class="thumb">
+							<div class="thumb" style="width:70%">
 								<img class="img-fluid" src="../img/cerebro.png" alt="">
-								<div class="align-items-end justify-content-center d-flex" onclick="selectCerebro()">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectCerebro()"
+									style="width: 120%; height: 120%; top: -15px; left: -15px">
 									<p>자가진단 하러가기 >></p>
 									<h4>뇌혈관질환</h4>
 								</div>

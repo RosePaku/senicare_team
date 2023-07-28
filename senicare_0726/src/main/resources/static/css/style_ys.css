@@ -831,7 +831,7 @@ input[type="checkbox"].replynum:enabled:hover {
 	height: 250px;
 	float: left;
 	padding: 5px;
-	margin: 5px 5px;
+	margin: 5px 3.5px;
 	border: 1px solid gray;
 	border-radius: 3%
 }
