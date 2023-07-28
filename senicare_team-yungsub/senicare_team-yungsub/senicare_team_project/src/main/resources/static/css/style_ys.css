@@ -1,0 +1,820 @@
+/*========== 자가진단 css ==========*/
+ /*뇌혈관질환 그림 */
+ .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+.single-team {
+    flex-basis: 25%;
+    max-width: 25%;
+}
+.team-area .thumb div {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #3face4;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.team-area .thumb img {
+    display: block;
+    width: 80%;
+}
+/* submitBtn */
+a.submitBtn {
+    position: relative;
+    left: 77%;
+    top: 10px;
+    display: inline-block;
+    padding: 22px 67px 22px 30px;
+    width: 225px;
+    line-height: 25px;
+    border-radius: 40px;
+    background: #f55a4a;
+    vertical-align: middle;
+    box-sizing: border-box;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.2);
+    transition: all .2s;
+}
+a.submitBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: block;
+    width: 22px;
+    height: 16px;
+    background: url(/img/arw_next03.png) no-repeat 0 center;
+}
+a.submitBtn span {
+    display: block;
+    background: #f55a4a;
+    border-right: 1px solid rgba(255,255,255,0.3);
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: -0.25px;
+    text-align: center;
+}
+/* resetBtn */
+a.resetBtn {
+    position: relative;
+    left: 70%;
+    top: 10px;
+    display: inline-block;
+    padding: 22px 30px 22px 67px;
+    width: 170px;
+    line-height: 25px;
+    border-radius: 40px;
+    background: #333;
+    vertical-align: middle;
+    box-sizing: border-box;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.2);
+    transition: all .2s;
+}
+a.resetBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    display: block;
+    width: 20px;
+    height: 14px;
+    background: url(/img/arw_prev03.png) no-repeat 0 center;
+}
+a.resetBtn span {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+/* resultBtn */
+a.resultBtn {
+    position: relative;
+    left: 72%;
+   	top: 10px;
+    display: inline-block;
+    padding: 8px 67px 8px 30px;
+    width: 170px;
+    line-height: 25px;
+    border-radius: 40px;
+    background: #f55a4a;
+    vertical-align: middle;
+    box-sizing: border-box;
+    box-shadow: 5px 0 5px rgba(0,0,0,0.2);
+    transition: all .2s;
+}
+a.resultBtn:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: block;
+    width: 20px;
+    height: 14px;
+    background: url(/img/arw_next03.png) no-repeat 0 center;
+}
+a.resultBtn span {
+    display: block;
+    background: #f55a4a;
+    font-size: 17px;
+    font-weight: 500;
+    color: #fff;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+/* 자가진단 테이블 */
+.c-tit01 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #000;
+    padding-left: 0px;
+    padding-top: 15px;
+    background: url(/img/blt01.png) no-repeat 0 0em;
+    line-height: 120%;
+    margin-bottom: 15px;
+}
+.c-tit02 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #009599;
+    padding-left: 17px;
+    background: url(/_Img/Content/sub/blt02.gif) no-repeat 0 0.45em;
+    line-height: 130%;
+    margin-bottom: 12px;
+}
+.tbl-type02 {
+	font-size: 20px;
+    font-weight: 600;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    table-layout: fixed;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    border-top: 2px solid #009599;
+}
+.tbl-type02 th {
+    background: #fbfcfd;
+    color: #01a09b;
+}
+.tbl-type02 th.l, .tbl-type02 td.l, .tbl-type02 td.left {
+    padding-left: 10px;
+}
+.left, .l {
+    text-align: left !important;
+}
+.tbl-type02 th, .tbl-type02 td {
+    border: 1px solid #c7d3d3;
+    border-right: 0;
+    padding: 13px 5px;
+    word-wrap: break-word;
+}
+/* 라디오 버튼 */
+[type="radio"], span {
+  vertical-align: middle;
+}
+
+[type="radio"] {
+  appearance: none;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+}
+
+[type="radio"]:checked {
+  border: 0.4em solid tomato;
+}
+
+[type="radio"]:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) dotted tomato;
+}
+[type="radio"]:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+  cursor: pointer;
+}
+
+[type="radio"]:hover + span {
+  cursor: pointer;
+}
+/* 자가진단 결과창 */
+.jagatest-result {
+	position: relative;
+	top: 30px;
+    text-align: center;
+    padding: 30px 10px;
+    border: 5px solid #c5c5c5;
+    line-height: 1;
+}
+.jagatest-result .comm {
+    font-size: 26px;
+    color: #000;
+    padding-top: 80px;
+    background: url(/img/jaga_result.jpg) no-repeat 50% 0;
+}
+.jagatest-result .comm .spc {
+    color: #009893;
+    font-weight: 600;
+}
+.jagatest-result .tit {
+    font-size: 24px;
+    color: #000;
+    padding-top: 30px;
+    font-weight: 600;
+}
+.jagatest-result .stxt {
+    width: 70%;
+    padding-top: 15px;
+    line-height: 1.4;
+    margin: 0 auto;
+    font-size: 22px;
+}
+
+
+
+.text-center {
+    text-align: center;
+}
+form.form-inline {
+    width: 100%;
+}
+.form-control, .form-inline {
+    display: inline-block;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    line-height: inherit;
+    vertical-align: middle;
+}
+fieldset {
+    width: 100%;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.col-md-9 {
+	padding-right: 0px;
+    padding-left: 0px;
+}
+.contents>.row, .contents>.block {
+    width: 740px;
+    margin: 0 auto;
+}
+.contents .search-condition {
+    position: relative;
+    width: 740px;
+    padding: 28px 0 30px 0px;
+    margin-bottom: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+.contents .search-condition .form-group {
+    display: inline-block;
+    margin: 0;
+}
+.contents .search-condition>* {
+    vertical-align: middle;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+label {
+    vertical-align: middle;
+}
+element.style {
+    width: 150px;
+}
+option {
+    font-weight: normal;
+    display: block;
+    white-space-collapse: collapse;
+    text-wrap: nowrap;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+}
+.contents .search-condition .form-group {
+    display: inline-block;
+    margin: 0;
+}
+.contents .search-condition>* {
+    vertical-align: middle;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+label {
+    vertical-align: middle;
+}
+.contents .search-condition input[type=text].form-control {
+    width: 450px;
+}
+.contents .search-condition>* {
+    vertical-align: middle;
+}
+.btn.btn-search, .btn.btn-download {
+    position: relative;
+    padding-left: 34px;
+}
+.btn {
+    min-width: 50px;
+    height: 40px;
+    border-radius: 0;
+    padding: 9px 12px;
+    text-decoration: none;
+}
+.btn.btn-search:before, .btn.btn-download:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -22px;
+    background: url(../img/btn_sprite.png) no-repeat -2px -2px;
+    vertical-align: middle;
+}
+.contents .search-condition>* {
+    vertical-align: middle;
+}
+.btn.btn-info {
+    border-color: #004fa8;
+    background-color: #004fa8;
+    color: #fff;
+}
+.btn.btn-info2 {
+    border-color: rgb(128, 128, 128);
+    background-color: rgb(128, 128, 128);
+    color: #fff;
+}
+.btn {
+    min-width: 50px;
+    height: 40px;
+    border-radius: 0;
+    padding: 9px 12px;
+    text-decoration: none;
+}
+.contents .grid-list-top {
+    margin-bottom: 20px;
+}
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+    padding-left: 0;
+    padding-right: 0;
+}
+fieldset {
+    width: 100%;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.contents .grid-list-top .pull-left {
+    float: none !important;
+    width: 100%;
+    height: 40px;
+    display: table-cell;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 16px;
+}
+.contents .grid-list-top .pull-left span:first-child {
+    padding-left: 22px;
+    background: url(../images/ico_sprite.png) no-repeat -4px 0;
+}
+
+.contents .grid-list-top .pull-left span:first-child {
+    margin-left: 0;
+}
+.contents .grid-list-top .pull-left span strong {
+    font-weight: normal;
+    color: #ad0000;
+}
+.contents .grid-list-top .pull-left span {
+    display: inline-block;
+    margin-left: 12px;
+    font-family: 'NotoSansR';
+}
+
+.contents .grid-list-top .pull-left>* {
+    vertical-align: middle;
+}
+.contents .grid-list-top .pull-left span strong {
+    font-weight: normal;
+    color: #ad0000;
+}
+.contents .grid-list-top .pull-right {
+    float: none !important;
+    height: 40px;
+    display: table-cell;
+    white-space: nowrap;
+    text-align: right;
+    vertical-align: middle;
+}
+.contents .grid-list-top .pull-right>* {
+    vertical-align: middle;
+}
+.contents .grid-list-top .pull-right select {
+    width: 70px;
+}
+
+.contents .grid-list-top .pull-right>* {
+    vertical-align: middle;
+}
+.contents .grid-list-top .pull-right>* {
+    vertical-align: middle;
+}
+
+.btn.btn-primary {
+    border-color: #454545;
+    background-color: #454545;
+    color: #fff;
+}
+.btn {
+    min-width: 50px;
+    height: 40px;
+    border-radius: 0;
+    padding: 9px 12px;
+    text-decoration: none;
+}
+
+
+
+/* 댓글입력창 */
+.pnDiv {
+    width: 100%;
+    border-top: 1px #d9d9d9 solid;
+    margin: 40px 0 0 0;
+    overflow: hidden;
+}
+.preNext {
+    width: 100%;
+    border-color: #fff;
+    border-width: 0;
+    border-spacing: 0;
+    border-style: none;
+    font-size: 12px;
+}
+.preNext th.pre {
+    background: url(../img/bg_arrow_down.gif) 73px 50% #ebebeb no-repeat;
+}
+.preNext th.next {
+    background: url(../img/bg_arrow_up.gif) 73px 50% #ebebeb no-repeat;
+}
+.preNext th {
+    border-color: #d9d9d9;
+    border-width: 0 0 1px 0;
+    color: #666;
+    border-style: none none solid none;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 12px;
+    padding: 10px 0 12px 20px;
+    font-weight: 600;
+    background: #ebebeb;
+}
+.preNext td {
+    border-color: #d9d9d9;
+    border-width: 0 0 1px 0;
+    color: #888;
+    padding: 12px 0 10px 16px;
+    border-style: none none solid none;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 13px;
+}
+.preNext td a {
+    color: #666;
+    text-decoration: none;
+}
+.replyWrite {
+    width: 100%;
+    margin: 50px 0 30px 0;
+    overflow: hidden;
+}
+.replyWrite ul li.in {
+    position: relative;
+    width: 82%;
+    padding: 25px 0 0 0;
+}
+
+.replyWrite ul li {
+    float: left;
+}
+.replyWrite ul li.in p.txt {
+    position: absolute;
+    left: 0;
+    top: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #666;
+}
+.orange {
+    color: #f7703c !important;
+}
+.replyWrite ul li.in p.password {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    line-height: 20px;
+}
+.replynum {
+    width: 82px;
+    height: 20px;
+    line-height: 20px;
+    border: 1px #d9d9d9 solid;
+    padding: 0 0 0 5px;
+}
+img, input {
+    vertical-align: top;
+}
+html, body, input, button {
+    font-size: 12px;
+    color: #888;
+    font-family: 'Nanum Gothic';
+}
+.replyType {
+    width: 100%;
+    height: 58px;
+    border: 1px #d9d9d9 solid;
+    padding: 0;
+    font-family: 'Nanum Gothic';
+}
+textarea {
+    border: 1px solid #dcdcdc;
+    color: #888;
+    font-size: 13px;
+    line-height: 18px;
+    padding: 5px;
+    overflow-y: auto;
+    resize: none;
+}
+.replyWrite ul li.btn {
+    margin: 1px 0 0 10px;
+}
+.replyWrite ul li {
+    float: left;
+}
+.replyBtn {
+    display: block;
+    width: 90px;
+    height: 85px;
+    line-height: 85px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    background: #d7d5d3;
+    text-align: center;
+    border-radius: inherit;
+}
+.replyWrite p.ntic {
+    clear: both;
+    padding: 5px 0;
+}
+.replyBox {
+    width: 100%;
+    border-top: 1px rgb(192, 192, 192) solid;
+    overflow: hidden;
+}
+.replyBox ul {
+    position: relative;
+    border-bottom: 1px #d9d9d9 solid;
+    margin: 15px 0 0 0;
+    padding: 0 20px 15px 20px;
+}
+.replyBox ul li.name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    padding: 0 0 10px 0;
+}
+.replyBox ul li.name span {
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+}
+.replyBox ul li.txt {
+    width: 100%;
+    color: #888;
+    line-height: 1.5;
+    font-size: 13px;
+    word-break: keep-all;
+}
+.replyType {
+    width: 100%;
+    height: 58px;
+    border: 1px #d9d9d9 solid;
+    padding: 0;
+    font-family: 'Nanum Gothic';
+}
+.replyBox ul li.btn {
+    text-align: right;
+    height: 20px;
+    padding: 3px 0 0 0;
+}
+.replyBox ul li.btn .rebtn {
+    display: inline-block;
+    width: 43px;
+    height: 23px;
+    line-height: 22px;
+    color: #777;
+    font-weight: 600;
+    text-align: center;
+    background: url(../img/btn_daybtn.gif) left top no-repeat;
+}
+.replyBox ul {
+    position: relative;
+    border-bottom: 1px #d9d9d9 solid;
+    margin: 15px 0 0 0;
+    padding: 0 20px 15px 20px;
+}
+.replyBox ul li.name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    padding: 0 0 10px 0;
+}
+.replyBox ul li.name span {
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+}
+.replyBox ul li.txt {
+    width: 100%;
+    color: #888;
+    line-height: 1.5;
+    font-size: 13px;
+    word-break: keep-all;
+}
+label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+input[type="checkbox"].replynum {
+  appearance: none;
+  position: relative;
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 1.25em;
+  width: 2.25em;
+  height: 1.25em;
+}
+
+input[type="checkbox"].replynum::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  transform: scale(0.8);
+  background-color: gray;
+  transition: left 250ms linear;
+}
+
+input[type="checkbox"].replynum:checked {
+  background-color: tomato;
+  border-color: tomato;
+}
+
+input[type="checkbox"].replynum:checked::before {
+  background-color: white;
+  left: 1em;
+}
+
+input[type="checkbox"].replynum:disabled {
+  border-color: lightgray;
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"].replynum:disabled:before {
+  background-color: lightgray;
+}
+
+input[type="checkbox"].replynum:disabled + span {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+input[type="checkbox"].replynum:focus-visible {
+  outline-offset: max(2px, 0.1em);
+  outline: max(2px, 0.1em) solid tomato;
+}
+
+input[type="checkbox"].replynum:enabled:hover {
+  box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+}
+
+/* 페이징 버튼 */
+.page-num {
+	width: 740px;
+    margin-top: 15px;
+    text-align: center;
+}
+.page-num li {
+    width: 36px;
+    height: 35px;
+    padding: 0;
+    display: inline-block;
+    font-size: 13px;
+}
+.first {
+    background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_first.png) no-repeat;
+}
+.prev {
+    background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_prev.png) no-repeat;
+}
+.on {
+    background: #004fa8;;
+    color: floralwhite;
+    font-weight: 600;
+}
+.num {
+    position: relative;
+    top: -17px;
+    height: 33px !important;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px #989898 solid;
+}
+.num > div {
+    position: relative;
+    top: 2px;
+}
+.next {
+    background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_next.png) no-repeat;
+}
+.last {
+    background: url(https://www.midashotel.co.kr/Midas_common/images/homepage/board/paging_last.png) no-repeat;
+}
+/* 게시판 보기 */
+.table-notice {
+    background-color: #004fa8;
+    color: white;
+    padding: 4px 15px 4px 15px;
+}
+#board_contents {
+    height: 380px;
+}
+.locs {
+	float: left;
+}
+.gridList {
+	width: 260px;
+	height: 250px;
+	float: left;
+	padding: 5px;
+	margin: 5px 5px;
+	border: 1px solid gray;
+	border-radius: 3%
+}
+.gridList:hover {
+	border: 5px solid orange;
+}

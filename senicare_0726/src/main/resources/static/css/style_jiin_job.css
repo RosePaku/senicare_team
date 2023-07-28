@@ -1,0 +1,310 @@
+/* job_t_2 파일 css코드 */
+/* 전체 페이지 기본 스타일 */
+
+.job_t2_body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* 상단 헤더 스타일 */
+.job_t2_header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* 네비게이션 스타일 */
+.job_t2_nav{
+  background-color: #f4f4f4;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* 메인 컨테이너 스타일 */
+.job_t2_main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* 왼쪽 기업 리스트 컨테이너 스타일 */
+.company-list {
+  flex-basis: 30%;
+  margin-bottom: 1rem;
+}
+
+/* 오른쪽 기업 상세 정보 컨테이너 스타일 */
+.company-details {
+  flex-basis: 68%;
+  padding: 1rem;
+}
+
+/* 기업 리스트 항목 스타일 */
+.company-item {
+  border: 1px solid slategray;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: none; /* 처음에는 모든 기업 정보를 숨깁니다. */
+  margin: 15px;
+  border-radius: 20px; /* 보더 끝 부분을 5px 둥글게 조정 */
+}
+
+.company-item.active {
+  display: block; /* 기업을 클릭하면 해당 기업 정보를 보여줍니다. */
+  padding: 30px;
+}
+
+.company-item:hover {
+  background-color: #f4f4f4;
+}
+
+.company-details-container.active {
+  display: block; /* 기업을 클릭하면 해당 기업 상세 정보를 보여줍니다. */
+}
+
+/* 닫기 버튼 아이콘 스타일 */
+.close-button {
+  position: absolute; /* 추가 */
+  top: 10px; /* 추가 */
+  right: 10px; /* 추가 */
+  cursor: pointer;
+  font-size: 20px;
+  border: 1px solid #000;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* 기업 상세 정보 내용 스타일 */
+.company-details-content {
+  padding: 1rem;
+}
+
+/* 기업 이름 2 상세 정보 영역 스타일 */
+.company-details-container[data-company-id="2"] {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* 기업 상세 정보 컨테이너 스타일 */
+.company-details-container {
+  padding: 20px;
+  border: 1px solid #000;
+  text-align: left;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+  color: #000;
+  font-weight: bold;
+  position: relative; /* 추가 */
+  border-radius: 10px; /* 보더 끝 부분을 5px 둥글게 조정 */
+}
+
+/* 기업 상세 정보 헤더 스타일 */
+.company-details-header {
+  text-align: left;
+  border-bottom: 1px solid #000;
+  padding-bottom: 10px;
+  color: #000;
+  font-weight: bold;
+  position: relative; /* 추가 */
+  border-radius: 10px; /* 보더 끝 부분을 5px 둥글게 조정 */
+  padding: 20px;
+}
+
+.search_button_1{
+  text-align: center;
+  display: -webkit-box;
+}
+
+.job_enter {
+  box-sizing: border-box;
+  background: none rgb(37, 87, 167);
+  appearance: none;
+  text-decoration: none;
+  border: 1px solid rgb(37, 87, 167);
+  cursor: pointer;
+  user-select: none;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  position: relative;
+  line-height: 1.5;
+  font-family: "Noto Sans", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", Roboto, Noto, sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  transition: border-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, background-color 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, opacity 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, box-shadow 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s, color 200ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  color: rgb(255, 255, 255);
+  padding: 0.563rem 1.5rem;
+  display: block;
+  width: 15%;
+  max-width: 21.9375rem;
+  text-align: center;
+  /* margin: 0px auto; */
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin : 10px
+  
+}
+
+
+
+/* <========job_t_3 파일 코드=========> */
+
+.job_t_3_body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  padding: 0px;
+}
+
+.job_t_3_h2 {
+  color: #000;
+}
+
+.job_label_2{
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="file"] {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+input[type="submit"]:hover {
+  background-color: #2b6bb5;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.applicant-info,
+.company-info {
+  flex-basis: 48%;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.applicant-info {
+  background-color: #fff;
+}
+
+.company-info {
+  background-color: #f0f0f0;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.company-info h3 {
+  color: #4a90e2;
+  margin-bottom: 10px;
+}
+
+.company-info p {
+  color: #333;
+  margin: 5px 0;
+}
+
+
+/* 성별 라디오 버튼 스타일 */
+.applicant-info input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* 생년월일 입력창 스타일 */
+.applicant-info input[type="date"] {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+/* 저장 및 다음으로 이동 버튼 스타일 */
+.applicant-info input[type="submit"] {
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.applicant-info input[type="submit"]:hover {
+  background-color: #2b6bb5;
+}
+
+/* 성별 라벨과 체크 박스를 한 줄에 표시 */
+.applicant-info div {
+  display: flex;
+  /* align-items: center; */
+}
+
+.applicant-info div label {
+  margin-right: 10px;
+}
+
+  /* 게이지 바와 버튼 스타일 */
+  .progress-bar {
+    width: 60%;
+    height: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4a90e2;
+    border-radius: 5px;
+}
+
+.btn-stop {
+    background-color: #ff3b30;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-stop:hover {
+    background-color: #c91812;
+}

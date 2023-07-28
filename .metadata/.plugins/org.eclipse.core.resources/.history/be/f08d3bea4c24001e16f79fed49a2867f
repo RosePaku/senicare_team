@@ -1,0 +1,37 @@
+package com.java.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.java.dto.MemberDto;
+import com.java.service.MemberService;
+
+@Controller
+public class MemberController {
+   
+    @GetMapping("/member/login")
+    public String login() {
+        return "member/login";
+    }
+    
+    @PostMapping("/member/login")
+//  DTO로 받기
+    public String login(String id, String pw, Model model) {
+//    	return "member/login";
+    	System.out.println("controller id : "+id);
+    	System.out.println("controller pw : "+pw);
+    	
+    	
+    	//회원 1명 가져오기(로그인)
+    	MemberDto mdto = MemberService.selectOne(id,pw);
+    	return "redirect:/";
+    }
+
+}

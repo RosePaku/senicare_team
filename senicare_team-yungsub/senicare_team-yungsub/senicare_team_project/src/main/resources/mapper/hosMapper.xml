@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.HosMapper">
+	
+	 <!-- 전체 데이터 가져오기 -->
+	 <select id="selectAll" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%'
+	 </select>
+	 
+	 <!-- 검색 데이터 가져오기 -->
+	 <select id="searchData" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HOSNM LIKE '%'||#{hosnm}||'%'
+	 </select>
+	 
+	 <!-- 병원 데이터만 가져오기 -->
+	 <select id="selectHos" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE CLNM NOT LIKE '%약국%' AND CLNM NOT LIKE '%요양%' AND SGGNM LIKE '%구로%'
+	 </select>
+	 
+	 <!-- 약국 데이터만 가져오기 -->
+	 <select id="selectPharm" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%약국%' AND SGGNM LIKE '%구로%'
+	 </select>
+	 
+	 <!-- 요양병원 데이터만 가져오기 -->
+	 <select id="selectNurs" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%요양%' AND SGGNM LIKE '%구로%'
+	 </select>
+	 
+	 <!-- 데이터 1개 가져오기 -->
+	 <select id="selectOne" resultType="com.java.dto.HosDto">
+	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HNO=#{hno}
+	 </select>
+	 
+
+
+</mapper>

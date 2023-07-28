@@ -1,0 +1,17 @@
+package com.java;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class UploadConfig implements WebMvcConfigurer {
+
+    private static final String UPLOAD_DIRECTORY = "/path/to/upload/directory";
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/uploads/**")
+                .addResourceLocations("file:" + UPLOAD_DIRECTORY + "/");
+    }
+}

@@ -1,0 +1,22 @@
+/* myPahe_auth_2 css  */
+
+.additional-input {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-container label,
+.dropdown-container select {
+  margin-right: 10px;
+}
+.add-button {
+  background: none;
+  border: none;
+  outline: none; /* 추가: 외곽선 제거 */
+  cursor: pointer; /* 추가: 커서 모양 변경 */										
+}		

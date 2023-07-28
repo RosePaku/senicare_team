@@ -1,0 +1,12 @@
+package com.java.service;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MemberServiceImpl {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MemberServiceImpl.class, args);
+	}
+}

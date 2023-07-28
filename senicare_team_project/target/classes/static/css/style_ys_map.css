@@ -1,0 +1,139 @@
+.Info .body {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f9f9f9;
+}
+body {
+    font: 12px/1.5 'Malgun Gothic','돋움',dotum,sans-serif;
+    background: #fff;
+    color: #333;
+    letter-spacing: -1px;
+}
+.Main .mainHeader {
+    position: relative;
+    background-color: #fff;
+}
+.Main .sub {
+    overflow: hidden;
+    position: relative;
+    padding: 0 0 0 20px;
+}
+
+ul, ol {
+    list-style: none;
+}
+.Main .sub li {
+    float: left;
+    position: relative;
+    z-index: 10;
+    width: 54px;
+    margin-right: 2px;
+}
+
+body, h1, h2, h3, h4, h5, h6, dl, dt, dd, ul, li, ol, th, td, p, blockquote, form, fieldset, legend {
+    margin: 0;
+    padding: 0;
+}
+.Main .sub .ACTIVE a, .Main .sub .option0-ACTIVE a, .Main .sub .option1-ACTIVE a, .Main .sub .option2-ACTIVE a, .Main .sub .option3-ACTIVE a, .Main .sub .option4-ACTIVE a {
+    border-color: #3396ff;
+    font-weight: bold;
+    color: #1f8cff;
+}
+
+.Main .sub li a {
+    display: block;
+    width: 100%;
+    padding: 13px 0;
+    border-bottom: 3px solid transparent;
+    font-size: 13px;
+    line-height: 17px;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+}
+.Main .sub li a {
+    display: block;
+    width: 100%;
+    padding: 13px 0;
+    border-bottom: 3px solid transparent;
+    font-size: 13px;
+    line-height: 17px;
+    color: #666;
+    text-align: center;
+    text-decoration: none;
+}
+.Main .sub:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #e2e2e2;
+    content: '';
+}
+.Main .mainHeader .clear {
+    overflow: hidden;
+    position: absolute;
+    top: 7px;
+    right: 11px;
+    width: 36px;
+    height: 36px;
+    font-size: 0;
+    line-height: 0;
+    background: url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/routeSearch/btn_roadsearch.png) no-repeat 0 -100px;
+    text-indent: -9999px;
+}
+
+a:link, a:active, a:visited {
+    color: #333;
+    text-decoration: none;
+}
+.Info .searchHeader {
+    position: relative;
+    padding: 13px 20px 26px;
+    font-size: 13px;
+    line-height: 17px;
+    background: #fff url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/info/shadow_info_section.png) repeat-x 0 100%;
+    color: #444;
+}
+.Info .searchHeader .desc_search em {
+    color: #1f8cff;
+}
+.MessageView .line:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    content: '';
+}
+.Info .section.lst {
+    padding-bottom: 4px;
+    background-image: url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/info/shadow_info_section_end.png);
+}
+.Info .section {
+    padding-bottom: 10px;
+    background: #fff url(//t1.daumcdn.net/localimg/localimages/07/2018/pc/info/shadow_info_section.png) repeat-x 0 100%;
+}
+.Info .sectiontitle {
+    padding: 18px 20px 7px;
+}
+.Main .section .addrtit, .Main .section .placetit {
+    float: left;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 19px;
+    color: #222;
+}
+.Main .cntwrap {
+    float: left;
+    margin-left: 5px;
+    font-size: 15px;
+    line-height: 19px;
+    color: #666;
+}
+.Main .cnt {
+    letter-spacing: 0;
+}

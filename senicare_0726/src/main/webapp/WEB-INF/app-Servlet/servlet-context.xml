@@ -1,0 +1,21 @@
+<bean id="viewResolver"
+    class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/views/" />
+    <property name="suffix" value=".jsp" />
+</bean>
+
+<!-- SqlSessionFactory 설정 -->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="mapperLocations" value="classpath*:com/java/mapper/*.xml" />
+</bean>
+
+<!-- SqlSessionTemplate 설정 -->
+<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+    <constructor-arg ref="sqlSessionFactory" />
+</bean>
+
+<!-- AuthService 서비스 빈 설정 -->
+<bean id="authService" class="com.java.service.AuthServiceImpl">
+    <property name="sqlSessionTemplate" ref="sqlSessionTemplate" />
+</bean>

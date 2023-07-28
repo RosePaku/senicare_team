@@ -1,0 +1,146 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.HobbyMapper">
+
+	<!-- 일반회원 게시글 전체 가져오기 -->
+	<select id="selectAll" resultType="com.java.dto.MadangDto">
+		SELECT * FROM
+    		(SELECT ROWNUM RNUM, C.* FROM
+      		  (SELECT B.*, COALESCE(CC.CCNT, NULL) AS CCNT FROM 
+          		  (SELECT ROWNUM BNO, A.* FROM (SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby' AND AUTH_ID != 'admin'
+			<if test="s_opt == 'all'">
+		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
+			</if>
+			<if test="s_opt == 'btitle'">
+		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
+			</if>
+			<if test="s_opt == 'content'">
+		      	AND BOARD_CONTENTS LIKE '%'||#{s_word}||'%' 
+			</if>
+			<if test="s_opt == 'writer'">
+		      	AND AUTH_NICKNAME LIKE '%'||#{s_word}||'%' 
+			</if>
+			<if test="locString == '전국'">
+		      	AND REGEXP_LIKE(MEET_LOC,'전국')
+			</if>
+			<if test="locString != '전국'">
+			    AND REGEXP_LIKE(MEET_LOC, #{locString})
+			</if>
+			 ORDER BY BOARD_NO ASC) A) B 
+			 LEFT JOIN (
+			 	SELECT BOARD_NO, COUNT(*) AS CCNT
+			 	FROM NOTICE_COMMENT
+			 	GROUP BY BOARD_NO) CC ON B.BOARD_NO = CC.BOARD_NO
+			 ORDER BY BNO DESC) C)
+			 WHERE RNUM BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	
+	<!-- 관리자 공지글 전체 가져오기 -->
+	<select id="selectNoticeAll" resultType="com.java.dto.MadangDto">
+		SELECT * FROM
+    		(SELECT ROWNUM RNUM, C.* FROM
+      		  (SELECT B.*, COALESCE(CC.CCNT, NULL) AS CCNT FROM 
+          		  (SELECT ROWNUM BNO, A.* FROM (SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby' AND AUTH_ID = 'admin'
+			  ORDER BY BOARD_NO ASC) A) B 
+			 LEFT JOIN (
+			 	SELECT BOARD_NO, COUNT(*) AS CCNT
+			 	FROM NOTICE_COMMENT
+			 	GROUP BY BOARD_NO) CC ON B.BOARD_NO = CC.BOARD_NO
+			 ORDER BY BNO DESC) C)
+			 WHERE RNUM BETWEEN #{startRow} AND #{endRow}
+	</select>
+	
+	<!-- 게시글 전체 개수 -->
+	<select id="selectListCount" resultType="int" >
+		SELECT COUNT(*) FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby'
+			<if test="s_opt == 'all'">
+		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
+			</if>
+			<if test="s_opt == 'btitle'">
+		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
+			</if>
+			<if test="s_opt == 'content'">
+		      	AND BOARD_CONTENTS LIKE '%'||#{s_word}||'%' 
+			</if>
+			<if test="s_opt == 'writer'">
+		      	AND AUTH_NICKNAME LIKE '%'||#{s_word}||'%' 
+			</if>
+			<if test="locString == '전국'">
+		      	AND REGEXP_LIKE(MEET_LOC,'전국')
+			</if>
+			<if test="locString != '전국'">
+			    AND REGEXP_LIKE(MEET_LOC, #{locString})
+			</if>
+	</select>
+	
+	<!-- 게시글 1개 가져오기 -->
+	<select id="selectOne" resultType="com.java.dto.MadangDto">
+		SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby' AND BOARD_NO=#{bno}
+	</select>
+	<!-- 이전글 가져오기 -->
+	<select id="selectPrevOne" resultType="com.java.dto.MadangDto">
+		SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby' AND BOARD_NO=#{bno}-1
+	</select>
+	<!-- 다음글 가져오기 -->
+	<select id="selectNextOne" resultType="com.java.dto.MadangDto">
+		SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'hobby' AND BOARD_NO=#{bno}+1
+	</select>
+	<!-- 조회수 1증가 -->
+	<update id="updateBView">
+		UPDATE NOTICE_BOARD SET BOARD_VIEW = BOARD_VIEW+1 WHERE BOARD_NO=#{bno} 
+	</update>
+	
+	<!-- 댓글 가져오기 -->
+	<select id="selectComAll" resultType="com.java.dto.CommentDto">
+		SELECT * FROM NOTICE_COMMENT WHERE BOARD_NO=#{bno} ORDER BY COMMENT_NO DESC
+	</select>
+	
+	<!-- 게시글 저장하기 -->
+	<insert id="insertOne">
+		INSERT INTO NOTICE_BOARD VALUES(
+			nb_seq.nextval,#{auth_id},#{auth_nickname},'hobby',#{board_title},#{board_contents}, SYSDATE, null,#{board_file},0,0, #{meet_loc})
+	</insert>
+	
+	<!-- 댓글 저장하기 -->
+	<insert id="insertComOne">
+		<selectKey resultType="int" keyProperty="comment_no" order="BEFORE">
+			SELECT NC_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+		INSERT INTO NOTICE_COMMENT VALUES (#{comment_no},#{board_no},#{auth_id},#{auth_nickname},#{comment_content},SYSDATE,null,#{comment_private})
+	</insert>
+	
+	<!-- 댓글 1개 가져오기 -->
+	<select id="selectComOne" resultType="com.java.dto.CommentDto">
+		SELECT * FROM NOTICE_COMMENT WHERE COMMENT_NO=#{comment_no} <!-- 위에서 시퀀스를 cno로 정의함! -->
+	</select>
+	
+	<!-- 댓글 1개 삭제하기 -->
+	<delete id="deleteOne">
+		DELETE NOTICE_COMMENT WHERE COMMENT_NO=#{cno}
+	</delete>
+	
+	<!-- 댓글 수정 저장 -->
+	<update id="updateComOne">
+		UPDATE NOTICE_COMMENT SET COMMENT_CONTENT=#{comment_content}, COMMENT_MODIFY=SYSDATE WHERE COMMENT_NO=#{comment_no}
+	</update>
+	
+	<!-- 이미지 배열로 가져오기 -->
+	<select id="loadImage" resultType="string">
+		SELECT BOARD_FILE FROM NOTICE_BOARD WHERE BOARD_NO=#{bno} 
+	</select>
+	
+	<!-- 게시글 1개 삭제하기 -->
+	<delete id="deleteBrdOne">
+		DELETE NOTICE_BOARD WHERE BOARD_NO=#{bno}
+	</delete>
+	
+	<!-- 게시글 수정 후 저장하기 -->
+	<update id="updateOne">
+		UPDATE NOTICE_BOARD SET BOARD_TITLE=#{board_title}, BOARD_CONTENTS=#{board_contents}, BOARD_MODIFIED=SYSDATE, BOARD_FILE=#{board_file} WHERE BOARD_NO=#{board_no}
+	</update>
+	
+	
+</mapper>

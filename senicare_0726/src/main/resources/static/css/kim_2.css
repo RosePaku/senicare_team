@@ -1,0 +1,138 @@
+.find_email{display: none;}
+body {
+ font-family: 'Roboto', sans-serif;
+}
+.container_input_find {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ max-width: 1000px;
+ margin: 0 auto;
+ padding: 40px;
+ border: 1px solid #000;
+}
+.title {
+ text-align: center;
+ font-size: 24px;
+ font-weight: bold;
+ margin-bottom: 20px;
+}
+.form-group {
+  display: block;
+  align-items: center;
+  margin-bottom: 20px;
+ }
+ .form-group label,
+ .form-group select,
+ .form-group input[type="text"],
+ .form-group input[type="email"] {
+  margin-right: 0px;
+ }
+ .form-group input[type="text"],
+ .form-group input[type="email"] {
+  width: 50%;
+  padding: 10px;
+  font-size: 25px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ }
+ .form-group input[type="text"] {
+   width: 20%;
+   padding: 10px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+  }
+ 
+.form-group select {
+  width: 11%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  }
+ .form-group.help-text {
+   font-size: 14px;
+   color: #888;
+   margin-top: 5px;
+  }
+.submit-btn {
+ text-align: center;
+ margin-top: 20px;
+}
+.submit-btn button {
+ padding: 10px 20px;
+ font-size: 16px;
+ background-color: #007bff;
+ color: #fff;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+.find_title {
+ font-size: 30px;
+ margin: 30px;
+}
+#find_id {
+ font-size: 40px;
+ font-weight: bold;
+ margin-bottom: 50px;
+}
+#find_id2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 50px;
+ }
+.form-group1 {
+ display: block;
+ align-items: center;
+ margin-bottom: 20px;
+}
+.form-group1 label,
+.form-group1 select,
+
+.form-group1 input[type="text"],
+.form-group1 input[type="email"] {
+ margin-right: 0px;
+}
+.form-group1 input[type="text"],
+.form-group1 input[type="email"] {
+ width: 50%;
+ padding: 10px;
+ font-size: 25px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+}
+.form-group1 input[type="text"] {
+  width: 20%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ }
+
+.form-group1 select {
+  width: 11%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ }
+.form-group1 .help-text {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+ }
+
+#button1 {display:block; box-sizing: border-box; border-radius: 10px; border: none;
+  margin:0 auto; margin-top: 40px; width:150px; height:50px; color:white; font-size:20px; background-color:rgb(32, 92, 255);}
+
+
+#recoverConfirmMethod1, #recoverConfirmMethod3 {
+  transform: scale(1.8); /* 크기 조절값 */
+ }
+#recoverConfirmMethod2, #recoverConfirmMethod4 {
+  transform: scale(1.8); margin-left: 25px; /* 크기 조절값 */
+ }
+
+ 

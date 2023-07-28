@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.java.config&apos; to &apos;spring0710_backend_sample/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;spring0717_board&apos;&#x0D;&#x0A;- Destination element: &apos;spring0710_backend_sample/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;spring0717_board/src/main/java/com.java.config&apos;" description="Copy package" destination="=spring0710_backend_sample/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/" element1="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.java.config" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1689581854488" version="1.0"/>
+</session>

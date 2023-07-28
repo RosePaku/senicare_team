@@ -1,0 +1,85 @@
+작업 해야할 것
+카테고리별 페이지 작업
+현재 정의된 것
+
+1 Main Page 
+index : 메인 페이지 (고은 누나)
+
+2 내 주변 의료기관 찾기 searchHos (영섭님) (searchHos_folder) /
+searchHos_1 : 내 주변 의료기관 찾기
+searchHos_list : 왼쪽 카테고리 메뉴
+
+3 참여 & 정보 마당 (madang_folder) /  -- (박지인)
+madang_1 : 자유/일상 게시판 
+madang_2 : 취미/친목 게시판
+madang_3 : 복지 혜택 안내
+madang_4 : 디지털 교육 안내
+madang_list : 왼쪽 카테고리 메뉴
+
+4 시니어 구인구직 게시판 (job_folder) / -- (박지인)
+job_1 : 바로 구직
+job_2 : 일자리 네트워크
+job_list : 왼쪽 카테고리 메뉴
+
+5 나의 건강 정보 (영섭님) (health_folder)
+health_1 : 자가 진단 검사
+health_2 : 식단 및 운동 추천
+health_list : 왼쪽 카테고리 메뉴
+
+6 마이 페이지 (myPage_folder)
+myPage_1 : 회원 정보 수정
+myPage_2 : 작성글 확인
+myPage_3 : 회원탈퇴
+myPage_list : 왼쪽 카테고리 메뉴
+
+
+7 회원 페이지 (member_folder)
+회원가입 양식 폼은 member_1_1에서 가져오면 됨
+
+* 회원가입 메인
+member_1 : 회원가입 (메인)  v
+
+
+member_1_1 : 개인 회원 정보 입력 v
+member_1_2 : 기업 회원 정보 입력 v
+
+* 개인/기업
+member_1_1_1 : 지원자 정보 입력 // 이동해야 함
+member_1_2_1 : 기업 정보 입력 v // 이동해야 함
+
+
+
+
+member_1_1 : 개인 회원가입 정보 입력란
+member_1_2_1 : 기업 회원가입 정보 입력란 (사업자등록증명 인증)
+member_1_2_2 : 기업 회원가입 정보 입력란 (개인회원가입처럼 기본 id 설정)
+member_2 : 로그인 (개인 / 기업회원)
+member_3 : 아이디 / 비밀번호 찾기 (메인)
+member_3_1 : 개인회원 id/pw 찾기
+member_3_2 : 기업회원 id/pw찾기
+member_4_1 : 회원약관
+member_4_2 : 개인정보수집 동의(필수)
+member_4_3 : 개인정보수집 동의(선택)
+member_list : 왼쪽 카테고리 메뉴
+
+
+8 헤더 & 푸터
+sinicare_header : 로고,배너 (메인에서 적용)
+footer : 로고, 주소, 카피 sns 아이콘
+
+
+페이지별 작업
+
+
+
+DB테이블
+AUTH // AUTH_BUSINESS // NOTICE_BOARD // NOTICE_COMMENT
+JOB_BOARD // JOB_COMMENT // HOS_DATA // SELF_CARE
+AUTH : 회원 테이블
+AUTH_BUSINESS : 기업 회원 테이블
+NOTICE_BOARD : 게시판 테이블
+NOTICE_COMMENT : 게시판 댓글 테이블
+JOB_BOARD : 구인구직 게시판
+JOB_COMMENT : 구인구직댓글
+HOS_DATA : 공공데이터(병원+약국)
+SELF_CARE : 자가진단

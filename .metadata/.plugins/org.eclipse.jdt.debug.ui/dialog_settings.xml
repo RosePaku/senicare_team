@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth0" value="91"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth1" value="569"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.columnWidth2" value="85"/>
+	<item key="org.eclipse.jdt.debug.ui.jre_preference_page_context.sortColumn" value="1"/>
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=spring0622/C:\/Users\/Administrator\/.m2\/repository\/org\/apache\/tomcat\/embed\/tomcat-embed-core\/9.0.75\/tomcat-embed-core-9.0.75.jar&amp;lt;org.apache.catalina.startup(Tomcat$SimpleRealm.class[SimpleRealm&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=spring0622/C:\/Users\/Administrator\/.m2\/repository\/net\/bytebuddy\/byte-buddy-agent\/1.12.23\/byte-buddy-agent-1.12.23.jar&amp;lt;net.bytebuddy.agent(Attacher.class[Attacher&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=sample_css/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;java.com.java.controller{EduBoardController.java[EduBoardController&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=spring0710_backend_sample/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&amp;lt;com.java{Spring0710SampleApplication.java[Spring0710SampleApplication&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="384"/>
+			<item key="DIALOG_Y_ORIGIN" value="267"/>
+			<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		</section>
+	</section>
+</section>

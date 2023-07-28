@@ -1,0 +1,322 @@
+* {
+    font-size: 17px;
+    line-height: 24px;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+    color: #000;
+    font-weight: bold;
+}
+element.style {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.login_input_wrap .loginform {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items:stretch;
+}
+/* *, ::after, ::before {
+    box-sizing: border-box;
+} */
+p.login_1{
+  text-align: center;
+    font-size: 15px;
+    color: #5c667b;
+    line-height: 24px;
+    letter-spacing: -1px;
+}
+.login_tab {
+    padding: 0 0px;
+    border-bottom: none;
+}
+.tabList {
+    display: table;
+    position: static;
+    width: 100%;
+    height: 47px;
+    box-sizing: border-box;
+    table-layout: fixed;
+}
+.tabList li.select {
+    position: relative;
+    z-index: 1;
+}
+.login_tab li {
+    border-bottom: 1px solid #e5e5e7;
+}
+.tabList li {
+    display: table-cell;
+    box-sizing: border-box;
+}
+/* 개인 */
+.tabList li.select .inTab {
+    border-bottom: 2px solid black;
+    color: #000;
+    background-color: rgb(253, 138, 105);
+    font-weight: bold;
+    height: 50px;
+}
+
+.login_tab li .inTab {
+    margin: 0;
+    width: 100%;
+}
+
+/* 기업 */
+.tabList li .inTab {
+    border-bottom: 1px solid black;
+    color: #000(255, 255, 255);
+    height: 50px;
+    background-color: rgb(175, 212, 133);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+/* 변경 후 */
+.tabList li.select .inTab {
+    border-bottom: 1px solid black;
+    color: #fff;
+    background-color: rgb(253, 138, 105);
+    font-weight: bold;
+    font-size: 22px;
+}
+
+
+button {
+    text-rendering: auto;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+}
+button {
+    background: none;
+    cursor: pointer;
+}
+.login_content {
+    padding: 20px;
+    min-height: 640px;
+    letter-spacing: -1px;
+    background: #fff;
+}
+.login_content {
+    padding: 20px;
+    min-height: 640px;
+    letter-spacing: -1px;
+    background: #fff;
+}
+.pc_keyboard {
+    margin-bottom: 7px;
+    text-align: center;
+}
+.special_keyboard {
+    margin-bottom: 7px;
+    text-align: center;
+}
+input:not([type="range"]):not([type="color"]) {
+    writing-mode: horizontal-tb !important;
+}
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: default;
+    box-sizing: border-box;
+}
+input[type="hidden" i] {
+    background-color: initial;
+    cursor: default;
+    display: none !important;
+}
+input {
+    text-rendering: auto;
+    color: fieldtext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    text-align: start;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+}
+
+input {
+    padding: 0;
+    border-radius: 0;
+    font-size: 14px;
+    border: 0;
+}
+input.inpTypoBox2 {
+    padding: 12px 16px;
+    height: 48px;
+    color: #373f57;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    border: 1px solid #d7dce5;
+    border-radius: 4px;
+}
+.hide, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.login_content .input_login_info .pw_text {
+    margin-top: 8px;
+}
+input[class*="inpTypo"] {
+    width: 100%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+label {
+    cursor: default;
+}
+.login_content .input_login_info p {
+    padding: 0;
+    font-weight: bold;
+}
+.input_login_info .ck_login_opt .lbl:first-of-type {
+    margin-right: 24px;
+}
+.login_content .input_login_info p label.off {
+    display: inline-block;
+    height: 23px;
+    line-height: 25px;
+    background: url(//www.saraminimage.co.kr/ui/mobile_login/check_off_img.png) no-repeat 0 50%;
+    background-size: 23px 23px;
+}
+span[class^="inpChk2"] {
+    display: inline-block;
+    vertical-align: top;
+    -webkit-tap-highlight-color: transparent;
+}
+span[class^="inpChk2"]>input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #909191;
+    margin: 0;
+}
+.login_content .input_login_info .login_btn {
+    margin-top: 11px;
+    width: 100%;
+}
+[class*="btnType"].colorBlue {
+    border: 1px solid #4876ef;
+    color: #fff;
+    background: #4876ef;
+}
+[class*="btnType"].sizeL {
+    padding: 0 24px;
+    height: 48px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 48px;
+}
+/* 회원정보완료버튼 */
+.btnType {
+    display: inline-block;
+    letter-spacing: -0.5px;
+    text-align: center;
+    border-radius: 4px;
+    vertical-align: top;
+    box-sizing: border-box;
+    color: white;
+}
+.login_content .extra_func, .login_content .extra_func_company {
+    position: relative;
+    margin-top: 16px;
+    color: #5c667b;
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+.login_content .extra_func_company {
+    display: none;
+}
+
+/* ㅇㅇ */
+/* ㅇㅇ */
+
+/* 지인 */
+
+.login_1::before {
+  width: 60px;
+  height: 1px;
+  background-color: #eaedf4;
+  display: inline-block;
+  vertical-align: super;
+  content: '';
+}
+
+
+
+.login_1:after {
+  width: 60px;
+  height: 1px;
+  background-color: #eaedf4;
+  display: inline-block;
+  vertical-align: super;
+  content: '';
+}
+
+.button_login {
+    margin: 40px 0;
+}
+/* 소셜 로그인 */
+
+.social_login li .wrap_icon {
+  display: flex;
+  flex-flow: row wrap;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 1px solid #96a0b5;
+  justify-content: center;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+.icon {
+  width: 22px;
+  height: 22px;
+}
+
+.social_login .login_kakao .wrap_icon {
+  background-color: #fee500;
+  border-color: #fee500;
+}
+
+.social_login .login_naver .wrap_icon {
+  background-color: #03cf5d;
+  border-color: #03cf5d;
+}
+
+ol, ul, li {
+  list-style: none;
+}
+
+.social_login {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding-top: 24px;
+}

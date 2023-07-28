@@ -1,0 +1,18 @@
+package com.java.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping("/hello")
+public class HelloController {
+
+    @GetMapping("/greet")
+    public String greet(Model model) {
+        String message = "안녕하세요! 스프링 부트로 웹 개발을 시작해보세요!";
+        model.addAttribute("message", message);
+        return "greet";
+    }
+}

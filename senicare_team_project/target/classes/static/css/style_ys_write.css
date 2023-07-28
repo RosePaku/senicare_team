@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* 게시판 글쓰기 */
+.bold {
+    margin-bottom: 30px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(78, 126, 207);
+    border-image: initial;
+}
+tr {
+    height: 50px;
+}
+th {
+    font-weight: normal;
+    font-size: 20px;
+}
+input {
+    height: 30px;
+    font-size: 16px;
+}
+select, input, textarea {
+    width: 100%;
+    border: 2px solid #ccc;
+}
+#file {
+    border: none;
+}
+input {
+    height: 30px;
+    font-size: 16px;
+}

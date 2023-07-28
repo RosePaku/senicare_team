@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+  <header>
+    <ul>
+      <li>회원가입</li> <span>|</span>
+      <li>로그인</li> <span>|</span>
+      <li>고객행복센터</li> <span>|</span>
+      <li>배송지역검색</li> <span>|</span>
+      <li>기프트카드 등록</li>
+    </ul>
+  </header>
+</body>
+</html>
