@@ -163,18 +163,18 @@
 													</div>
 		
 													<!-- 경력사항 -->
-													<div class="item" id="keywordsContainer">
+													<div class="item" id="keywordsContainer1">
 														<label for="career"><strong>경력사항</strong></label>
 														<div class="TypoBox">
 															<div class="keyword-inputs">
-																<div class="keyword-input">
+																<div class="keyword-input1">
 																	<input type="text" name="career[]" class="Typo SizeL defalt"
 																		style="ime-mode:active" autocapitalize="off"
 																		placeholder="예) 한국직업전문학교 팀장 3년 근무">
 		
 																</div>
 															</div>
-															<i class="fas fa-plus add-keyword-button"></i>
+															<i class="fas fa-plus add-keyword-button1"></i>
 														</div>
 													</div>
 													</div>
@@ -226,20 +226,22 @@
 													</div>
 		
 													<!-- 키워드 입력란 -->
-													<div class="item" id="keywordsContainer">
+													<div class="item" id="keywordsContainer2">
 														<label for="keywords"><strong>키워드</strong></label>
 														<div class="TypoBox">
 															<div class="keyword-inputs">
-																<div class="keyword-input">
+																<div class="keyword-input2">
 																	<input type="text" name="keywords[]"
 																		class="Typo SizeL defalt" style="ime-mode:active"
 																		autocapitalize="off" placeholder="예) 풀타임 근무 ok">
-																	<i class="fas fa-minus remove-keyword-button"></i>
+																																
+																	</div>
 																</div>
-															</div>
-															<i class="fas fa-plus add-keyword-button"></i>
+																<i class="fas fa-plus add-keyword-button2"></i>
 														</div>
 													</div>
+
+													
 		
 		
 		

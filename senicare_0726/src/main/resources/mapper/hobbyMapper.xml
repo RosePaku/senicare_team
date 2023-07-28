@@ -23,7 +23,7 @@
 		      	AND AUTH_NICKNAME LIKE '%'||#{s_word}||'%' 
 			</if>
 			<if test="locString == '전국'">
-		      	AND REGEXP_LIKE(MEET_LOC,'전국|서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주')
+		      	AND REGEXP_LIKE(MEET_LOC,'전국')
 			</if>
 			<if test="locString != '전국'">
 			    AND REGEXP_LIKE(MEET_LOC, #{locString})
@@ -69,7 +69,7 @@
 		      	AND AUTH_NICKNAME LIKE '%'||#{s_word}||'%' 
 			</if>
 			<if test="locString == '전국'">
-		      	AND REGEXP_LIKE(MEET_LOC,'전국|서울|부산|대구|인천|광주|대전|울산|세종|경기|강원|충북|충남|전북|전남|경북|경남|제주')
+		      	AND REGEXP_LIKE(MEET_LOC,'전국')
 			</if>
 			<if test="locString != '전국'">
 			    AND REGEXP_LIKE(MEET_LOC, #{locString})

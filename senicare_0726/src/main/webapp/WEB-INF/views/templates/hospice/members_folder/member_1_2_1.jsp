@@ -114,7 +114,7 @@
 															<!-- 기업 인증 파일 업로드 부분 끝 -->
 															<form id="fileUploadForm" enctype="multipart/form-data">
 																<input type="file" id="auth_business_img_1" name="auth_business_img_1" />
-																<input type="button" value="" onclick="uploadFile()" />
+																<input type="button" id="auth_business_img_1" name="auth_business_img_1" value="" onclick="uploadFile()" />
 															</form>
 														</div>
 													</div>

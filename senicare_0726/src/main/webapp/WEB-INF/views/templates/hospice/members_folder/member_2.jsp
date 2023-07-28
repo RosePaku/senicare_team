@@ -154,7 +154,7 @@
 									<input class="pw_text inpTypoBox2" type="password" id="auth_password" name="auth_password" placeholder="비밀번호">
 									<label for="auth_password"><span class="blind">비밀번호</span></label>
 									<div class="button_login">
-										<button class="login_btn btnType colorBlue sizeL" type="submit">로그인</button>
+										<button class="login_btn btnType colorBlue sizeL" type="submit">개인회원 로그인</button>
 									</div>
 									<div class="extra_func">
 										<a href="https://m.saramin.co.kr/helpdesk/person-find-id">아이디 · 비밀번호 찾기</a>
@@ -177,10 +177,10 @@
 									<input class="id_text inpTypoBox2" type="text" id="auth_business_id" name="auth_business_id" maxlength="26" placeholder="아이디123">
 									<label for="auth_business_id"><span class="blind">아이디</span></label>
 									<input type="text" style="display:none;">
-									<input class="pw_text inpTypoBox2" type="auth_business_password" id="auth_business_password" name="auth_business_password" placeholder="비밀번호">
+									<input class="pw_text inpTypoBox2" type="password" id="auth_business_password" name="auth_business_password" placeholder="비밀번호">
 									<label for="auth_business_password"><span class="blind">비밀번호</span></label>
 									<div class="button_login">
-										<button class="login_btn btnType colorBlue sizeL" type="submit">11로그인</button>
+										<button class="login_btn btnType colorBlue sizeL" type="submit">기업회원 로그인</button>
 									</div>
 									<div class="extra_func_company">
 										<a href="https://m.saramin.co.kr/helpdesk/company-find-id">아이디 · 비밀번호 찾기(기업)</a>

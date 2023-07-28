@@ -63,18 +63,34 @@
 						<div id="jobsearch-HomePage"><span id="jobsearch-HomepageBody" class="dd-privacy-allow">
 								<div class="jobsearch-Container jobsearch-Spacer"></div>
 								<div id="mosaic-belowNav" class="mosaic-zone"></div>
-								<form action="/myPages_business_folder/myPages_business_1" method="post">
-								<div class="search_button_guin" id="asdsad1">
-									<button  class="blue-button" type="submit" id="ssada">
-										<font style="vertical-align: inherit;">
-											<font style="vertical-align: inherit;">구인 구직 등록하기</font>
-										</font>
-									</button>
-								</div>
-								</form>
+
+								<c:if test="${sessionScope.a_bid!=null}">
+									<form action="/myPages_business_folder/myPages_business_2_1" method="post">
+										<div class="search_button_guin" id="asdsad1">
+											<button class="blue-button" type="submit" id="ssada">
+												<font style="vertical-align: inherit;">
+													<font style="vertical-align: inherit;">기업 회원 구인 구직 등록하기</font>
+												</font>
+											</button>
+										</div>
+									</form>
+								</c:if>
+
+								<c:if test="${sessionScope.id!=null}">
+									<form action="/myPages_business_folder/myPages_business_2_1" method="post">
+										<div class="search_button_guin" id="asdsad1">
+											<button class="blue-button" type="submit" id="ssada">
+												<font style="vertical-align: inherit;">
+													<font style="vertical-align: inherit;">개인 회원 이력서 작성하기</font>
+												</font>
+											</button>
+										</div>
+									</form>
+								</c:if>
+
 
 								<div class="jobsearch-Container jobsearch-Spacer"></div>
-								<div class="jobsearch-Container jobsearch-Spacer_1">구인구직할 키워드를 입력하세요</div>
+								<div class="jobsearch-Container jobsearch-Spacer_1" style="margin-bottom: 20px;">구인구직할 키워드를 입력하세요</div>
 
 
 								<div role="main" data-testid="jobsearch-Content" class="css-7i63eu eu4oa1w0">

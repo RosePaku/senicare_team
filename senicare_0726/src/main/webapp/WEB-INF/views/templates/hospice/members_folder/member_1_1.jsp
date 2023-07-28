@@ -119,6 +119,16 @@
     <!-- 완료 시 텍스트 -->
 </div>
 
+<!-- 이름 -->
+<div class="item">
+<label for="auth_name"><strong>이름</strong></label>
+<div class="TypoBox">
+<input type="text" name="auth_name" id="auth_name" class="Typo SizeL defalt" style="ime-mode:active"
+autocapitalize="off" placeholder="이름 입력">
+</div>
+<em class="msgInvalid" id="auth_name_msg" name="auth_name_msg" style="display:none">이름은 필수 입력 정보 입니다.</em>
+</div>
+
                                    <!-- 비밀번호 -->
 <div class="item">
     <label for="auth_password" type="PassWord"><strong>비밀번호</strong></label>
@@ -134,16 +144,6 @@
     </em>
     <p class="alert_column good_txt" id="auth_password_good_txt" style="display:none"></p>
     <p class="pass_safety" id="pw_strnegth_level" style="display:none"></p>
-</div>
-
-                                          <!-- 이름 -->
-<div class="item">
-    <label for="auth_name"><strong>이름</strong></label>
-    <div class="TypoBox">
-        <input type="text" name="auth_name" id="auth_name" class="Typo SizeL defalt" style="ime-mode:active"
-            autocapitalize="off" placeholder="이름 입력">
-    </div>
-    <em class="msgInvalid" id="auth_name_msg" name="auth_name_msg" style="display:none">이름은 필수 입력 정보 입니다.</em>
 </div>
 
                                             <!-- 성별 -->
@@ -253,17 +253,38 @@
 
 
                                             <!-- 기저질환-->
-                                            <div class="item">
-                                                <label for="auth_under_disease"><strong>기저질환</strong></label>
-                                                <div class="TypoBox">
-                                                    <input type="text" name="auth_under_disease" id="auth_under_disease"
+                                            <form>                                                
+                                                <div class="item">
+                                                    <label for="auth_under_disease"><strong>기저질환</strong></label>
+                                                    <div class="TypoBox">
+                                                        <input type="text" name="auth_under_disease" id="auth_under_disease"
                                                         class="Typo SizeL defalt" style="ime-mode:active"
                                                         autocapitalize="off" placeholder="먹는 약이 있거나 진단 받은 질환을 적어주세요">
+                                                        <button type="button" style="margin-left: 20px; margin-bottom: 5px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;" onclick="addInput1()" class="add-button1"><h1 style="margin: -10px; color:black;">+</h1></button>
+                                                    </div>
+                                                    <div id="additionalInputs1"></div>
                                                 </div>
-                                            </div>
+                                            </form>
 
-
-
+                                            <script>
+                                                function addInput1() {
+                                                  const additionalInputs1 = document.getElementById("additionalInputs1");
+                                                  const newInput = document.createElement("div");
+                                                  newInput.className = "additional-input";
+                                                  newInput.innerHTML = `
+                                                    <input type="text" style="width:600px; margin-top: 10px; margin-bottom: 5px;" placeholder="추가 기저질환 입력">
+                                                    <button type="button" style="margin-bottom: -10px; margin-left: 20px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;" onclick="addInput1()" class="add-button"><h1 style="margin: -10px; color:black;">+</h1></button>
+                                                    <button type="button" style="margin-bottom: -10px; margin-left: 20px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;" onclick="removeInput1(this)" class="remove-button"><h1 style="margin: -10px; color:red;">-</h1></button>`;
+                                                  additionalInputs1.appendChild(newInput);
+                                                }
+                                              
+                                                function removeInput1(button) {
+                                                  const additionalInputs1 = document.getElementById("additionalInputs1");
+                                                  additionalInputs1.removeChild(button.parentNode);
+                                                }
+                                              
+                                                
+                                              </script>
                                         </div>
                                         <!--     선택 입력 항목 끝   -->
 
@@ -328,7 +349,7 @@
                             
                             <input type="checkbox" id="auth_personal_yn" name="auth_personal_yn" value="Y">
                             <label class="Lbl check_custom check_off" for="auth_personal_yn">
-                                <spanㅈ>(선택) 개인정보 수집 및 이용에 동의</span>
+                                <span>(선택) 개인정보 수집 및 이용에 동의</span>
                             </label>
                         </span>
                     </div>

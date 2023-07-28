@@ -14,19 +14,18 @@ public class HealthServiceImpl implements HealthService {
 	@Autowired
 	HealthMapper healthMapper;
 
-	// 점수 저장
+	// DB에 점수 저장하기
 	@Override
 	public void insertOne(HealthDto healthDto) {
 		healthMapper.insertOne(healthDto);
 	}
 
-	// 점수 가져오기
+	// 사용자 점수 가져오기
 	@Override
 	public ArrayList<HealthDto> selectAll(HealthDto healthDto) {
 		ArrayList<HealthDto> list = healthMapper.selectAll(healthDto);
-		
 		return list;
 	}
-	
+
 
 }

@@ -93,42 +93,42 @@
 							style="font-size: 60px; font-family: 'Nanum Gothin', sans-serif; font-weight: 500; margin-top: -30px; margin-bottom: 70px;">
 							회원정보 수정</h1>
 						<form>
-							<label for="username">아이디:</label>
+							<label for="auth_id">아이디:</label>
 							<div style="display: inline-block; vertical-align: top;">
-								<input type="text" style="width: 400px;" id="username" value="기존 아이디" readonly>
+								<input type="text" style="width: 400px;" id="auth_id" value="기존 아이디" readonly>
 							</div>
 							<div style="display: inline-block; vertical-align: top; color: red; margin-left: 20px;">*
 								수정불가 *</div>
 							<br>
 							<br>
 
-							<label for="name">이름:</label>
+							<label for="auth_name">이름:</label>
 							<div style="display: inline-block; vertical-align: top;">
-								<input type="text" style="width:250px;" id="name" value="이름" readonly>
+								<input type="text" style="width:250px;" id="auth_name" value="이름" readonly>
 							</div>
 							<div style="display: inline-block; vertical-align: top; color: red; margin-left: 20px;">*
 								수정불가 *</div>
 							<br>
 							<br>
-							<label for="password">비밀번호 변경:</label>
+							<label for="auth_password">비밀번호 변경:</label>
 							<div style="display: inline-block; vertical-align: top;">
-								<input type="password" style="width: 400px;" id="password"
+								<input type="auth_password" style="width: 400px;" id="password"
 									placeholder="변경할 비밀번호를 입력하세요">
 							</div>
 							<br>
 							<br>
 							<label for="gender-male">성별:</label>
-							<input type="radio" name="gender" id="gender-male" value="남" checked>
+							<input type="radio" name="auth_sex" id="gender-male" value="남" checked>
 							<label for="gender-male">남</label>
-							<input type="radio" name="gender" id="gender-female" value="여">
+							<input type="radio" name="auth_sex" id="gender-female" value="여">
 							<label for="gender-female">여</label>
 							<br>
 							<br>
-							<label for="nickname">닉네임:</label>
-							<input type="text" style="width:250px;" id="nickname" placeholder="닉네임을 입력하세요.">
+							<label for="auth_nickname">닉네임:</label>
+							<input type="text" style="width:250px;" id="auth_nickname" placeholder="닉네임을 입력하세요.">
 							<br>
 							<br>
-							<label for=birthday>생년월일</label>
+							<label for=auth_birth>생년월일</label>
 							<div class="dropdown-container">
 								<select id="birthYear" style="width:100px;">
 									<option syle="width:30px;" value="">연도</option>
@@ -214,7 +214,7 @@
 									<option value="2000">2000년</option>
 								</select>
 								<label for="birthYear"
-									style="margin-bottom: 3px; margin-left: -7px; margin-right: 20px; font-size: 18px;">년</label>
+									style="margin-bottom: 3px; margin-left: 1%; margin-right: 20px; font-size: 18px;">년</label>
 
 								<select id="birthMonth" style="width:70px;">
 									<option value="">월</option>
@@ -232,7 +232,7 @@
 									<option value="12">12월</option>
 								</select>
 								<label for="birthMonth"
-									style="margin-bottom: 3px; margin-left: -7px; margin-right: 20px; font-size: 18px;">월</label>
+									style="margin-bottom: 3px; margin-left: 1%; margin-right: 20px; font-size: 18px;">월</label>
 
 								<select id="birthDay" style="width:70px;">
 									<option value="">일</option>
@@ -269,13 +269,13 @@
 									<option value="31">31일</option>
 								</select>
 								<label for="birthDay"
-									style="margin-bottom: 3px; margin-left: -7px; margin-right: 20px; font-size: 18px;">일</label>
+									style="margin-bottom: 3px; margin-left: 1%; margin-right: 20px; font-size: 18px;">일</label>
 							</div>
 							<br>
 							<br>
-							<label for="phoneNumber">휴대폰 번호:</label>
+							<label for="auth_phone_number">휴대폰 번호:</label>
 							<div style="display: flex; align-items: center;">
-								<select id="phoneNumber" style="width: 70px;">
+								<select id="auth_phone_number" style="width: 100px;">
 									<option value="010">010</option>
 									<option value="011">011</option>
 									<option value="016">016</option>
@@ -284,31 +284,31 @@
 									<option value="019">019</option>
 								</select>
 								<h4>-</h4>
-								<input type="text" id="phoneNumber2" style="width: 100px;" maxlength="4"
+								<input type="text" id="auth_phone_number2" style="width: 100px;" maxlength="4"
 									placeholder="1234"> <!-- 나머지 두 칸 입력 -->
 								<h4>-</h4>
-								<input type="text" id="phoneNumber3" style="width: 100px;" maxlength="4"
+								<input type="text" id="auth_phone_number3" style="width: 100px;" maxlength="4"
 									placeholder="5678"> <!-- 나머지 두 칸 입력 -->
 							</div>
 							<br>
 							<br>
-							<label for="email">이메일:</label>
-							<input type="email" style="width:550px;" id="email" placeholder="이메일을 입력하세요">
+							<label for="auth_email">이메일:</label>
+							<input type="auth_email" style="width:550px;" id="email" placeholder="이메일을 입력하세요">
 							<br>
 							<br>
-							<label for="address1">주소 (시/도):</label>
-							<input type="text" style="width:650px;" id="address1" placeholder="시/도를 입력하세요">
+							<label for="auth_address1">주소 (시/도):</label>
+							<input type="text" style="width:650px;" id="auth_address1" placeholder="시/도를 입력하세요">
 							<br>
 							<br>
-							<label for="address2">상세주소 (시/군/구):</label>
-							<input type="text" style="width:650px;" id="address2" placeholder="시/군/구를 입력하세요">
+							<label for="auth_address2">상세주소 (시/군/구):</label>
+							<input type="text" style="width:650px;" id="auth_address2" placeholder="시/군/구를 입력하세요">
 							<br>
 							<br>
 
 							<form>
-								<label for="disease">기저질환</label>
+								<label for="auth_under_disease">기저질환</label>
 								<div style="display: flex; align-items: center;">
-									<input type="text" id="disease" style="width:600px; margin-bottom: 5px;"
+									<input type="text" id="auth_under_disease" style="width:600px; margin-bottom: 5px;"
 										placeholder="기저질환이 있다면 입력하세요">
 									<button type="button"
 										style="margin-left: 20px; margin-bottom: 5px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;"
@@ -319,39 +319,7 @@
 								<div id="additionalInputs1"></div>
 							</form>
 
-							<br>
-							<br>
-
-							<form>
-								<label for="license">자격증</label>
-								<div style="display: flex; align-items: center;">
-									<input type="text" id="license" style="width:600px; margin-bottom: 5px;"
-										placeholder="자격증이 있다면 입력하세요">
-									<button type="button"
-										style="margin-left: 20px; margin-bottom: 5px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;"
-										onclick="addInput2()" class="add-button2">
-										<h1 style="margin: -10px; color:black;">+</h1>
-									</button>
-								</div>
-								<div id="additionalInputs2"></div>
-							</form>
-
-							<br>
-							<br>
-
-							<form>
-								<label for="career">경력사항</label>
-								<div style="display: flex; align-items: center;">
-									<input type="text" id="career" style="width:600px; margin-bottom: 5px;"
-										placeholder="경력이 있다면 입력하세요">
-									<button type="button"
-										style="margin-left: 20px; margin-bottom: 5px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;"
-										onclick="addInput3()" class="add-button3">
-										<h1 style="margin: -10px; color:black;">+</h1>
-									</button>
-								</div>
-								<div id="additionalInputs3"></div>
-							</form>
+							
 
 							<script>
 

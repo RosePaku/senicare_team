@@ -78,14 +78,14 @@
 					<ul class="right_side">
 						<li>
 							<div id="loginLink">
-								<c:if test="${sessionScope.id==null}">
+								<c:if test="${sessionScope.login==null}">
 								<a href="../members_folder/member_2">로그인</a>
 							</c:if>
 							</div>
 						</li>
 						<li>
 							<div id="loginLink">
-								<c:if test="${sessionScope.id==null}">
+								<c:if test="${sessionScope.login==null}">
 								<a href="../members_folder/member_2">아이디/비밀번호 찾기</a>
 							</c:if>
 							</div>
@@ -97,23 +97,25 @@
 						<c:if test="${sessionScope.id!=null}">	
 						<div id="userMenu">
 							<!-- 개인회원 메뉴 -->
-								<a href="/logout">로그아웃</a>
+								<a href="/logout" style="padding-right: 100px;">로그아웃</a>
 								<a href="../myPages_auth_folder/myPages_auth_1">개인회원 마이페이지</a>
 							</div>
 						</c:if>
 						</li>
 						<li>
 							<div id="signupLink">
-								<c:if test="${sessionScope.id==null}">	
+								<c:if test="${sessionScope.login==null}">	
 								<a href="../members_folder/member_1">회원가입</a>
 								</c:if>
 							</div>
 						</li>
 						<li>
-							<div id="companyMenu" style="display:none;">
+							<div id="companyMenu">
 								<!-- 기업회원 메뉴 -->
-								<a href="../members_folder/member_4">로그아웃</a>
-								<a href="../members_folder/member_6">기업회원 마이페이지</a>
+								<c:if test="${sessionScope.a_bid!=null}">	
+								<a href="/logout">로그아웃</a>
+								<a href="../myPages_business_folder/myPages_business_1">기업회원 마이페이지</a>
+							</c:if>
 							</div>
 						</li>
 					</ul>

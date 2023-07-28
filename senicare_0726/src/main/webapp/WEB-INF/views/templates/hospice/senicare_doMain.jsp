@@ -53,7 +53,7 @@
 						<a class="main_btn mr-10 btn_width1" href="../searchHoss_folder/searchHos_1.jsp">내 주변<br>의료기관<br>찾기</a>
 					</div>
 					<div class="col-lg-13" id="col-lg-13-id">						
-						<a class="main_btn mr-10 btn_width2" href="../madangs_folder/madang_1.jsp">참여ㆍ<br>정보마당</a>
+						<a class="main_btn mr-10 btn_width2" href="../madangs_folder/madang_1_1.jsp">참여ㆍ<br>정보마당</a>
 					</div>
 					<div class="col-lg-14" id="col-lg-14-id">						
 						<a class="main_btn mr-10 btn_width3" href="../jobs_folder/job_1.jsp">구인ㆍ구직<br>게시판</a>

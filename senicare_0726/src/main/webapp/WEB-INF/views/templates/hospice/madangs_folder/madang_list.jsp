@@ -1,12 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!-- 0712_1934 작업사항
-	1) 헤더, 푸터 작업 완료
-	
-0724 작업사항_고은
-	1) jsp 파일로 작업 수정
--->
+    
 <!--  불러오기 : job_list 영역 -->
 <!doctype html>
 <html lang="en">
@@ -36,10 +30,10 @@
 <div class="menu_list">
 	<h3 class="tit"> <strong>참여 · 정보<br>마당</strong></h3>
 	<ul class="menu_list_ul">
-		<a class="menu_a" href="../madangs_folder/madang_1.jsp"> 자유 / 일상 게시판 </a> 
-		<a class="menu_a" href="../madangs_folder/madang_2.jsp"> 취미 / 친목 게시판 </a> 
-		<a class="menu_a" href="../madangs_folder/madang_3.jsp"> 복지 혜택 안내 </a> 
-		<a class="menu_a" href="../madangs_folder/madang_4.jsp"> 디지털 교육 안내 </a> 
+		<a class="menu_a" href="../madangs_folder/madang_1_1"> 자유 / 일상 게시판 </a> 
+		<a class="menu_a" href="../madangs_folder/madang_2_1"> 취미 / 친목 게시판 </a> 
+		<a class="menu_a" href="../madangs_folder/madang_3_1"> 복지 혜택 안내 </a> 
+		<a class="menu_a" href="../madangs_folder/madang_4_1"> 디지털 교육 안내 </a> 
 	</ul>
 </div>
 

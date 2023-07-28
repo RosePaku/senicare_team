@@ -8,9 +8,22 @@ import com.java.dto.A_B_Notice;
 
 @Mapper
 public interface A_B_NoticeMapper {
-    public List<A_B_Notice> getAll();
-    public A_B_Notice getByNo(Long auth_business_work_no);
-    public void insert(A_B_Notice a_b_notice);
-    public void update(A_B_Notice a_b_notice);
-    public void delete(Long auth_business_work_no);
+
+    List<A_B_Notice> getAllA_B_Notice();
+
+    A_B_Notice getA_B_NoticeById(String auth_Business_Wn);
+
+    // 기업 정보 추가, 수정, 삭제 등의 메서드 정의
+    // ...
 }
+
+// @Mapper
+// public interface A_B_NoticeMapper {
+// void insertA_B_Notice(A_B_Notice a_b_notice);
+
+// A_B_Notice selectA_B_Notice(int authBusinessWn);
+
+// void updateA_B_Notice(A_B_Notice a_b_notice);
+
+// void deleteA_B_Notice(int authBusinessWn);
+// }

@@ -764,6 +764,7 @@ function selectCity() {
 }
 
 // 개인회원 / 기업회원 로그인
+// tab_content
 function showTab(tabName) {
     var i, tabContent, tabButtons;
     tabContent = document.getElementsByClassName("tab_content");

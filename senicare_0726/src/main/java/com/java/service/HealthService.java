@@ -6,11 +6,12 @@ import com.java.dto.HealthDto;
 
 public interface HealthService {
 	
-	// 점수 저장
+	// DB에 점수 저장하기
 	void insertOne(HealthDto healthDto);
 	
-	// 점수 가져오기
+	// 사용자 점수 가져오기
 	ArrayList<HealthDto> selectAll(HealthDto healthDto);
+
 	
 
 }

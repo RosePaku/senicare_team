@@ -205,17 +205,7 @@
 
 						<form action="../members_folder/member_1_2_1" class="login" method="get" name="loginform" id="loginform"
 							onsubmit="return validateLoginForm(this)">
-							<input type="hidden" name="url" value="/" id="url">
-							<input type="hidden" name="m_code" value="" id="m_code">
-
-							<!--  (기업) 아이디/비밀번호 로그인 입력창
-									<input type="hidden" name="login_tab" value="c" id="login_tab">
-									<input class="id_text inpTypoBox2" type="text" id="userid" name="userid" maxlength="26" placeholder="아이디123">
-									<label for="userid"><span class="blind">아이디</span></label>
-									<input type="text" style="display:none;">
-									<input class="pw_text inpTypoBox2" type="password" id="passwd" name="passwd" placeholder="비밀번호234">
-									<label for="passwd"><span class="blind">비밀번호</span></label>
-									  (기업) 아이디/비밀번호 로그인 입력창-->
+		
 
 							<div class="button_login">
 								<button class="login_btn btnType colorBlue sizeL" type="submit">기업회원 회원가입하기</button>

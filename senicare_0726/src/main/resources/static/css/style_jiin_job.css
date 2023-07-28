@@ -48,7 +48,7 @@
   border: 1px solid slategray;
   cursor: pointer;
   padding: 0.5rem;
-  display: none; /* 처음에는 모든 기업 정보를 숨깁니다. */
+  /* display: none; 처음에는 모든 기업 정보를 숨깁니다. */
   margin: 15px;
   border-radius: 20px; /* 보더 끝 부분을 5px 둥글게 조정 */
 }
@@ -63,7 +63,8 @@
 }
 
 .company-details-container.active {
-  display: block; /* 기업을 클릭하면 해당 기업 상세 정보를 보여줍니다. */
+  display: block; 
+  /* 기업을 클릭하면 해당 기업 상세 정보를 보여줍니다. */
 }
 
 /* 닫기 버튼 아이콘 스타일 */

@@ -22,6 +22,7 @@ public class MyPages_businessController {
 
 	@PostMapping("/myPages_business_folder/myPages_business_2_1")
 	public String MyPages_businessController_2_1(Model model) {
+
 		return "myPages_business_folder/myPages_business_2_1";
 
 	}
@@ -34,6 +35,7 @@ public class MyPages_businessController {
 
 	@PostMapping("/myPages_business_folder/myPages_business_2_2")
 	public String MyPages_businessController_2_2(Model model) {
+
 		return "myPages_business_folder/myPages_business_2_2";
 
 	}

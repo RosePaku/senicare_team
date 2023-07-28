@@ -120,16 +120,16 @@
 										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">참여 · 정보 마당</a>
 										<ul class="dropdown-menu">
 											<li class="nav-item">
-												<a class="nav-link" href="../madangs_folder/madang_1">자유 / 일상 게시판</a>
+												<a class="nav-link" href="../madangs_folder/madang_1_1">자유 / 일상 게시판</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="../madangs_folder/madang_2">취미 / 친목 게시판</a>
+												<a class="nav-link" href="../madangs_folder/madang_2_1">취미 / 친목 게시판</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="../madangs_folder/madang_3">복지 혜택 안내</a>
+												<a class="nav-link" href="../madangs_folder/madang_3_1">복지 혜택 안내</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="../madangs_folder/madang_4">디지털 교육 안내</a>
+												<a class="nav-link" href="../madangs_folder/madang_4_1">디지털 교육 안내</a>
 											</li>
 										</ul>
 									</li>
