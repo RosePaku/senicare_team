@@ -41,7 +41,7 @@
 
 
 	<!--================Header Menu Area =================-->
-	<div data-include-path="../senicare_sub_header"></div>
+	<%@ include file="../senicare_main_header.jsp" %>
 
 	<!--================Header Menu Area =================-->
 
@@ -229,7 +229,7 @@
 							// 1. 댓글 저장
 							function commentBtn() {
 								
-								if (${sessionId == null}) {
+								if (${sessionScope.id == null}) {
 									alert("먼저 로그인을 해주세요.");
 									location.href ="/members_folder/member_2";
 									return false;
@@ -253,7 +253,7 @@
 									type:"post",
 									data: {
 										"board_no":"${mdto.board_no}",
-										"auth_id":"${sessionId}",
+										"auth_id":"${sessionScope.id}",
 										"auth_nickname":"${sessionNickName}",
 										"comment_content":$("#commentBox").val(),
 										"comment_private":comment_private
@@ -295,7 +295,7 @@
 							
 							// 2. 댓글 삭제
 							function deleteBtn(cno) {
-								if (${sessionId == 'admin'}) { // 관리자이면
+								if (${sessionScope.id == 'admin'}) { // 관리자이면
 									if (confirm("관리자 권한으로 해당 댓글을 삭제하시겠습니까?")) {
 										$.ajax({
 											url:"/free/deleteComOne",
@@ -436,7 +436,7 @@
 						<div class="replyBox">
 							<c:forEach var="cdto" items="${list}">
 								<!-- 관리자 권한으로 댓글 삭제 -->
-								<c:if test="${sessionId == 'admin' }">
+								<c:if test="${sessionScope.id == 'admin' }">
 									<ul id="${cdto.comment_no }">
 										<li class="name">${cdto.auth_nickname}
 											<c:if test="${cdto.comment_modify == null}">
@@ -456,7 +456,7 @@
 								
 								
 								<!-- 본인이 쓴 댓글 -->
-								<c:if test="${sessionId == cdto.auth_id}">
+								<c:if test="${sessionScope.id == cdto.auth_id}">
 									<ul id="${cdto.comment_no }">
 										<li class="name">${cdto.auth_nickname}
 											<c:if test="${cdto.comment_modify == null}">
@@ -476,8 +476,8 @@
 								</c:if>
 
 
-								<c:if test="${sessionId != 'admin' }">
-								<c:if test="${sessionId != cdto.auth_id}">
+								<c:if test="${sessionScope.id != 'admin' }">
+								<c:if test="${sessionScope.id != cdto.auth_id}">
 									<!-- 일반댓글, 다른사람이 쓴 댓글 -->
 									<c:if test="${cdto.comment_private == 0}">
 										<ul id="${cdto.comment_no }">
@@ -520,7 +520,7 @@
 						<script>
 							// 1. 게시글 삭제하기
 							function deleteBrdBtn(bno) {
-								if (${sessionId == 'admin'}) {// 관리자이면
+								if (${sessionScope.id == 'admin'}) {// 관리자이면
 									if(confirm("관리자 권한으로 해당 게시글을 삭제하시겠습니까?")) {
 										$.ajax({
 											url: "/free/deleteBrdOne",
@@ -562,11 +562,11 @@
 								<div class="pull-right">
 								
 									
-									<c:if test="${mdto.auth_id == sessionId }">
+									<c:if test="${mdto.auth_id == sessionScope.id }">
 										<a href="/madangs_folder/madang_1_4?bno=${mdto.board_no}" class="btnType02 btn btn-info">
 											<span>수정</span>
 										</a>
-										<c:if test="${sessionId != 'admin' }">
+										<c:if test="${sessionScope.id != 'admin' }">
 										<a onclick="deleteBrdBtn(${mdto.board_no})" class="btnType02 btn btn-info">
 											<span style="color:white;">삭제</span>
 										</a>
@@ -574,7 +574,7 @@
 									</c:if>
 									
 									<!-- 관리자 권한으로 게시글 삭제 -->
-									<c:if test="${sessionId == 'admin' }">
+									<c:if test="${sessionScope.id == 'admin' }">
 									<a onclick="deleteBrdBtn(${mdto.board_no})" class="btnType02 btn btn-info">
 											<span style="color:white;">삭제</span>
 										</a>
@@ -600,7 +600,7 @@
 
 	<!-- End Offered Services Area -->
 	<!-- start footer Area -->
-	<div data-include-path="../senicare_sub_footer"></div>
+	<%@ include file="../senicare_sub_footer.jsp" %>
 	<!-- End footer Area -->
 
 	<!-- Optional JavaScript -->

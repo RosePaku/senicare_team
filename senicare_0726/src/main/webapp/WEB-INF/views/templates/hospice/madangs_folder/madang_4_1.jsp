@@ -46,7 +46,7 @@
 <body>
 
 	<!--================Header Menu Area =================-->
-	<div data-include-path="../senicare_sub_header"></div>
+	<%@ include file="../senicare_main_header.jsp" %>
 
 	<!--================Header Menu Area =================-->
 
@@ -166,7 +166,7 @@
 						<div class="row block btn-group-wrap" style="clear: both;">
 							<div class="col-sm-12 btn-group">
 								<div class="pull-right">
-									<c:if test="${sessionId == 'admin'}">
+									<c:if test="${sessionScope.id == 'admin'}">
 										<a href="/madangs_folder/madang_4_3" class="btnType02 btn btn-info">
 											<span>글쓰기</span>
 										</a>
@@ -251,7 +251,7 @@
 
 
 	<!-- start footer Area -->
-	<div data-include-path="../senicare_sub_footer"></div>
+	<%@ include file="../senicare_sub_footer.jsp" %>
 	<!-- End footer Area -->
 
 

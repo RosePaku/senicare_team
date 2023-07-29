@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller 
 public class FController { 
    
-  @GetMapping("/index") 
-  public String index() { 
-    return "index"; 
-  }
-  
-  @RequestMapping("/senicare_sub_header") 
-  public String senicare_sub_header() { 
-	  return "senicare_sub_header"; 
-  } 
-  @RequestMapping("/senicare_sub_footer") 
-  public String senicare_sub_footer() { 
-	  return "senicare_sub_footer"; 
-  } 
+//  @GetMapping("/index") 
+//  public String index() { 
+//    return "index"; 
+//  }
+//  
+//  @RequestMapping("/senicare_sub_header") 
+//  public String senicare_sub_header() { 
+//	  return "senicare_sub_header"; 
+//  } 
+//  @RequestMapping("/senicare_sub_footer") 
+//  public String senicare_sub_footer() { 
+//	  return "senicare_sub_footer"; 
+//  } 
   
 	// 네비게이션바
 	@RequestMapping("/madangs_folder/madang_list")

@@ -32,7 +32,6 @@
 			<link rel="stylesheet" href="../css/style_jiin.css">
 			<link rel="stylesheet" href="../css/responsive.css">
 		</head>
-
 		<body>
 
 

@@ -35,14 +35,14 @@
 <link rel="stylesheet" href="../css/responsive.css">
 </head>
 <script>
-	if (${sessionId == null}) {
+	if (${sessionScope.id == null}) {
 		alert("먼저 로그인을 해주세요.");
 		location.href ="/members_folder/member_2";
 	}
 </script>
 <body>
 	<!--================Header Menu Area =================-->
-	<div data-include-path="../senicare_sub_header"></div>
+	<%@ include file="../senicare_main_header.jsp" %>
 
 	<!--================Header Menu Area =================-->
 
@@ -93,7 +93,7 @@
 									</colgroup>
 									<tr>
 										<th>작성자 ID</th>
-										<td><input type="text" name="auth_id" value="${sessionId}" readonly="readonly"></td>
+										<td><input type="text" name="auth_id" value="${sessionScope.id}" readonly="readonly"></td>
 									</tr>
 									<tr>
 										<th>닉네임</th>
@@ -170,7 +170,7 @@
 
 	<!-- End Offered Services Area -->
 	<!-- start footer Area -->
-	<div data-include-path="../senicare_sub_footer"></div>
+	<%@ include file="../senicare_sub_footer.jsp" %>
 	<!-- End footer Area -->
 
 	<!-- Optional JavaScript -->

@@ -37,7 +37,7 @@
 <body>
 
 	<!--================Header Menu Area =================-->
-	<div data-include-path="../senicare_sub_header"></div>
+	<%@ include file="../senicare_main_header.jsp" %>
 
 	<!--================Header Menu Area =================-->
 
@@ -332,7 +332,7 @@
 
 
 	<!-- start footer Area -->
-	<div data-include-path="../senicare_sub_footer"></div>
+	<%@ include file="../senicare_sub_footer.jsp" %>
 	<!-- End footer Area -->
 
 

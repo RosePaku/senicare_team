@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.context.annotation.SessionScope;
 
 import com.java.dto.A_B;
 import com.java.dto.Auth;
@@ -145,16 +146,16 @@ public class MemberController {
 
 	// 로그인 인증
 	@PostMapping("/login")
-	public String login(Auth auth, Model model, HttpSession session) {
+	public String login(Auth auth, Model model) {
 		System.out.println(auth.getAuth_id());
 		System.out.println(auth.getAuth_password());
-		System.out.println(auth.getAuth_name());
 
 		String resultCode = authServiceimpl.select(auth);
 		if (resultCode.equals("s_login")) {
 			// 세션에 id값 담아서 저장
 			session.setAttribute("login", 1);
 			session.setAttribute("id", auth.getAuth_id());
+			System.out.println("auth.getAuth_nickname():" + session.getAttribute("sessionNickName"));
 			return "redirect:/?resultCode=" + resultCode;
 
 		} else {

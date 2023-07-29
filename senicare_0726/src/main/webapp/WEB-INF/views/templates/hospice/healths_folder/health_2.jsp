@@ -31,7 +31,7 @@
 
 </head>
 <script>
-	if (${sessionId == null}) {
+	if (${sessionScope.id} == null}) {
 		alert("먼저 로그인을 해주세요.");
 		location.href ="/members_folder/member_2";
 	}
@@ -39,7 +39,7 @@
 <body>
 
 	<!--================Header Menu Area =================-->
-	<div data-include-path="../senicare_sub_header"></div>
+	<%@ include file="../senicare_main_header.jsp" %>
 	<!--================Header Menu Area =================-->
 
 	<!--================ Banner Area =================-->
@@ -76,58 +76,60 @@
 			<script>
 			
 			</script>
-			<div class="row justify-content-center d-flex align-items-center">
-				<div class="col-lg-3 col-md-6 single-team mb-50">
-					<div class="thumb" style="width:70%">
-						<img class="img-fluid" src="../img/demen.png" alt="">
-						<div class="align-items-end justify-content-center d-flex"
-							onclick="selectDemen()" style="width: 120%; height: 120%; top: -15px; left: -15px">
-							<p>검사결과 보기 >></p>
-							<h4>치매</h4>
+			<div style="display: flex; justify-content: space-around;">
+						<div class="col-lg-3 col-md-6 single-team mb-50">
+							<div class="thumb">
+							<!-- <div class="thumb" style="width:70%"> -->
+								<img class="img-fluid" src="../img/demen.png" alt="">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectDemen()">
+								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
+									<p>자가진단 하러가기 >></p>
+									<h4>치매</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 single-team mb-50">
+							<div class="thumb">
+								<img class="img-fluid" src="../img/arth.png" alt="">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectArth()">
+									<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
+									<p>자가진단 하러가기 >></p>
+									<h4>퇴행성 관절염</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 single-team mb-50">
+							<div class="thumb">
+								<img class="img-fluid" src="../img/hyper.png" alt="">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectHyper()">
+								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
+									<p>자가진단 하러가기 >></p>
+									<h4>고혈압</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 single-team mb-50">
+							<div class="thumb">
+								<img class="img-fluid" src="../img/diabet.png" alt="">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectDiabet()">
+								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
+									<p>자가진단 하러가기 >></p>
+									<h4>당뇨병</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-6 single-team mb-50">
+							<div class="thumb">
+								<img class="img-fluid" src="../img/cerebro.png" alt="">
+								<div class="align-items-end justify-content-center d-flex" onclick="selectCerebro()">
+								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
+									<p>자가진단 하러가기 >></p>
+									<h4>뇌혈관질환</h4>
+								</div>
+							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 single-team mb-50">
-					<div class="thumb" style="width:70%">
-						<img class="img-fluid" src="../img/arth.png" alt="">
-						<div class="align-items-end justify-content-center d-flex"
-							onclick="selectArth()" style="width: 120%; height: 120%; top: -15px; left: -15px">
-							<p>검사결과 보기 >></p>
-							<h4>퇴행성 관절염</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 single-team mb-50">
-					<div class="thumb" style="width:70%">
-						<img class="img-fluid" src="../img/hyper.png" alt="">
-						<div class="align-items-end justify-content-center d-flex"
-							onclick="selectHyper()" style="width: 120%; height: 120%; top: -15px; left: -15px">
-							<p>검사결과 보기 >></p>
-							<h4>고혈압</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 single-team mb-50">
-					<div class="thumb" style="width:70%">
-						<img class="img-fluid" src="../img/diabet.png" alt="">
-						<div class="align-items-end justify-content-center d-flex"
-							onclick="selectDiabet()" style="width: 120%; height: 120%; top: -15px; left: -15px">
-							<p>검사결과 보기 >></p>
-							<h4>당뇨병</h4>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6 single-team mb-50">
-					<div class="thumb" style="width:70%">
-						<img class="img-fluid" src="../img/cerebro.png" alt="">
-						<div class="align-items-end justify-content-center d-flex"
-							onclick="selectCerebro()" style="width: 120%; height: 120%; top: -15px; left: -15px">
-							<p>검사결과 보기 >></p>
-							<h4>뇌혈관질환</h4>
-						</div>
-					</div>
-				</div>
-			</div>
+
 
 			<!--========== 치매 자가진단 ==========-->
 			<div class="demenTest">
@@ -231,7 +233,7 @@
 			$.ajax({	
 				url : "/health/testList",
 				type : "post",
-				data : {"auth_id" : '${sessionId}'},
+				data : {"auth_id" : '${sessionScope.id}'},
 				success : function(data) {
 					console.log(data);
 					
@@ -374,7 +376,7 @@
 			$.ajax({	
 				url : "/health/testList",
 				type : "post",
-				data : {"auth_id" : '${sessionId}'},
+				data : {"auth_id" : '${sessionScope.id}'},
 				success : function(data) {
 					console.log("종합:" , data.demenList[data.demenList.length-1]);
 					const latestSC = [data.demenList[data.demenList.length-1]/14, data.arthList[data.arthList.length-1]/10, data.hyperList[data.hyperList.length-1]/17,
@@ -430,7 +432,7 @@
 	<!-- End team Area -->
 
 	<!-- start footer Area -->
-	<div data-include-path="../senicare_sub_footer"></div>
+	<%@ include file="../senicare_sub_footer.jsp" %>
 	<!-- End footer Area -->
 
 	<!-- Optional JavaScript -->

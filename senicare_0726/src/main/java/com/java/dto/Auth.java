@@ -48,7 +48,7 @@ public class Auth {
 		this.auth_name = auth_name;
 	}
 
-	public String getAuth_nickname(String username) {
+	public String getAuth_nickname() {
 		return auth_nickname;
 	}
 
