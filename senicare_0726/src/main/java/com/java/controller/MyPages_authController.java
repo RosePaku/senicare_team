@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.java.dto.Auth;
 import com.java.dto.MadangDto;
 import com.java.service.MpAuthService;
 
@@ -18,16 +19,35 @@ public class MyPages_authController {
 	@Autowired
 	MpAuthService mpAuthService;
 	
+	// 회원정보 가져오기
 	@GetMapping("/myPages_auth_folder/myPages_auth_1")
 	public String MyPages_authController_1(String auth_id, Model model) {
+		Auth auth = mpAuthService.selectOne(auth_id);
+		model.addAttribute("auth", auth);
+		
 		return "myPages_auth_folder/myPages_auth_1";
 
 	}
 
+	// 회원정보 수정하기
+	@PostMapping("/myPages_auth_folder/myPages_auth_1")
+	public String MyPages_authController_1(Auth auth) {
+		
+		String underArr;
+		underArr = String.join(", " ,auth.getAuth_under_diseases());
+		auth.setAuth_under_disease(underArr); 
+		System.out.println(auth.getAuth_under_diseases());
+		System.out.println(underArr);
+		System.out.println(auth.getAuth_under_disease());
+		mpAuthService.updateOne(auth);
+		
+		return "/myPages_auth_folder/myPages_auth_1";
+	}
+	
 	@PostMapping("/myPages_auth_folder/myPages_auth_2")
 	public String MyPages_authController_2(Model model) {
 		return "myPages_auth_folder/myPages_auth_2";
-
+		
 	}
 
 	@GetMapping("/myPages_auth_folder/myPages_auth_2")

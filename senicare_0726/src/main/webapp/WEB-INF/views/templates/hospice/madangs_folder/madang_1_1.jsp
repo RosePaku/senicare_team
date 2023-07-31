@@ -83,9 +83,9 @@
 									$("#q_searchVal").focus();
 									return false;
 								}
-								alert($("#q_searchKeyTy option:selected").val()); // 검색조건
-								alert($("#q_searchVal").val()); // 검색어
-								alert($("#q_rowPerPage option:selected").val()); // 페이지당 목록
+								//alert($("#q_searchKeyTy option:selected").val()); // 검색조건
+								//alert($("#q_searchVal").val()); // 검색어
+								//alert($("#q_rowPerPage option:selected").val()); // 페이지당 목록
 
 								dataForm.submit();
 

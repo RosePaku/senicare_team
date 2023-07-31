@@ -8,7 +8,7 @@ function addInput1() {
     const newInput = document.createElement("div");
     newInput.className = "additional-input";
     newInput.innerHTML = `
-      <input type="text" style="width:600px; margin-top: 10px; margin-bottom: 5px;" placeholder="추가 기저질환 입력">
+      <input type="text" style="width:600px; margin-top: 10px; margin-bottom: 5px;" placeholder="추가 기저질환 입력" name="auth_under_diseases" >
       <button type="button" style="margin-bottom: -10px; margin-left: 20px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;" onclick="addInput1()" class="add-button"><h1 style="margin: -10px; color:black;">+</h1></button>
       <button type="button" style="margin-bottom: -10px; margin-left: 10px; background-color: #D3D3D3; box-shadow: inset 0 0 0 2px #D3D3D3;" onclick="removeInput1(this)" class="remove-button"><h1 style="margin: -10px; color:red;">-</h1></button>`;
     additionalInputs1.appendChild(newInput);

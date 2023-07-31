@@ -152,10 +152,18 @@ public class Auth {
 		this.auth_info = auth_info;
 	}
 
+	public String[] getAuth_under_diseases() {
+		return auth_under_diseases;
+	}
+
+	public void setAuth_under_diseases(String[] auth_under_diseases) {
+		this.auth_under_diseases = auth_under_diseases;
+	}
+
 	private String auth_id;
 	private String auth_password;
 	private String auth_sex;
-	@DateTimeFormat(pattern = "yyyy-mm-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date auth_birth;
 	private String auth_name;
 	private String auth_nickname;
@@ -170,6 +178,7 @@ public class Auth {
 	private String auth_user_status;
 	private String auth_user_type;
 	private String auth_under_disease;
+	private String[] auth_under_diseases;
 	private String auth_info;
 
 }

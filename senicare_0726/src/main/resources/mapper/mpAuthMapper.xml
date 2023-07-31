@@ -11,5 +11,15 @@
 	<delete id="deleteOne">
 		DELETE FROM NOTICE_BOARD WHERE BOARD_NO=#{bno}	
 	</delete>
+	
+	<select id="selectOne" resultType="com.java.dto.Auth">
+		SELECT * FROM AUTH WHERE AUTH_ID=#{auth_id}
+	</select>
+	
+	<update id="updateOne">
+		UPDATE AUTH SET auth_password=#{auth_password}, auth_sex=#{auth_sex}, auth_birth=#{auth_birth},
+		auth_phone_number=#{auth_phone_number}, auth_email=#{auth_email}, auth_address=#{auth_address}, auth_address_detail=#{auth_address_detail},
+		auth_under_disease=#{auth_under_disease} WHERE AUTH_ID=#{auth_id} 
+	</update>
 
 </mapper>
