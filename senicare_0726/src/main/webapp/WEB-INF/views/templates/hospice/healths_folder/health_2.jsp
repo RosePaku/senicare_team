@@ -83,7 +83,7 @@
 								<img class="img-fluid" src="../img/demen.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectDemen()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 하러가기 >></p>
+									<p>자가진단 결과보기 >></p>
 									<h4>치매</h4>
 								</div>
 							</div>
@@ -93,7 +93,7 @@
 								<img class="img-fluid" src="../img/arth.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectArth()">
 									<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 하러가기 >></p>
+									<p>자가진단 결과보기 >></p>
 									<h4>퇴행성 관절염</h4>
 								</div>
 							</div>
@@ -103,7 +103,7 @@
 								<img class="img-fluid" src="../img/hyper.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectHyper()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 하러가기 >></p>
+									<p>자가진단 결과보기 >></p>
 									<h4>고혈압</h4>
 								</div>
 							</div>
@@ -113,7 +113,7 @@
 								<img class="img-fluid" src="../img/diabet.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectDiabet()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 하러가기 >></p>
+									<p>자가진단 결과보기 >></p>
 									<h4>당뇨병</h4>
 								</div>
 							</div>
@@ -123,7 +123,7 @@
 								<img class="img-fluid" src="../img/cerebro.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectCerebro()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 하러가기 >></p>
+									<p>자가진단 결과보기 >></p>
 									<h4>뇌혈관질환</h4>
 								</div>
 							</div>
@@ -142,8 +142,8 @@
 					<canvas id="demenPolar"></canvas>
 				</span>
 				<h4 class="c-tit02">치매 예방 및 관리에 도움을 주는 운동과 식단</h4>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uk3oKzjhMT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VMj0DzBbefU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/uk3oKzjhMT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/VMj0DzBbefU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 			<!--========== 퇴행성 관절염 자가진단 ==========-->
 			<div class="arthTest">
@@ -156,8 +156,8 @@
 					<canvas id="arthPolar"></canvas>
 				</span>
 				<h4 class="c-tit02">퇴행성 관절염 예방 및 관리에 도움을 주는 운동과 식단</h4>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/MIx329dU8ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/bM0hJWePWfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/MIx329dU8ug" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/bM0hJWePWfs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				
 			</div>
 			<!--========== 고혈압 자가진단 ==========-->
@@ -171,8 +171,8 @@
 					<canvas id="hyperPolar"></canvas>
 				</span>
 				<h4 class="c-tit02">고혈압 예방 및 관리에 도움을 주는 운동과 식단</h4>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/H8D77McC8Uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LzHMy2ScdhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/H8D77McC8Uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/LzHMy2ScdhA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				
 			</div>
 			<!--========== 당뇨병 자가진단 ==========-->
@@ -186,8 +186,8 @@
 					<canvas id="diabetPolar"></canvas>
 				</span>
 				<h4 class="c-tit02">당뇨병 예방 및 관리에 도움을 주는 운동과 식단</h4>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/tj0FuDZ3Dpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/BFeF_5NywSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/tj0FuDZ3Dpg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/BFeF_5NywSs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				
 			</div>
 			<!--========== 뇌혈관질환 자가진단 ==========-->
@@ -201,8 +201,8 @@
 					<canvas id="cerebroPolar"></canvas>
 				</span>
 				<h4 class="c-tit02">뇌혈관질환 예방 및 관리에 도움을 주는 운동과 식단</h4>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Q4hKh6dSScw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/iUJSO5CMJ3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/Q4hKh6dSScw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+				<iframe width="550" height="315" style="margin:0 1.5px;"src="https://www.youtube-nocookie.com/embed/iUJSO5CMJ3E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 			</div>
 		</div>
 	</section>
