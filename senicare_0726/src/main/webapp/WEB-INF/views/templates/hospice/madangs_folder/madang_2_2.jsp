@@ -424,7 +424,8 @@
 									<a onclick="commentBtn()" class="replyBtn">등록</a>
 								</li>
 							</ul>
-							<p class="ntic">※ 비밀글 버튼을 활성화하시면 게시글 작성자에게만 보이는 비밀글로 등록됩니다.</p>
+							<p class="ntic orange">※ 비밀글 버튼을 활성화하시면 게시글 작성자에게만 보이는 비밀글로 등록됩니다.</p>
+							
 						</div>
 
 						<div class="replyBox">
@@ -470,8 +471,10 @@
 								</c:if>
 
 
+
 								<c:if test="${sessionScope.id != 'admin' }">
 								<c:if test="${sessionScope.id != cdto.auth_id}">
+								<c:if test="${sessionScope.id != mdto.auth_id}">
 									<!-- 일반댓글, 다른사람이 쓴 댓글 -->
 									<c:if test="${cdto.comment_private == 0}">
 										<ul id="${cdto.comment_no }">
@@ -504,6 +507,45 @@
 											</li>
 										</ul>
 									</c:if>
+								</c:if>
+								</c:if>
+								</c:if>
+								
+								<c:if test="${sessionScope.id != 'admin' }">
+								<c:if test="${sessionScope.id != cdto.auth_id}">
+								<c:if test="${sessionScope.id == mdto.auth_id}">
+									<!-- 일반댓글, 다른사람이 쓴 댓글 -->
+									<c:if test="${cdto.comment_private == 0}">
+										<ul id="${cdto.comment_no }">
+											<li class="name">${cdto.auth_nickname}
+												<c:if test="${cdto.comment_modify == null}">
+													<span>[${cdto.comment_date}]</span>
+												</c:if>
+												<c:if test="${cdto.comment_modify != null}">
+													<span>[${cdto.comment_modify}] (수정)</span>
+												</c:if>
+											</li>
+											<li class="txt">${cdto.comment_content}</li>
+										</ul>
+									</c:if>
+									<!-- 비밀댓글, 다른사람이 쓴 댓글 -->
+									<c:if test="${cdto.comment_private == 1}">
+										<ul id="${cdto.comment_no }">
+											<li class="name">${cdto.auth_nickname}
+												<c:if test="${cdto.comment_modify == null}">
+													<span>[${cdto.comment_date}]</span>
+													<span class="orange">※ 비밀글로 등록된 댓글입니다.</span>
+												</c:if>
+												<c:if test="${cdto.comment_modify != null}">
+													<span>[${cdto.comment_modify}] (수정)</span>
+													<span class="orange">※ 비밀글로 등록된 댓글입니다.</span>
+												</c:if>
+											</li>
+											<li class="txt">
+												<li class="txt">${cdto.comment_content}</li>
+										</ul>
+									</c:if>
+								</c:if>
 								</c:if>
 								</c:if>
 

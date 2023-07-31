@@ -441,7 +441,7 @@
 									<a onclick="commentBtn()" class="replyBtn">등록</a>
 								</li>
 							</ul>
-							<p class="ntic">※ 비밀글 버튼을 활성화하시면 게시글 작성자에게만 보이는 비밀글로 등록됩니다.</p>
+							<p class="ntic orange">※ 비밀글 버튼을 활성화하시면 게시글 작성자에게만 보이는 비밀글로 등록됩니다.</p>
 						</div>
 
 						<div class="replyBox">

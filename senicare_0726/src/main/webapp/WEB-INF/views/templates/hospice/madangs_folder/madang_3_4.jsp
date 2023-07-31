@@ -175,7 +175,7 @@
 									</tr>
 									<tr>
 										<th>이미지</th>
-										<td>※ 사진파일은 최대 3개까지 올릴 수 있습니다.<br>
+										<td class="orange">※ (필수) 사진파일을 최소 1개이상 등록해야 합니다.<br>
 											<input type="hidden" name="board_file" value="${arrImg[0]}"><!-- 원본파일명 -->
 											<input type="hidden" name="board_file" value="${arrImg[1]}"><!-- 원본파일명 -->
 											<input type="hidden" name="board_file" value="${arrImg[2]}"><!-- 원본파일명 -->

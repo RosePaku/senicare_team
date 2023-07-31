@@ -131,7 +131,7 @@
 									</tr>
 									<tr>
 										<th>이미지</th>
-										<td>※ 사진파일은 최대 3개까지 올릴 수 있습니다.<br>
+										<td class="orange">※ 사진파일은 최대 3개까지 올릴 수 있습니다.<br>
 											<input type="file" name="files" id="file"><br>
 											<input type="file" name="files" id="file"><br>
 											<input type="file" name="files" id="file">

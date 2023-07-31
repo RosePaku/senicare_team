@@ -113,7 +113,7 @@
 									</tr>
 									<tr>
 										<th>이미지</th>
-										<td>※ (필수) 사진파일을 최소 1개이상 등록해야 합니다.<br>
+										<td class="orange">※ (필수) 사진파일을 최소 1개이상 등록해야 합니다.<br>
 											<input type="file" name="files" id="file" required><br>
 											<input type="file" name="files" id="file"><br>
 											<input type="file" name="files" id="file">
