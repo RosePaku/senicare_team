@@ -201,7 +201,7 @@ public class FreeServiceImpl implements FreeService {
 			mdto.setBoard_file(bfile);
 			} // if
 		} // for
-		
+		System.out.println("수정하기 테스트 서비스임플:" + mdto);
 		freeMapper.updateOne(mdto);
 	}
 		
