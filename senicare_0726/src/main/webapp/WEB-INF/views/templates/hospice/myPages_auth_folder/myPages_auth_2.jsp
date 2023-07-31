@@ -294,7 +294,7 @@
 						<li><a href="../myPages_auth_folder/myPages_auth_3">내가 쓴 글</a></li>
 						<li><a href="../myPages_auth_folder/myPages_auth_4">면접(채팅)</a></li>
 						<li><a href="../myPages_auth_folder/myPages_auth_5">내가 지원한 회사</a></li>
-						<li><a href="../myPages_auth_folder/myPages_auth_6">자가테스트 기록</a></li>
+						<!-- <li><a href="../myPages_auth_folder/myPages_auth_6">자가테스트 기록</a></li> -->
 						<li><a href="../myPages_auth_folder/myPages_auth_7">회원탈퇴</a></li>
 						<li></li>
 					</ul>

@@ -1,0 +1,15 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.java.mapper.MpAuthMapper">
+	
+	<select id="selectAll" resultType="com.java.dto.MadangDto">
+		SELECT * FROM NOTICE_BOARD WHERE AUTH_ID=#{auth_id}
+	</select>
+	
+	<delete id="deleteOne">
+		DELETE FROM NOTICE_BOARD WHERE BOARD_NO=#{bno}	
+	</delete>
+
+</mapper>

@@ -50,7 +50,7 @@ public class AuthServiceImpl implements AuthService {
         	session.setAttribute("login", 1);
             session.setAttribute("session_id", authdto.getAuth_id());
             session.setAttribute("session_password", authdto.getAuth_password());
-            session.setAttribute("session_nickname", authdto.getAuth_nickname());
+            session.setAttribute("sessionName", authdto.getAuth_name());
             session.setAttribute("sessionNickName", authdto.getAuth_nickname());
             resultCode = "s_login";
         } else {
@@ -59,6 +59,8 @@ public class AuthServiceImpl implements AuthService {
 
         return resultCode;
     }
+
+
 
     // @Override
     // public void select(String id, String pw, Auth auth) {

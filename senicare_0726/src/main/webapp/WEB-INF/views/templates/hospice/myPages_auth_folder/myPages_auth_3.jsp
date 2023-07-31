@@ -72,20 +72,84 @@
 										<table>
 										  <thead>
 											<tr style="height: 60px; vertical-align: middle; font-size: 30px; margin-top: 100px;">
-											  <th style="width:50%;">제목</th>
-											  <th style="width:20%;">날짜</th>
+											  <th style="width:10%;">번호</th>
+											  <th style="width:40%;">제목</th>
+											  <th style="width:20%;">작성 날짜</th>
 											  <th style="width:12%;">조회수</th>
 											  <th style="width:13%;">삭제</th>
 											</tr>
 										  </thead>
 										  <tbody style="height: 40px; vertical-align: middle; font-size: 20px; margin-top: 100px;">
-											<!-- 이 부분은 실제 데이터를 받아와서 동적으로 생성될 예정입니다. -->
+											<c:forEach var="board" items="${list}">
+												<tr id="${board.board_no }">
+													<td>${board.board_no}</td>
+													<td><a href="#" onclick="showCon()">${board.board_title}</a>
+														<table class="here">
+															<td>${board.board_contents}</td>
+														</table>
+													</td>
+													<td>${board.board_created}</td>
+													<td>${board.board_view}</td>
+													<td><button onclick="deleteBtn(${board.board_no})">삭제</button></td>
+												</tr>
+											</c:forEach> 
 										  </tbody>
 										</table>
 									  </div>
 														
 								  </body>
 								  </section>
+								  <script>
+								  	function showCon() {
+								  		alert("잔짠");
+								  		$(".here").css("display","none"); /* 디스플레이를 안.보.이.게! */
+										$(".hyperTest").css("display","none"); /* 디스플레이를 안.보.이.게! */
+								  	}
+								  
+								  
+									function selectDemen() {
+										$(".arthTest").css("display","none"); /* 디스플레이를 안.보.이.게! */
+										$(".hyperTest").css("display","none"); /* 디스플레이를 안.보.이.게! */
+										$(".diabetTest").css("display","none"); /* 디스플레이를 안.보.이.게! */
+										$(".cerebroTest").css("display","none"); /* 디스플레이를 안.보.이.게! */
+										$(".demenTest").css("display","block"); /* 디스플레이를 보.이.게! */
+										// 스크롤 이동
+										var offset = $(".demenTest").offset();
+								        $('html, body').animate({scrollTop : offset.top-300}, 400);
+									}
+								  
+								  
+								  </script>
+								  
+								  
+								  
+						<script>
+						function deleteBtn(bno) {
+							if (confirm("해당 글을 삭제하시겠습니까?")) {
+								$.ajax({
+									url:"/myPages_auth_folder/myPages_auth_3",
+									type:"post",
+									data: {"bno":bno},
+								success: function(data) {
+									
+									$("#"+bno).remove(); // ???
+									
+									alert("게시글이 삭제되었습니다.");
+								},
+								error: function() {
+									alert("실패");
+								}
+									
+								});
+							}
+							
+						}
+						
+						</script>
+						
+						
+						
+						
 						
 						<!-- Sidebar -->
 						<div id="sidebar"></div>
@@ -105,10 +169,10 @@
 									<li></li>
 									<li><a href="../myPages_auth_folder/myPages_auth_1">회원정보 수정</a></li>
 									<li><a href="../myPages_auth_folder/myPages_auth_2">지원자 정보 수정</a></li>
-									<li><a href="../myPages_auth_folder/myPages_auth_3">내가 쓴 글</a></li>
+									<li><a href="../myPages_auth_folder/myPages_auth_3?auth_id=${sessionScope.id}">내가 쓴 글</a></li>
 									<li><a href="../myPages_auth_folder/myPages_auth_4">면접(채팅)</a></li>
 									<li><a href="../myPages_auth_folder/myPages_auth_5">내가 지원한 회사</a></li>
-									<li><a href="../myPages_auth_folder/myPages_auth_6">자가테스트 기록</a></li>
+									<!-- <li><a href="../myPages_auth_folder/myPages_auth_6">자가테스트 기록</a></li> -->
 									<li><a href="../myPages_auth_folder/myPages_auth_7">회원탈퇴</a></li>
 									<li></li>
 								</ul>

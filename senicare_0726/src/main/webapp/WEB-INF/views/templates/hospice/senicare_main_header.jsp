@@ -98,7 +98,7 @@
 						<div id="userMenu">
 							<!-- 개인회원 메뉴 -->
 								<a href="/logout" style="padding-right: 100px;">로그아웃</a>
-								<a href="../myPages_auth_folder/myPages_auth_1">개인회원 마이페이지</a>
+								<a href="../myPages_auth_folder/myPages_auth_1?auth_id=${sessionScope.id}">개인회원 마이페이지</a>
 							</div>
 						</c:if>
 						</li>

@@ -150,10 +150,9 @@ public class FreeController {
 	// 게시글 수정 후 저장하기
 	@PostMapping("/madangs_folder/madang_1_4")
 	public String madang_1_4(MadangDto mdto, List<MultipartFile> files) {
+		freeService.updateOne(mdto, files);
 		System.out.println("수정하기 테스트 컨트롤러:" + mdto);
 		
-		freeService.updateOne(mdto, files);
-			
 		return "redirect:/madangs_folder/madang_1_1";
 	}
 }

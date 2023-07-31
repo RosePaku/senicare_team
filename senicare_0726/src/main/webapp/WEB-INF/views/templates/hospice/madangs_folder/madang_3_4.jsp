@@ -89,6 +89,7 @@
 										<col width="15%">
 										<col width="85%">
 									</colgroup>
+									<input type="hidden" name="board_no" value="${mdto.board_no}">
 									<tr>
 										<th>작성자 ID</th>
 										<td><input type="text" name="auth_id" value="${sessionScope.id}" readonly="readonly"></td>
