@@ -50,7 +50,7 @@
 				<div class="banner_content text-left">
 					<h2>디지털 교육 안내</h2>
 					<div class="page_link">
-						<a href="../senicare_main">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a>
+						<a href="/">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a>
 						<a href="madang_4_1">클릭하시면 [ 디지털 교육 안내 ] 페이지를 새로 고침합니다.</a>
 					</div>
 				</div>

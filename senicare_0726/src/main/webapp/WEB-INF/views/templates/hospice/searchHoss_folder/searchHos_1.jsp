@@ -41,7 +41,7 @@
 				<div class="banner_content text-left">
 					<h2>내 주변 의료기관 찾기</h2>
 					<div class="page_link">
-						<a href="../senicare_main">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a>
+						<a href="/">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a>
 						<a href="searchHos_1">클릭하시면 [ 내 주변 의료기관 찾기 ] 페이지를 새로 고침합니다.</a>
 					</div>
 				</div>

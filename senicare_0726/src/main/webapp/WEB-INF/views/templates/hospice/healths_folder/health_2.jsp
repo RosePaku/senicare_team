@@ -31,7 +31,7 @@
 
 </head>
 <script>
-	if (${sessionScope.id} == null}) {
+	if (${sessionScope.id == null}) {
 		alert("먼저 로그인을 해주세요.");
 		location.href ="/members_folder/member_2";
 	}
@@ -49,8 +49,8 @@
 				<div class="banner_content text-left">
 					<h2>자가진단 검사결과</h2>
 					<div class="page_link">
-						<a href="../senicare_main.jsp">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a> <a
-							href="health_2">클릭하시면 [ 자가진단 검사결과 ] 페이지를 새로 고침합니다.</a>
+						<a href="/">클릭하시면 [ 홈페이지 ] 로 이동합니다 </a>
+						<a href="health_2?auth_id=${sessionScope.id}">클릭하시면 [ 자가진단 검사결과 ] 페이지를 새로 고침합니다.</a>
 					</div>
 				</div>
 			</div>
