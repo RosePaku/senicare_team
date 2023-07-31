@@ -268,7 +268,7 @@
 										htmlData += "<li class='txt'>"+data.comment_content+"</li>";
 										htmlData += "<li class='btn'>";
 										htmlData += "<a onclick=\"updateBtn('"+data.comment_no+"','"+data.auth_nickname+"','"+moment(data.comment_date).format("YYYY-MM-DD HH:mm:ss")+"','"+data.comment_content+"')\" class='rebtn'>수정</a>";
-										htmlData += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+										htmlData += "<a onclick=\"deleteBtn("+data.comment_no+")\" class='rebtn'>삭제</a>";
 										htmlData += "</li></ul>";
 										
 										$(".replyBox").prepend(htmlData); // 위에 붙여 넣기 => 최신 댓글이 위로!!
@@ -392,8 +392,8 @@
 											htmlData += "<li class='name'>"+data.auth_nickname+" <span>["+moment(data.comment_modify).format("YYYY-MM-DD HH:mm:ss")+"] (수정)</span></li>";
 											htmlData += "<li class='txt'>"+data.comment_content+"</li>";
 											htmlData += "<li class='btn'>";
-											htmlData += "<a href='#' class='rebtn'>수정</a>";
-											htmlData += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+											htmlData += "<a onclick=\"updateBtn('"+data.comment_no+"','"+data.auth_nickname+"','"+moment(data.comment_date).format("YYYY-MM-DD HH:mm:ss")+"','"+data.comment_content+"')\" class='rebtn'>수정</a>";
+											htmlData += "<a onclick=\"deleteBtn("+data.comment_no+")\" class='rebtn'>삭제</a>";
 											htmlData += "</li>";
 											
 											$("#"+cno).html(htmlData);
@@ -405,10 +405,6 @@
 								}// if
 
 							}// updateSave
-							
-							
-							
-							
 						</script>
 
 

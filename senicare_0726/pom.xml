@@ -81,7 +81,12 @@
 			<systemPath>${basedir}/src/main/webapp/WEB-INF/lib/ojdbc6_g.jar</systemPath>
 		</dependency>
 
-<!-- log4jdbc 마이바티스 출력 --> <dependency> <groupId>org.bgee.log4jdbc-log4j2</groupId> <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId> <version>1.16</version> </dependency>
+		<!-- log4jdbc 마이바티스 출력 -->
+		<dependency>
+			<groupId>org.bgee.log4jdbc-log4j2</groupId>
+			<artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
+			<version>1.16</version>
+		</dependency>
 
 
 		<dependency>

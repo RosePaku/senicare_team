@@ -224,10 +224,10 @@
 							</table>
 						</div>
 						<!-- //이전다음글 -->
-						<script>
+<script>
 							// 1. 댓글 저장
 							function commentBtn() {
-
+								
 								if (${sessionScope.id == null}) {
 									alert("먼저 로그인을 해주세요.");
 									location.href ="/members_folder/member_2";
@@ -248,7 +248,7 @@
 								}
 								
 								$.ajax({
-									url:"/hobby/insertComOne",
+									url:"/free/insertComOne",
 									type:"post",
 									data: {
 										"board_no":"${mdto.board_no}",
@@ -267,7 +267,7 @@
 										htmlData += "<li class='txt'>"+data.comment_content+"</li>";
 										htmlData += "<li class='btn'>";
 										htmlData += "<a onclick=\"updateBtn('"+data.comment_no+"','"+data.auth_nickname+"','"+moment(data.comment_date).format("YYYY-MM-DD HH:mm:ss")+"','"+data.comment_content+"')\" class='rebtn'>수정</a>";
-										htmlData += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+										htmlData += "<a onclick=\"deleteBtn("+data.comment_no+")\" class='rebtn'>삭제</a>";
 										htmlData += "</li></ul>";
 										
 										$(".replyBox").prepend(htmlData); // 위에 붙여 넣기 => 최신 댓글이 위로!!
@@ -297,7 +297,7 @@
 								if (${sessionScope.id == 'admin'}) { // 관리자이면
 									if (confirm("관리자 권한으로 해당 댓글을 삭제하시겠습니까?")) {
 										$.ajax({
-											url:"/hobby/deleteComOne",
+											url:"/free/deleteComOne",
 											type:"post",
 											data:{"cno":cno},
 											success: function(data) {
@@ -316,7 +316,7 @@
 								} else { // 관리자 아니면
 									if (confirm("댓글을 삭제하시겠습니까?")) {
 										$.ajax({
-											url:"/hobby/deleteComOne",
+											url:"/free/deleteComOne",
 											type:"post",
 											data:{"cno":cno},
 											success: function(data) {
@@ -377,7 +377,7 @@
 								
 								if (confirm("수정된 댓글을 저장합니다.")) {
 									$.ajax({
-										url:"/hobby/updateComOne",
+										url:"/free/updateComOne",
 										type:"post",
 										data: {
 											"comment_no":cno,
@@ -391,8 +391,8 @@
 											htmlData += "<li class='name'>"+data.auth_nickname+" <span>["+moment(data.comment_modify).format("YYYY-MM-DD HH:mm:ss")+"] (수정)</span></li>";
 											htmlData += "<li class='txt'>"+data.comment_content+"</li>";
 											htmlData += "<li class='btn'>";
-											htmlData += "<a href='#' class='rebtn'>수정</a>";
-											htmlData += "<a onclick=\"deleteBtn("+data.cno+")\" class='rebtn'>삭제</a>";
+											htmlData += "<a onclick=\"updateBtn('"+data.comment_no+"','"+data.auth_nickname+"','"+moment(data.comment_date).format("YYYY-MM-DD HH:mm:ss")+"','"+data.comment_content+"')\" class='rebtn'>수정</a>";
+											htmlData += "<a onclick=\"deleteBtn("+data.comment_no+")\" class='rebtn'>삭제</a>";
 											htmlData += "</li>";
 											
 											$("#"+cno).html(htmlData);
@@ -402,6 +402,7 @@
 										}
 									});// ajax
 								}// if
+
 							}// updateSave
 						</script>
 
@@ -425,7 +426,6 @@
 								</li>
 							</ul>
 							<p class="ntic orange">※ 비밀글 버튼을 활성화하시면 게시글 작성자에게만 보이는 비밀글로 등록됩니다.</p>
-							
 						</div>
 
 						<div class="replyBox">
@@ -469,7 +469,6 @@
 										</li>
 									</ul>
 								</c:if>
-
 
 
 								<c:if test="${sessionScope.id != 'admin' }">
@@ -554,6 +553,43 @@
 						<!-- //댓글 -->
 						
 						<script>
+							// 1. 게시글 삭제하기
+							function deleteBrdBtn(bno) {
+								if (${sessionScope.id == 'admin'}) {// 관리자이면
+									if(confirm("관리자 권한으로 해당 게시글을 삭제하시겠습니까?")) {
+										$.ajax({
+											url: "/free/deleteBrdOne",
+											type: "post",
+											data: {"bno":bno},
+											success: function(data) {
+												if (data=="deleted") {
+													alert("게시글이 삭제 되었습니다.");
+													location.href = document.referrer; // 뒤로가기 후 새로고침!
+												}
+											},
+											error: function() {
+											}
+										});// ajax
+									}// if-confirm 
+								} else {// 관리자 아니면
+									if(confirm("해당 게시글을 삭제하시겠습니까?")) {
+										$.ajax({
+											url: "/free/deleteBrdOne",
+											type: "post",
+											data: {"bno":bno},
+											success: function(data) {
+												if (data=="deleted") {
+													alert("게시글이 삭제 되었습니다.");
+													location.href = document.referrer; // 뒤로가기 후 새로고침!
+												}
+											},
+											error: function() {
+											}
+										});// ajax
+									}// if-confirm
+								}// else
+							}// deleteBrdBtn
+						</script><script>
 							// 1. 게시글 삭제하기
 							function deleteBrdBtn(bno) {
 								if (${sessionScope.id == 'admin'}) {// 관리자이면
