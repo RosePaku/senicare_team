@@ -114,7 +114,7 @@
 		// 전체 불러오기
 		allData();
 		function allData() {
-			alert("전체 데이터 받아오기");
+			//alert("전체 데이터 받아오기");
 			$.ajax({
 				url : "../allData",
 				type : "get",
@@ -446,7 +446,7 @@
 						var lat = position.coords.latitude, // 위도
 						lon = position.coords.longitude; // 경도
 
-						alert("병원 데이터 받아오기");
+						//alert("병원 데이터 받아오기");
 						$
 								.ajax({
 									url : "../hosBtn",
@@ -590,7 +590,7 @@
 						var lat = position.coords.latitude, // 위도
 						lon = position.coords.longitude; // 경도
 
-						alert("약국 데이터 받아오기");
+						//alert("약국 데이터 받아오기");
 						$
 								.ajax({
 									url : "../pharmBtn",
@@ -731,7 +731,7 @@
 						var lat = position.coords.latitude, // 위도
 						lon = position.coords.longitude; // 경도
 
-						alert("요양병원 데이터 받아오기");
+						//alert("요양병원 데이터 받아오기");
 						$
 								.ajax({
 									url : "../nursBtn",
@@ -878,7 +878,7 @@
 						var lat = position.coords.latitude, // 위도
 						lon = position.coords.longitude; // 경도
 
-						alert("검색 데이터 받아오기");
+						//alert("검색 데이터 받아오기");
 						$.ajax({
 								url : "../searchData",
 								type : "get",

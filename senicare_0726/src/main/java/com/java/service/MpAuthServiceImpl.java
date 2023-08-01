@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.java.dto.Auth;
 import com.java.dto.MadangDto;
 import com.java.mapper.MpAuthMapper;
 
@@ -27,6 +28,20 @@ public class MpAuthServiceImpl implements MpAuthService {
 	public void deleteOne(String bno) {
 		mpAuthMapper.deleteOne(bno);
 		
+	}
+	
+	// 회원정보 가져오기
+	@Override
+	public Auth selectOne(String auth_id) {
+		Auth auth = mpAuthMapper.selectOne(auth_id);
+		
+		return auth;
+	}
+	
+	// 회원정보 수정하기
+	@Override
+	public void updateOne(Auth auth) {
+		mpAuthMapper.updateOne(auth);
 	}
 
 }

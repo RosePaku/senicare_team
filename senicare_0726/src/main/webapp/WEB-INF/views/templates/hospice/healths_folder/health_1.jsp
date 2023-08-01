@@ -1063,7 +1063,7 @@
 						"cerebro":$("#sum5").text()
 						},
 					success: function(data) {
-						alert("성공");
+						//alert("성공");
 						location.href = "/healths_folder/health_2?auth_id=${sessionScope.id}" /* 두번째 페이지로 보냄  */
 						},
 					error: function() {
