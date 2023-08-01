@@ -29,14 +29,21 @@ public class A_B_NoticeServiceImpl implements A_B_NoticeService {
         return A_B_NoticeMapper.getAllA_B_Notice();
     }
 
-    @Override
-    public A_B_Notice getA_B_NoticeById(String auth_Business_Wn) {
-        return A_B_NoticeMapper.getA_B_NoticeById(auth_Business_Wn);
-    }
+    // 채용공고 조회
+    // @Override
+    // public A_B_Notice getA_B_NoticeById(String auth_Business_Wn) {
+    // return A_B_NoticeMapper.getA_B_NoticeById(auth_Business_Wn);
+    // }
 
+    // 지원자 수 증가
+    @Override
+    public A_B_Notice increaseApplicantCount(A_B_Notice a_b_Notice) {
+        return A_B_NoticeMapper.increaseApplicantCount(a_b_Notice);
+    }
     // 기업 정보 추가,수정,
     // 삭제 등의
     // 서비스 메서드 구현...
+
 }
 
 // @Service

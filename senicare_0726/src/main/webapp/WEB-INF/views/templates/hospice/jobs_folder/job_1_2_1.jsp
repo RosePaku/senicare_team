@@ -37,14 +37,32 @@
 <script type="application/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- 날짜 포맷함수 -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="../js/jquery.ajaxchimp.min.js"></script>
-			
 
 		</head>
+		
 
 		<body>
+			<!-- <script>
+				$(document).ready(function() {
+					$("#supportButton").click(function() {
+						$.ajax({
+							url: "/jobs_folder/job_1_2_1/increaseAuthBusinessVol",
+							type: "POST",
+							data: { auth_Business_Vol: ${A_B_Notice.auth_Business_Vol}},
+							success: function(response) {
+								alert(response);
+							},
+							error: function() {
+								alert("에러가 발생했습니다. 다시 시도해주세요.");
+							}
+						});
+					});
+				});
+			</script> -->
 
 			<!--================Header Menu Area =================-->
 			<%@ include file="../senicare_main_header.jsp" %>
@@ -131,8 +149,12 @@
 													<!-- <a href="http://" class="job_enter">구직 신청하기</a> -->
 													<div class="search_button_1">
 														<!-- 고객 마이페이지 -->
-														<form action="../myPages_auth_folder/myPages_auth_1" method="post"
-															>
+														<!-- 간편 지원하면 시퀀스 증가 -->
+														<!-- onclick="showApplyAlert()" -->
+														<form action="/jobs_folder/job_1_2_1" method="POST" onclick="showApplyAlert()" >
+															<!-- 속성값 넘기기 -->
+															<input type="hidden" name="auth_Business_Wn" value="${A_B_Notice.auth_Business_Wn}"/>
+															<input type="hidden" name="auth_Business_Vol" value="${A_B_Notice.auth_Business_Vol}"/>
 															<button class="job_enter" style="width: 300px;" type="submit">
 																<!--  -->
 																<font style="vertical-align: inherit;">
@@ -142,7 +164,7 @@
 														</form>
 														<!-- 데이터 타입에 따라 되면 이야기하기 간편 지원 또는 상세 지원 밖에 안되는 곳 (알럿)-->
 	
-														<form action="../jobs_folder/job_1_2_2" method="post">
+														<form action="/jobs_folder/job_1_2_1" method="post" onclick="sangse()">
 															<button class="job_enter" type="submit" style="width: 300px;">
 																<font style="vertical-align: inherit;">
 																	<font style="vertical-align: inherit;">상세 지원하기</font>
@@ -154,15 +176,33 @@
 													</div>
 												</div>
 												<div class="company-details-header2"
-													style="overflow-y: scroll; max-height: 1000px;">
-													<h2>기업 이름 2 상세 정보</h2>
-	
-													<p class="j2_info" id="">기업 정보가 여기에 표시됩니다.</p>
-													<p class="j2_info" id="">기업 정보가 여기에 표시됩니다.</p>
-													<p class="j2_info" id="">기업 정보가 여기에 표시됩니다.</p>
-													<p class="j2_info" id="">기업 정보가 여기에 표시됩니다.</p>
-													<p class="j2_info" id="">기업 정보가 여기에 표시됩니다.</p>
-													<!-- 기업 간단한 정보, 구직 신청 버튼 등이 들어갈 수 있는 부분입니다. -->
+													style=" overflow-y: scroll; max-height: 1000px; padding: 20px;">
+													<h2 style="font-size: 35pt; margin-bottom: 20px; border-bottom: 2px solid black;">상세 정보</h2>
+													<div style="font-size: 30pt; margin-bottom: 20px;">
+														<p class="j2_info" >기업명</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Ko}</p>
+														<p class="j2_info" >급여</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Sal}</p>
+														<p class="j2_info" >채용마감일</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Em_Cl}</p>
+														<p class="j2_info" >자격 조건 및 우대사항</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Qu}</p>
+														<p class="j2_info" >예정 면접일</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Sc}</p>
+														<p class="j2_info" >채용 프로세스</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Pro}</p>
+														<p class="j2_info" >기업 연봉 정책</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_Pol}</p>
+														<p class="j2_info" >지원 방법</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_App}</p>
+														<p class="j2_info" >지역</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_W_Gu} ${A_B_Notice.auth_Business_W_Si} ${A_B_Notice.auth_Business_W_Loc}  </p>
+														<p class="j2_info" >기업 설명</p>
+														<p class="j2_info" style="font-size: 20px;">${A_B_Notice.auth_Business_W_Gu} ${A_B_Notice.auth_Business_W_Si} ${A_B_Notice.auth_Business_Des}  </p>
+
+													
+													</div>
+														<!-- 기업 간단한 정보, 구직 신청 버튼 등이 들어갈 수 있는 부분입니다. -->
 												</div>
 											</div>
 											<!-- 다른 기업들의 상세 정보 컨테이너도 추가로 표시합니다. -->
@@ -173,7 +213,8 @@
 
 									<!-- 테스트 공간 -->
 								</section>
-
+								
+			
 					
 
 
@@ -257,10 +298,18 @@ function clickHidden() {
 								<!-- 테스트 -->
 
 
-			
-					
-								
 
+							<!-- 지원 완료 스크립트 -->
+							<script>
+								function showApplyAlert() {
+									alert("지원이 완료되었습니다.");
+								}
+								</script>
+							<script>
+								function sangse() {
+									alert("상세 지원이 불가능한 회사입니다.");
+								}
+								</script>
 
 						<!--====게시판====-->
 

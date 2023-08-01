@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
-import org.springframework.web.context.annotation.SessionScope;
 
 import com.java.dto.A_B;
 import com.java.dto.Auth;
@@ -212,6 +211,16 @@ public class MemberController {
 		model.addAttribute("header", "senicare_main_header.jsp");
 		model.addAttribute("footer", "senicare_main_footer.jsp");
 		return "members_folder/member_3";
+
+	}
+
+	@RequestMapping("/members_folder/member_3_1")
+	public String members_3_1Controller(@RequestParam(defaultValue = "none") String resultCode,
+			Model model) {
+		model.addAttribute("resultCode", resultCode);
+		model.addAttribute("header", "senicare_main_header.jsp");
+		model.addAttribute("footer", "senicare_main_footer.jsp");
+		return "members_folder/member_3_1";
 
 	}
 

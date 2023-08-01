@@ -94,6 +94,8 @@
 									<strong>채용 공고 현황</strong>
 								</header>
 								<!--  -->
+								<!-- 값 넘겨주기 -->
+								<!-- <input type="hidden" name="auth_business_id" id="auth_business_id" value="samsung"/> -->
 								
 								<!-- 여기에 테이블 형태로 채용공고 등록한 것을 상세 조회 및 수정 및 삭제할 수 있음 테이블 형태로 --> 
 								<!-- 기본적으로 나오는 정보는 기업 입장에서 궁금한 정보들을 넣을거임  -->
@@ -104,35 +106,44 @@
 												<th scope="col">채용공고 ID</th>
 												<th scope="col">직종</th>
 												<th scope="col">지역</th>
-												<th scope="col">채용 인원</th>
+												<!-- <th scope="col">채용 인원</th> -->
 												<th scope="col">마감일</th>
 												<th scope="col">게시일</th>
-												<th scope="col">상태</th>
+												<!-- <th scope="col">상태</th> -->
 												<th scope="col">조회수</th>
 												<th scope="col">지원자 수</th>
 												<th scope="col">작업</th>
 											</tr>
 										</thead>
+										
 										<tbody>
 											<tr>
-												<td>#001</td>
-												<td>소프트웨어 엔지니어</td>
-												<td>서울</td>
-												<td>5</td>
-												<td>2023-08-20</td>
-												<td>2023-07-20</td>
-												<td data-status="진행중">진행중</td>
-												<td>150</td>
-												<td>30</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Wn}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Po}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_W_Si} ${A_B_NoticeList.get(0).auth_Business_W_Gu}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Em_Cl}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Dc}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Hit}</td>
+												<td>${A_B_NoticeList.get(0).auth_Business_Vol}</td>
+												
 												<td>
 													<button type="button" onclick="viewPost('#001')" class="inp_join BtnType SizeL defalt ga_data_layer submit_btn">상세 조회</button>
 													<button type="button" onclick="editPost('#001')" class="inp_join BtnType SizeL defalt ga_data_layer submit_btn">수정</button>
-													<button type="button" onclick="deletePost('#001')" class="inp_join BtnType SizeL defalt ga_data_layer submit_btn">삭제</button>
+													<!-- <form action="/myPages_business_folder/myPages_business_3/delate" method="post"> -->
+														<input type="hidden" name="auth_business_id" id="auth_business_id" value="${A_B_NoticeList.get(0).auth_business_id}">
+													<button type="submit" class="inp_join BtnType SizeL defalt ga_data_layer submit_btn">삭제</button>
+												<!-- </form> -->
 												</td>
 											</tr>
 										</tbody>
+									
 									</table>
 								</div>
+
+								<form action="/myPages_business_folder/myPages_business_3/delate" method="post">
+									<input type="hidden" name="auth_business_id" id="auth_business_id" value="${A_B_NoticeList.get(0).auth_business_id}">
+								<button type="submit" class="inp_join BtnType SizeL defalt ga_data_layer submit_btn" style="margin-left: 50%;">전부 삭제</button>
+							</form>
 
 								<!--  -->
 
@@ -158,6 +169,8 @@
 												<li><a href="/myPages_business_folder/myPages_business_6">회원탈퇴</a></li>
 											</ul>									
 								</nav>		
+
+								
 
 		<!-- start footer Area -->
 		<!-- End footer Area -->

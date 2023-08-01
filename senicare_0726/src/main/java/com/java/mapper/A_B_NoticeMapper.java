@@ -11,10 +11,15 @@ public interface A_B_NoticeMapper {
 
     List<A_B_Notice> getAllA_B_Notice();
 
-    A_B_Notice getA_B_NoticeById(String auth_Business_Wn);
+    // 채용공고 조회
+    // A_B_Notice getA_B_NoticeById(String auth_Business_Wn);
+
+    // 조회자 수 증가
+    A_B_Notice increaseApplicantCount(A_B_Notice a_b_Notice);
 
     // 기업 정보 추가, 수정, 삭제 등의 메서드 정의
     // ...
+
 }
 
 // @Mapper

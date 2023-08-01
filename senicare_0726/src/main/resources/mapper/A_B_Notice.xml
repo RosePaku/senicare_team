@@ -34,6 +34,16 @@
         SELECT * FROM A_B_NOTICE
     </select>
 
+
+    <!-- 업데이트문 -->
+    <!-- resulttype 없애야 함 -->
+    <update id="increaseApplicantCount">
+            UPDATE A_B_Notice
+            SET auth_Business_Vol = #{auth_Business_Vol} + 1
+            WHERE auth_Business_Wn = #{auth_Business_Wn};
+    </update>
+
+
     <!-- <select id="getA_B_NoticeById" parameterType="String" resultMap="A_B_NoticeMapper">
         SELECT *
         FROM A_B_NOTICE

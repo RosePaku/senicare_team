@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.java.dto.A_B_Notice;
@@ -34,8 +34,21 @@ public class A_B_NoticeController {
         return "{'jobTitle': '웹 개발자', 'company': 'ABC 기업'}";
     }
 
+    // 지원자 수 업데이트문
+    @PostMapping("/jobs_folder/job_1_2_1/increaseAuthBusinessVol")
+    public String increaseAuthBusinessVol(A_B_Notice a_b_Notice, Model model) {
+        System.out.println(a_b_Notice.getAuth_Business_Vol());
+        A_B_NoticeService.increaseApplicantCount(a_b_Notice);
+        System.out.println(a_b_Notice.getAuth_Business_Wn());
+        // A_B_NoticeService.increaseApplicantCount(a_b_Notice);
+        // A_B_NoticeService.increaseApplicantCount(a_b_Notice);
+        // A_B_NoticeService.increaseApplicantCount(auth_Business_Vol);
+        return "jobs_folder/job_1_2_1";
+    }
+
     @PostMapping("/jobs_folder/job_1_2_1")
     public String pjob_1_2_1(Model model) {
+
         List<A_B_Notice> A_B_NoticeList = A_B_NoticeService.getAllA_B_Notice();
         System.out.println("A_B_NoticeController A_B_NoticeList : " +
                 A_B_NoticeList.size());
@@ -63,34 +76,45 @@ public class A_B_NoticeController {
         return "jobs_folder/job_1_2_1";
     }
 
+    // 상세 지원하기
+    @PostMapping("/jobs_folder/job_1_2_2")
+    public String job_1_2_2Controller(@RequestParam(defaultValue = "none") String resultCode, Model model) {
+        model.addAttribute("resultCode", resultCode);
+        model.addAttribute("header", "senicare_main_header.jsp");
+        model.addAttribute("footer", "senicare_main_footer.jsp");
+        return "jobs_folder/job_1_2_2";
+
+    }
     // @GetMapping("/jobs_folder/job_1_2_1")
     // public String showA_B_NoticeList(Model model) {
     // return "jobs_folder/job_1_2_1";
     // }
 
     // 기업 상세 정보를 보여주는 페이지의 매핑
-    @GetMapping("/{auth_Business_Wn}")
-    public String showA_B_NoticeDetails(@PathVariable String auth_Business_Wn, Model model) {
-        A_B_Notice selectedA_B_Notice = A_B_NoticeService.getA_B_NoticeById(auth_Business_Wn);
-        model.addAttribute("selectedA_B_Notice", selectedA_B_Notice);
-        return "A_B_Notice_details";
-    }
+    // @GetMapping("/{auth_Business_Wn}")
+    // public String showA_B_NoticeDetails(@PathVariable String auth_Business_Wn,
+    // Model model) {
+    // A_B_Notice selectedA_B_Notice =
+    // A_B_NoticeService.getA_B_NoticeById(auth_Business_Wn);
+    // model.addAttribute("selectedA_B_Notice", selectedA_B_Notice);
+    // return "A_B_Notice_details";
+    // }
 
-    // 기업 정보에 간편 지원하기 기능을 구현한 매핑
-    @PostMapping("/apply/{auth_Business_Wn}")
-    public String applyJob(@PathVariable String auth_Business_Wn) {
-        // 구직 신청 로직 구현
-        // ...
-        return "redirect:/jobs_folder"; // 채용 사이트 페이지로 리다이렉트
-    }
+    // // 기업 정보에 간편 지원하기 기능을 구현한 매핑
+    // @PostMapping("/apply/{auth_Business_Wn}")
+    // public String applyJob(@PathVariable String auth_Business_Wn) {
+    // // 구직 신청 로직 구현
+    // // ...
+    // return "redirect:/jobs_folder"; // 채용 사이트 페이지로 리다이렉트
+    // }
 
-    // 기업 정보에 상세 지원하기 기능을 구현한 매핑
-    @PostMapping("/apply/{auth_Business_Wn}/detail")
-    public String applyJobInDetail(@PathVariable String auth_Business_Wn) {
-        // 상세 구직 신청 로직 구현
-        // ...
-        return "redirect:/jobs_folder"; // 채용 사이트 페이지로 리다이렉트
-    }
+    // // 기업 정보에 상세 지원하기 기능을 구현한 매핑
+    // @PostMapping("/apply/{auth_Business_Wn}/detail")
+    // public String applyJobInDetail(@PathVariable String auth_Business_Wn) {
+    // // 상세 구직 신청 로직 구현
+    // // ...
+    // return "redirect:/jobs_folder"; // 채용 사이트 페이지로 리다이렉트
+    // }
 
 }
 

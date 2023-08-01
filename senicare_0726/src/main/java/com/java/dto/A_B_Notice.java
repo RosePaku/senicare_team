@@ -4,27 +4,27 @@ package com.java.dto;
 import java.util.Date;
 
 public class A_B_Notice {
-	private int auth_Business_Wn;
-	private String auth_business_id;
-	private String auth_Business_Ko;
-	private String auth_Business_Em;
-	private String auth_Business_Po;
-	private String auth_Business_Des;
-	private String auth_Business_Sal;
-	private String auth_Business_Em_Cl;
-	private String auth_Business_Key;
-	private String auth_Business_Qu;
-	private String auth_Business_Sc;
-	private String auth_Business_Pro;
-	private String auth_Business_Pol;
-	private Date auth_Business_Dc;
-	private int auth_Business_Hit;
-	private int auth_Business_Vol;
-	private String auth_Business_Que;
-	private String auth_Business_App;
-	private String auth_Business_W_Gu;
-	private String auth_Business_W_Si;
-	private String auth_Business_W_Loc;
+	private int auth_Business_Wn; // 채용공고 번호
+	private String auth_business_id; // 기업회원 아이디
+	private String auth_Business_Ko; // 기업명
+	private String auth_Business_Em; // 직원 수
+	private String auth_Business_Po; // 채용 직무
+	private String auth_Business_Des; // 기업 설명
+	private String auth_Business_Sal; // 급여
+	private String auth_Business_Em_Cl; // 채용마감일
+	private String auth_Business_Key; // 키워드
+	private String auth_Business_Qu; // 자격 조건 및 우대사항
+	private String auth_Business_Sc; // 예정 면접일
+	private String auth_Business_Pro; // 채용 프로세스
+	private String auth_Business_Pol; // 기업 연봉 정책
+	private Date auth_Business_Dc; // 게시일
+	private int auth_Business_Hit; // 조회수
+	private int auth_Business_Vol; // 지원자수
+	private String auth_Business_Que; // 면접질문
+	private String auth_Business_App; // 지원 방법
+	private String auth_Business_W_Si; // 근무지 (시)
+	private String auth_Business_W_Gu; // 근무지 (구)
+	private String auth_Business_W_Loc; // 상세 근무지
 
 	public int getAuth_Business_Wn() {
 		return this.auth_Business_Wn;

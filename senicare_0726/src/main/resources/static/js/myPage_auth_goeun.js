@@ -52,17 +52,4 @@ function addInput1() {
   }
 
 
-      // 실제로는 서버와의 통신을 통해 회원 정보를 업데이트하는 로직을 구현해야 합니다.
-      // 여기서는 예시로 입력된 정보를 alert 창으로 보여줍니다.
-function updateUserInfo() {
-    const genderRadio = document.querySelector('input[name="gender"]:checked');   
-    const genderValue = genderRadio ? genderRadio.value : "";
-    const username = document.getElementById("username").value;
-    const email = document.getElementById("email").value;
-    const name = document.getElementById("name").value;
-    const birthYear = document.getEementById("birthYear").value;
-    const birthMonth = document.getElementById("birthMonth").value;
-    const birthDay = document.getElementById("birthDay").value;
-}
-    // alert(`성별: ${genderValue}\n아이디: ${username}\n이메일: ${email}\n이름: ${name}`);
-    // alert(`생년월일: ${birthYear}년 ${birthMonth}월 ${birthDay}일`);
+

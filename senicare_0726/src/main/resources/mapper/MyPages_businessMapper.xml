@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 매퍼 네임스페이스 -->
+<mapper namespace="com.java.mapper.MyPages_businessMapper">
+
+
+
+    <!-- 정보 가져오기 -->
+    <select id="getAllA_B" resultType="com.java.dto.A_B">
+        SELECT * FROM A_B
+    </select>
+    
+
+    <!-- 수정하기 -->
+    <select id="updateA_B" resultType="com.java.dto.A_B">
+           UPDATE A_B
+        SET AUTH_BUSINESS_PASSWORD = #{auth_business_password}, 
+        AUTH_BUSINESS_EMAIL = #{auth_business_email},
+        auth_business_phone_number = #{auth_business_phone_number}
+        WHERE AUTH_BUSINESS_ID = #{auth_business_id}
+    </select>
+
+
+    <!-- 채용공고 등록하기 -->
+    <!-- 기업 회원 등록 -->
+<insert id="insert" parameterType="com.java.dto.A_B_Notice">
+<!-- wn= 1, id = samsung -->
+<!-- TO_DATE('2023-07-27', 'YYYY-MM-DD') -->
+    INSERT INTO A_B_NOTICE (
+        auth_Business_Wn,
+        auth_business_id,
+        auth_Business_Ko,
+        auth_Business_Em,
+        auth_Business_Po,
+        auth_Business_Des,
+        auth_Business_Sal,
+        auth_Business_Em_Cl,
+        auth_Business_Key,
+        auth_Business_Qu,
+        auth_Business_Sc,
+        auth_Business_Pro,
+        auth_Business_Pol, 
+
+        <!-- 게시일,조회수,지원자수 알아서 설정 -->
+
+        auth_Business_Dc,
+        auth_Business_Hit,
+        auth_Business_Vol,
+        
+        auth_Business_Que,
+        auth_Business_App,
+        auth_Business_W_Si,
+        auth_Business_W_Gu,
+        auth_Business_W_Loc
+        
+        <!-- 21개 -->
+
+
+    ) VALUES (
+        #{auth_Business_Wn},
+        #{auth_business_id},
+        #{auth_Business_Ko},
+        #{auth_Business_Em},
+        #{auth_Business_Po},
+        #{auth_Business_Des},
+        #{auth_Business_Sal},
+        #{auth_Business_Em_Cl},
+        #{auth_Business_Key},
+        #{auth_Business_Qu},
+        #{auth_Business_Sc},
+        #{auth_Business_Pro},
+        #{auth_Business_Pol},
+        TO_DATE('2023-08-01', 'YYYY-MM-DD'),
+        #{auth_Business_Hit},
+        #{auth_Business_Vol},
+        
+        <!-- 면접질문, 지원 방법, 근무지 -->
+        #{auth_Business_Que},
+        #{auth_Business_App},
+        #{auth_Business_W_Si},
+        #{auth_Business_W_Gu},
+        #{auth_Business_W_Loc}
+
+
+    )
+</insert>
+
+    <select id="getAllA_B_Notice" resultType="com.java.dto.A_B_Notice">
+        SELECT * FROM A_B_NOTICE
+        WHERE AUTH_BUSINESS_ID = 'samsung'
+    </select>
+
+    <!-- 채용공고 정보 삭제 -->
+        <delete id="deleteA_B_Notice" parameterType="com.java.dto.A_B_Notice">
+        DELETE FROM A_B_NOTICE
+        WHERE AUTH_BUSINESS_ID = 'samsung'
+        </delete>
+
+
+    <!-- 업데이트문 -->
+    <!-- resulttype 없애야 함 -->
+    <!-- <update id="increaseApplicantCount">
+            UPDATE A_B_Notice
+            SET auth_Business_Vol = #{auth_Business_Vol} + 1
+            WHERE auth_Business_Wn = #{auth_Business_Wn};
+    </update> -->
+
+
+    <!-- <select id="getA_B_NoticeById" parameterType="String" resultMap="A_B_NoticeMapper">
+        SELECT *
+        FROM A_B_NOTICE
+        WHERE auth_Business_Wn = #{auth_Business_Wn}
+    </select> -->
+
+    <!-- 기업 정보 추가, 수정, 삭제 등의 SQL 쿼리 정의 -->
+    <!-- ... -->
+
+</mapper>

@@ -66,7 +66,7 @@
 										<div id="join_wrapper" class="join_cont_wrap">
 											<div id="member_personal" class="member_cate">
 												<form name="frm" id="frm" method="post"
-													action="/myPages_business_folder/myPages_business_2_2">
+													action="/myPages_business_folder/myPages_business_2_1">
 							
 													<h3 class="tit_join_member">
 														<p>채용 공고 정보 작성P1</p>
@@ -85,9 +85,9 @@
 							
 																		<!-- 기업명 -->
 																		<div class="item">
-																			<label for="company_name"><strong>기업명</strong></label>
+																			<label for="auth_Business_Ko"><strong>기업명</strong></label>
 																			<div class="TypoBox">
-																				<input type="text" name="company_name" id="company_name"
+																				<input type="text" name="auth_Business_Ko" id="auth_Business_Ko"
 																					class="Typo SizeL defalt" style="ime-mode:active"
 																					autocapitalize="off" placeholder="기업명 입력">
 																			</div>
@@ -97,7 +97,7 @@
 																		<div class="item">
 																			<label for="employee_count"><strong>직원수</strong></label>
 																			<div class="TypoBox">
-																				<select name="employee_count" id="employee_count"
+																				<select name="auth_Business_Em" id="auth_Business_Em"
 																					class="Typo SizeL defalt">
 																					<option value="1-49">1~49명</option>
 																					<option value="50-149">50~149명</option>
@@ -109,10 +109,27 @@
 																		</div>
 							
 																		<!-- 근무지 - 시 선택 -->
-																		<div class="item">
+																				   <!-- 상세 근무지 -->
+														   <div class="item">
+															<label for="auth_Business_W_Si"><strong>근무지 - 시</strong></label>
+															<div class="TypoBox">
+																<input type="text" name="auth_Business_W_Si" id="auth_Business_W_Si"
+																	class="Typo SizeL defalt" style="ime-mode:active"
+																	autocapitalize="off" placeholder="예) 서울특별시">
+															</div>
+
+														   <div class="item">
+															<label for="auth_Business_W_Gu"><strong>근무지 - 구</strong></label>
+															<div class="TypoBox">
+																<input type="text" name="auth_Business_W_Gu" id="auth_Business_W_Gu"
+																	class="Typo SizeL defalt" style="ime-mode:active"
+																	autocapitalize="off" placeholder="예) 구로구">
+															</div>
+
+																		<!-- <div class="item">
 																			<label for="work_location_city"><strong>근무지 - 시</strong></label>
 																			<div class="TypoBox">
-																				<select name="work_location_city" id="work_location_city"
+																				<select name="auth_Business_W_Si" id="auth_Business_W_Si"
 																					class="Typo SizeL defalt" onchange="selectCity()">
 																					<option value="" disabled selected>시 선택</option>
 																					<option value="seoul">서울특별시</option>
@@ -128,29 +145,29 @@
 																					<option value="gangwon">강원도</option>
 																					<option value="jeju">제주특별자치도</option>
 																					<option value="etc">기타</option>
-																					<!-- 다른 도시들 추가 -->
+																					
 																				</select>
 																			</div>
-																		</div>
+																		</div> -->
 							
 							
 							
 																		<!-- 근무지 - 구 선택 -->
-																		<div class="item">
+																		<!-- <div class="item">
 																			<label for="work_location_district"><strong>근무지 - 구</strong></label>
 																			<div class="TypoBox">
-																				<select name="work_location_district" id="work_location_district"
+																				<select name="auth_Business_W_Gu" id="auth_Business_W_Gu"
 																					class="Typo SizeL defalt">
-																					<!-- 기본적으로 비활성화된 옵션 -->
+																					
 																					<option value="" disabled selected>구 선택</option>
 																				</select>
 																			</div>
-																		</div>
+																		</div> -->
 							
 							
 							
 																		<!-- 근무지 - 기타 입력란 -->
-																		<div id="work_location_etc" style="display:none;">
+																		<!-- <div id="work_location_etc" style="display:none;">
 																			<div class="item">
 																				<label for="other_work_location_input1"><strong>근무지 - 기타
 																						(시)</strong></label>
@@ -169,36 +186,36 @@
 																						placeholder="예) 무안군">
 																				</div>
 																			</div>
-																		</div>
+																		</div> -->
 							
 														   <!-- 상세 근무지 -->
 														   <div class="item">
-															<label for="work_location"><strong>상세 근무지</strong></label>
+															<label for="auth_Business_W_Loc"><strong>상세 근무지</strong></label>
 															<div class="TypoBox">
-																<input type="text" name="work_location" id="work_location"
+																<input type="text" name="auth_Business_W_Loc" id="auth_Business_W_Loc"
 																	class="Typo SizeL defalt" style="ime-mode:active"
-																	autocapitalize="off" placeholder="예) 해제면 만송로 34 무안생태갯벌사업소 1층">
+																	autocapitalize="off" placeholder="예) 디지털로34길 27 1106호">
 															</div>
 														</div>
 							
 																		<!-- 직종 카테고리 -->
 																		<div class="item">
-																			<label for="job_category"><strong>채용 직무</strong></label>
+																			<label for="auth_Business_Po"><strong>채용 직무</strong></label>
 																			<div class="TypoBox">
-																				<select name="job_category" id="job_category"
+																				<select name="auth_Business_Po" id="auth_Business_Po"
 																					class="Typo SizeL defalt" onchange="checkOtherOption()">
 																					<option value="" disabled selected>직종 카테고리 선택</option>
-																					<option value="it">IT</option>
-																					<option value="cook">요리사</option>
-																					<option value="sales">영업</option>
-																					<option value="design">디자인</option>
-																					<option value="finance">재무</option>
-																					<option value="teacher">교사</option>
-																					<option value="healthcare">보건의료</option>
-																					<option value="construction">건설</option>
-																					<option value="marketing">마케팅</option>
-																					<option value="media">미디어</option>
-																					<option value="other">기타</option>
+																					<option value="IT">IT</option>
+																					<option value="요리사">요리사</option>
+																					<option value="영업">영업</option>
+																					<option value="디자인">디자인</option>
+																					<option value="재무">재무</option>
+																					<option value="교사">교사</option>
+																					<option value="보건의료">보건의료</option>
+																					<option value="건설">건설</option>
+																					<option value="마케팅">마케팅</option>
+																					<option value="미디어">미디어</option>
+																					<option value="기타">기타</option>
 																				</select>
 																			</div>
 																		</div>

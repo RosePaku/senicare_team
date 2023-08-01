@@ -6,6 +6,7 @@ import com.java.dto.A_B;
 
 @Mapper
 public interface A_BMapper {
+
     void insert(A_B a_b);
 
     // 로그인 기능 구현

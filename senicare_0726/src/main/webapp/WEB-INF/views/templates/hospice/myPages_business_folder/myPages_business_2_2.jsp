@@ -61,7 +61,7 @@
 
             <div id="join_wrapper" class="join_cont_wrap">
                 <div id="member_personal" class="member_cate">
-                    <form name="frm" id="frm" method="post" action="/myPages_business_2_2">
+                    <form name="frm" id="frm" method="post" action="/myPages_business_folder/myPages_business_2_2">
 
                         <h3 class="tit_join_member">
                             <p>채용 공고 정보 작성 P2</p>
@@ -78,12 +78,19 @@
                                             <!-- 아이디 -->
                                             <div class="member_center_line">기업 정보 입력 항목 (필수)</div>
 
+                                            <!-- 정보 넘기는 값 -->
+                                            <input type="hidden" value="11" name="auth_Business_Wn" id="auth_Business_Wn">
+                                            <input type="hidden" value="samsung" name="auth_business_id" id="auth_business_id">
+                                            <!-- <input type="hidden" value="0" name="auth_Business_Dc" id="auth_Business_Dc"> -->
+
+                                            
+
 
                                             <!-- 기업 설명 -->
                                             <div class="item">
-                                                <label for="work_location"><strong>기업 설명</strong></label>
+                                                <label for="auth_Business_Des"><strong>기업 설명</strong></label>
                                                 <div class="TypoBox">
-                                                    <input type="text" name="work_location" id="work_location"
+                                                    <input type="text" name="auth_Business_Des" id="auth_Business_Des"
                                                         class="Typo SizeL defalt" style="ime-mode:active"
                                                         autocapitalize="off" placeholder="">
                                                 </div>
@@ -91,16 +98,16 @@
 
                                             <!-- 급여 -->
                                             <div class="item">
-                                                <label for="salary_range"><strong>급여 범위</strong></label>
+                                                <label for="auth_Business_Sal"><strong>급여 범위</strong></label>
                                                 <div class="TypoBox">
-                                                    <select name="salary_range" id="salary_range"
+                                                    <select name="auth_Business_Sal" id="auth_Business_Sal"
                                                         class="Typo SizeL defalt">
-                                                        <option value="0-2000">0~2,000만원</option>
-                                                        <option value="2000-3000">2,000~3,000만원</option>
-                                                        <option value="3000-4000">3,000~4,000만원</option>
-                                                        <option value="4000-5000">4,000~5,000만원</option>
-                                                        <option value="5000-9999">5,000만원 이상</option>
-                                                        <option value="negotiable">협의 후 결정</option>
+                                                        <option value="0-2000만원">0~2,000만원</option>
+                                                        <option value="2000-3000만원">2,000~3,000만원</option>
+                                                        <option value="3000-4000만원">3,000~4,000만원</option>
+                                                        <option value="4000-5000만원">4,000~5,000만원</option>
+                                                        <option value="5000만원 이상">5,000만원 이상</option>
+                                                        <option value="협의 후 결정">협의 후 결정</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -108,9 +115,9 @@
 
                                             <!-- 지원 방법 -->
                                             <div class="item">
-                                                <label for="application_method"><strong>지원 방법</strong></label>
+                                                <label for="auth_Business_App"><strong>지원 방법</strong></label>
                                                 <div class="TypoBox">
-                                                    <select name="application_method" id="application_method"
+                                                    <select name="auth_Business_App" id="auth_Business_App"
                                                         class="Typo SizeL defalt">
                                                         <option value="간편 지원">간편 지원</option>
                                                         <option value="상세 지원">상세 지원</option>
@@ -119,9 +126,13 @@
                                                 </div>
                                             </div>
 
+                                            
+
                                             <!-- 간편 지원 설명 -->
                                             <div id="simple_application_description" style="display: block;">
-                                                기업의 질문을 받지 않고 바로 지원을 받습니다.
+                                                간편 지원 : 기업의 질문을 받지 않고 바로 지원을 받습니다.
+                                                <br>
+                                                상세 지원 : 기업의 질문을 받고 지원을 받습니다.
                                             </div>
 
                                             <!-- 상세 지원 설명 -->
@@ -129,7 +140,7 @@
                                                 기업의 질문을 받고 지원을 받습니다.
                                             </div>
 
-                                            <!-- 면접 질문 -->
+                                            <!-- 면접 질문 (구현 해야 함) -->
                                             <div class="item" id="interviewQuestionsContainer" style="display: none;">
                                                 <label for="interviewQuestions"><strong>면접 질문</strong></label>
                                                 <div class="TypoBox">
@@ -146,11 +157,32 @@
                                                 </div>
                                             </div>
 
+
+                                             <!-- 면접 질문 : 태그 형태로 아이콘 방식으로 선택하는 느낌, 기업이 주는 이미지에 대한 키워드 -->
+                                             <div class="item" id="auth_Business_KeyContainer">
+                                                <label for="auth_Business_Que"><strong>면접 질문</strong></label>
+                                                <div class="TypoBox">
+                                                    <div class="keyword-inputs">
+                                                        <div class="keyword-input">
+                                                            <input type="text" name="auth_Business_Que[]" id="auth_Business_Que"
+                                                                class="Typo SizeL defalt" style="ime-mode:active"
+                                                                autocapitalize="off" placeholder="키워드를 입력하세요." readonly>
+                                                            <i class="fas fa-minus remove-keyword-button"></i>
+                                                        </div>
+                                                    </div>
+                                                    <i class="fas fa-plus add-keyword-button"></i>
+                                                </div>
+                                            </div>
+
+
+
+
+
                                             <!-- 채용 마감일 선택 -->
                                             <div class="item">
-                                                <label for="application_deadline"><strong>채용 마감일</strong></label>
+                                                <label for="auth_Business_Em_Cl"><strong>채용 마감일</strong></label>
                                                 <div class="TypoBox">
-                                                    <select name="application_deadline" id="application_deadline"
+                                                    <select name="auth_Business_Em_Cl" id="auth_Business_Em_Cl"
                                                         class="Typo SizeL defalt">
                                                         <option value="1주일 이내">1주일 이내</option>
                                                         <option value="2주일 이내">2주일 이내</option>
@@ -162,14 +194,14 @@
 
 
                                             <!-- 키워드 입력란 : 태그 형태로 아이콘 방식으로 선택하는 느낌, 기업이 주는 이미지에 대한 키워드 -->
-                                            <div class="item" id="keywordsContainer">
-                                                <label for="keywords"><strong>키워드</strong></label>
+                                            <div class="item" id="auth_Business_KeyContainer">
+                                                <label for="auth_Business_Key"><strong>키워드</strong></label>
                                                 <div class="TypoBox">
                                                     <div class="keyword-inputs">
                                                         <div class="keyword-input">
-                                                            <input type="text" name="keywords[]"
+                                                            <input type="text" name="auth_Business_Key[]"
                                                                 class="Typo SizeL defalt" style="ime-mode:active"
-                                                                autocapitalize="off" placeholder="키워드를 입력하세요.">
+                                                                autocapitalize="off" placeholder="키워드를 입력하세요." readonly>
                                                             <i class="fas fa-minus remove-keyword-button"></i>
                                                         </div>
                                                     </div>
@@ -185,9 +217,9 @@
 
                                             <!-- 자격 조건 -->
                                             <div class="item">
-                                                <label for="work_location"><strong>자격 조건 및 우대사항</strong></label>
+                                                <label for="auth_Business_Qu"><strong>자격 조건 및 우대사항</strong></label>
                                                 <div class="TypoBox">
-                                                    <input type="text" name="work_location" id="work_location"
+                                                    <input type="text" name="auth_Business_Qu" id="auth_Business_Qu"
                                                         class="Typo SizeL defalt" style="ime-mode:active"
                                                         autocapitalize="off" placeholder="예) 컴퓨터공학 전공 또는 컴퓨터 공학 우대">
                                                 </div>
@@ -200,9 +232,9 @@
 
                                             <!-- 예정 면접일 입력란 -->
                                             <div class="item">
-                                                <label for="interview_schedule"><strong>예정 면접일</strong></label>
+                                                <label for="auth_Business_Sc"><strong>예정 면접일</strong></label>
                                                 <div class="TypoBox">
-                                                    <input type="text" name="interview_schedule" id="interview_schedule"
+                                                    <input type="text" name="auth_Business_Sc" id="auth_Business_Sc"
                                                         class="Typo SizeL defalt" style="ime-mode:active"
                                                         autocapitalize="off"
                                                         placeholder="예) 20231124 금요일 오후 3시 또는 추후 기재">
@@ -213,10 +245,10 @@
 
                                             <!-- 채용 프로세스 입력란 -->
                                             <div class="item">
-                                                <label for="recruitment_process"><strong>채용 프로세스</strong></label>
+                                                <label for="auth_Business_Pro"><strong>채용 프로세스</strong></label>
                                                 <div class="TypoBox">
-                                                    <input type="text" name="recruitment_process"
-                                                        id="recruitment_process" class="Typo SizeL defalt"
+                                                    <input type="text" name="auth_Business_Pro"
+                                                        id="auth_Business_Pro" class="Typo SizeL defalt"
                                                         style="ime-mode:active" autocapitalize="off"
                                                         placeholder="예) 이력서 면접 -> 1차 면접 -> 결과 통보">
                                                 </div>
@@ -224,9 +256,9 @@
 
                                             <!-- 기업 연봉 정책 입력란 -->
                                             <div class="item">
-                                                <label for="salary_policy"><strong>기업 연봉 정책</strong></label>
+                                                <label for="auth_Business_Pol"><strong>기업 연봉 정책</strong></label>
                                                 <div class="TypoBox">
-                                                    <input type="text" name="salary_policy" id="salary_policy"
+                                                    <input type="text" name="auth_Business_Pol" id="auth_Business_Pol"
                                                         class="Typo SizeL defalt" style="ime-mode:active"
                                                         autocapitalize="off" placeholder="예) 1년마다 재 계약">
                                                 </div>
@@ -247,7 +279,8 @@
 
                                             <div class="btn_join">
                                                 <button type="submit" id="btn_submit"
-                                                    class="inp_join BtnType SizeL defalt ga_data_layer submit_btn">
+                                                    class="inp_join BtnType SizeL defalt ga_data_layer submit_btn"
+                                                    onclick="end()">
                                                     완료
                                                 </button>
                                             </div>
@@ -297,6 +330,12 @@
 			
 		
 		<!-- Scripts -->
+
+        <script>
+            function end() {
+                alert("채용 공고가 등록 되었습니다.");
+            }
+        </script>
 			<script src="../assets_business/js/jquery.min.js"></script>
 			<script src="../assets_business/js/skel.min.js"></script>
 			<script src="../assets_business/js/util.js"></script>
@@ -314,7 +353,6 @@
 	<script src="../js/page_jiin.js"></script>
 	<script src="../js/myPage_auth_goeun.js"></script>
 	<script src="../js/page_jiin_header_footer.js"></script>
-	<script src="../js/"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 

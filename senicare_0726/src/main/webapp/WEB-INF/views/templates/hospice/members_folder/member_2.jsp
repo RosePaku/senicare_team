@@ -157,7 +157,7 @@
 										<button class="login_btn btnType colorBlue sizeL" type="submit">개인회원 로그인</button>
 									</div>
 									<div class="extra_func">
-										<a href="https://m.saramin.co.kr/helpdesk/person-find-id">아이디 · 비밀번호 찾기</a>
+										<a href="/members_folder/member_3">아이디 · 비밀번호 찾기</a>
 										<i>|</i>
 										<a href="https://m.saramin.co.kr/join?type=p">회원가입</a>
 									</div>

@@ -62,10 +62,10 @@
             <!-- 메인칸 -->
             <div class="container_button">
                 <button class="personal-btn">
-                    <img src="../images/personalmem.png">
+                    <img src="../static/images/personalmem.png">
                 </button>
                 <button class="business-btn">
-                    <img src="../images/businessmem.png">
+                    <img src="../static/images/businessmem.png">
                 </button>
             </div>
             <!-- 메인 -->
