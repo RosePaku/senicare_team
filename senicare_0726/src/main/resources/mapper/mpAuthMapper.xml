@@ -5,7 +5,7 @@
 <mapper namespace="com.java.mapper.MpAuthMapper">
 	
 	<select id="selectAll" resultType="com.java.dto.MadangDto">
-		SELECT * FROM NOTICE_BOARD WHERE AUTH_ID=#{auth_id}
+		SELECT * FROM NOTICE_BOARD WHERE AUTH_ID=#{auth_id} ORDER BY BOARD_NO DESC
 	</select>
 	
 	<delete id="deleteOne">

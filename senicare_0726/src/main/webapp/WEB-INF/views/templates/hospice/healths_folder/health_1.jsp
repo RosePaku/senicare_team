@@ -58,9 +58,9 @@
 			<div class="row justify-content-center section-title-wrap">
 				<div class="col-lg-12">
 					<h1>노인성 5대질환 자가진단</h1>
-					<p>
-						치매, 퇴행성 관절염, 고혈압, 당뇨병, 뇌혈관질환을 간단하게 진단합니다.<br>본 진단은 단순 참고용으로 의학적인 진단을 대체할 수 없습니다.
-					</p>
+					<br>
+					<h3>치매, 퇴행성 관절염, 고혈압, 당뇨병, 뇌혈관질환을 간단하게 진단합니다.</h3>
+					<h4>본 진단은 단순 참고용으로 의학적인 진단을 대체할 수 없습니다.</h4>
 				</div>
 			</div>
 			<!-- Start Offered Services Area -->
