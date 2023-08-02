@@ -13,7 +13,7 @@
 			<if test="s_opt == 'all'">
 		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
 			</if>
-			<if test="s_opt == 'btitle'">
+			<if test="s_opt == 'title'">
 		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
 			</if>
 			<if test="s_opt == 'content'">
@@ -70,11 +70,23 @@
 	</select>
 	<!-- 이전글 가져오기 -->
 	<select id="selectPrevOne" resultType="com.java.dto.MadangDto">
-		SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'free' AND BOARD_NO=#{bno}-1
+		SELECT * FROM NOTICE_BOARD WHERE BOARD_NO =
+		(SELECT NEXT_BNO FROM
+		(SELECT LAG(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS PREV_BNO, 
+		       LEAD(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS NEXT_BNO,
+		       A.* FROM NOTICE_BOARD A
+		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin' ORDER BY BOARD_NO DESC)
+		WHERE BOARD_NO=#{bno})
 	</select>
 	<!-- 다음글 가져오기 -->
 	<select id="selectNextOne" resultType="com.java.dto.MadangDto">
-		SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'free' AND BOARD_NO=#{bno}+1
+		SELECT * FROM NOTICE_BOARD WHERE BOARD_NO =
+		(SELECT PREV_BNO FROM
+		(SELECT LAG(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS PREV_BNO, 
+		       LEAD(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS NEXT_BNO,
+		       A.* FROM NOTICE_BOARD A
+		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin' ORDER BY BOARD_NO DESC)
+		WHERE BOARD_NO=#{bno})
 	</select>
 	<!-- 조회수 1증가 -->
 	<update id="updateBView">

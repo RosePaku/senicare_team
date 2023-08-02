@@ -99,15 +99,20 @@
 										<div class="block search-condition">
 											<div class="form-group">
 												<label for="q_searchKeyTy" class="sr-only">항목</label> <select name="s_opt" id="q_searchKeyTy" class="select" style="width: 150px;">
-													<option value="all">-- 검색선택 --</option>
-													<option value="title">제목</option>
-													<option value="content">내용</option>
-													<option value="writer">등록자명</option>
+													<option value="all" <c:if test="${param.s_opt == 'all'}"> selected </c:if>>-- 검색선택 --</option>
+													<option value="title" <c:if test="${param.s_opt == 'title'}"> selected </c:if>>제목</option>
+													<option value="content" <c:if test="${param.s_opt == 'content'}"> selected </c:if>>내용</option>
+													<option value="writer" <c:if test="${param.s_opt == 'writer'}"> selected </c:if>>등록자명</option>
 												</select>
 											</div>
 											<div class="form-group">
 												<label for="q_searchVal" class="sr-only">검색어</label>
+												<c:if test="${param.s_word == '' || param.s_word == null}">
 												<input type="text" name="s_word" id="q_searchVal" value="" class="form-control" placeholder="검색어를 입력하세요.">
+												</c:if>
+												<c:if test="${param.s_word != ''}">
+												<input type="text" name="s_word" id="q_searchVal" value="${param.s_word}" class="form-control" >
+												</c:if>
 											</div>
 											<button type="button" class="btn btn-info btn-search" onclick="searchBtn()">검색</button>
 											<button type="button" class="btn btn-info" onclick="javascript:location.href='madang_1_1'">초기화</button>
@@ -123,10 +128,10 @@
 													<div class="pull-right">
 														<label for="q_rowPerPage">페이지당 목록</label> <select name="rowPP" id="q_rowPerPage" class="form-control">
 															<option value="10">-행-</option>
-															<option value="10">10</option>
-															<option value="15">15</option>
-															<option value="50">50</option>
-															<option value="100">100</option>
+															<option value="10" <c:if test="${param.rowPP == '10'}"> selected </c:if>>10</option>
+															<option value="15" <c:if test="${param.rowPP == '15'}"> selected </c:if>>15</option>
+															<option value="50" <c:if test="${param.rowPP == '50'}"> selected </c:if>>50</option>
+															<option value="100" <c:if test="${param.rowPP == '100'}"> selected </c:if>>100</option>
 														</select>
 														<button type="submit" class="btn btn-primary " data-loading-text="<i class='icon-spinner7 spin'></i>">변경</button>
 													</div>
@@ -160,7 +165,7 @@
 										<c:forEach var="board" items="${notice}">
 											<tr>
 												<td class="show-col text-center"><span class="table-notice">공지</span></td>
-												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title}
+												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${board.board_title}
 												<c:if test="${board.ccnt != 0}">
 													&nbsp;[${board.ccnt}] <!-- 제목옆에 댓글수 나타내기 -->
 												</c:if>
@@ -182,7 +187,7 @@
 										<c:forEach var="board" items="${list}">
 											<tr>
 												<td class="show-col text-center">${board.bno}</td>
-												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title} 
+												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${board.board_title} 
 												<c:if test="${board.ccnt != 0}">
 													&nbsp;[${board.ccnt}]
 												</c:if>

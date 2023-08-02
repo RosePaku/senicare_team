@@ -63,17 +63,18 @@
 		<div class="container">
 			<div class="row justify-content-center section-title-wrap">
 				<div class="col-lg-12">
-					<h1>노인성 5대질환 자가진단 검사결과</h1>
+					<h1 style="font-weight:800;"><span>노인성 5대질환</span> <span style="color:#0070a9;">검사 결과</span></h1>
+					<br><br>
+					<h3 style="font-weight:600"><span>그림을 마우스로 클릭하시면 각 항목별</span> <span style="background:#0070a9; color:white;">자가진단 결과</span><span>를 보실 수 있습니다.</span></h3>
 					<br>
-					<h3>치매, 퇴행성 관절염, 고혈압, 당뇨병, 뇌혈관질환을 간단하게 진단합니다.</h3>
-					<h4>본 진단은 단순 참고용으로 의학적인 진단을 대체할 수 없습니다.</h4>
+					<h4 style="font-weight:600; color:gray;">(본 진단은 단순 참고용으로 의학적인 진단을 대체할 수 없습니다.)</h4>
 				</div>
 			</div>
 
 			<!-- 스타일 적용! 처음에 디스플레이 안.보.이.게 -->
 
 			<script>
-			 (selectDemen());
+
 			</script>
 			<div style="display: flex; justify-content: space-around;">
 						<div class="col-lg-3 col-md-6 single-team mb-50">
@@ -82,8 +83,8 @@
 								<img class="img-fluid" src="../img/demen.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectDemen()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 결과보기 >></p>
-									<h4>치매</h4>
+									<p style="font-size:15px; font-weight:600">자가진단 결과보기 >></p>
+									<h4 style="font-size:25px; font-weight:800">치매</h4>
 								</div>
 							</div>
 						</div>
@@ -92,8 +93,8 @@
 								<img class="img-fluid" src="../img/arth.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectArth()">
 									<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 결과보기 >></p>
-									<h4>퇴행성 관절염</h4>
+									<p style="font-size:15px; font-weight:600">자가진단 결과보기 >></p>
+									<h4 style="font-size:25px; font-weight:800">퇴행성 관절염</h4>
 								</div>
 							</div>
 						</div>
@@ -102,8 +103,8 @@
 								<img class="img-fluid" src="../img/hyper.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectHyper()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 결과보기 >></p>
-									<h4>고혈압</h4>
+									<p style="font-size:15px; font-weight:600">자가진단 결과보기 >></p>
+									<h4 style="font-size:25px; font-weight:800">고혈압</h4>
 								</div>
 							</div>
 						</div>
@@ -112,8 +113,8 @@
 								<img class="img-fluid" src="../img/diabet.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectDiabet()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 결과보기 >></p>
-									<h4>당뇨병</h4>
+									<p style="font-size:15px; font-weight:600">자가진단 결과보기 >></p>
+									<h4 style="font-size:25px; font-weight:800">당뇨병</h4>
 								</div>
 							</div>
 						</div>
@@ -122,8 +123,8 @@
 								<img class="img-fluid" src="../img/cerebro.png" alt="">
 								<div class="align-items-end justify-content-center d-flex" onclick="selectCerebro()">
 								<!-- style="width: 120%; height: 120%; top: -15px; left: -15px"> -->
-									<p>자가진단 결과보기 >></p>
-									<h4>뇌혈관질환</h4>
+									<p style="font-size:15px; font-weight:600">자가진단 결과보기 >></p>
+									<h4 style="font-size:25px; font-weight:800">뇌혈관질환</h4>
 								</div>
 							</div>
 						</div>

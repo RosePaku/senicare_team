@@ -183,10 +183,10 @@
 										<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">나의 건강 정보</a>
 										<ul class="dropdown-menu">
 											<li class="nav-item">
-												<a class="nav-link" href="../healths_folder/health_1">자가 진단 검사</a>
+												<a class="nav-link" href="../healths_folder/health_1">자가진단 검사</a>
 											</li>
 											<li class="nav-item">
-												<a class="nav-link" href="../healths_folder/health_2?auth_id=${sessionScope.id}">자가 진단 검사 결과</a>
+												<a class="nav-link" href="../healths_folder/health_2?auth_id=${sessionScope.id}">자가진단 검사결과</a>
 											</li>
 										</ul>
 									</li>

@@ -207,7 +207,7 @@
 											<td>(다음 글이 존재하지 않습니다.)</td>
 										</c:if>
 										<c:if test="${nextMdto.board_no != null}">
-											<td><a href="/madangs_folder/madang_1_2?bno=${nextMdto.board_no }">${nextMdto.board_title}</a></td>
+											<td><a href="/madangs_folder/madang_1_2?bno=${nextMdto.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${nextMdto.board_title}</a></td>
 										</c:if>
 										<td>&nbsp;</td>
 									</tr>
@@ -217,7 +217,7 @@
 											<td>(이전 글이 존재하지 않습니다.)</td>
 										</c:if>
 										<c:if test="${prevMdto.board_no != null}">
-											<td><a href="/madangs_folder/madang_1_2?bno=${prevMdto.board_no }">${prevMdto.board_title}</a></td>
+											<td><a href="/madangs_folder/madang_1_2?bno=${prevMdto.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${prevMdto.board_title}</a></td>
 										</c:if>
 										<td>&nbsp;</td>
 									</tr>
@@ -225,7 +225,16 @@
 							</table>
 						</div>
 						<!-- //이전다음글 -->
-						<script>
+						<script>	
+							// 0. 댓글 박스
+							function commentBox() {
+								if (${sessionScope.id == null}) {
+									alert("먼저 로그인을 해주세요.");
+									location.href ="/members_folder/member_2";
+									return false;
+								}
+							}
+							
 							// 1. 댓글 저장
 							function commentBtn() {
 								
@@ -420,7 +429,7 @@
 											비밀글 여부 &nbsp;<input role="switch" type="checkbox" class="replynum">
 										</p>
 									</label>
-									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50"></textarea>
+									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50" onclick="commentBox()"></textarea>
 								</li>
 								<li class="btn">
 									<a onclick="commentBtn()" class="replyBtn">등록</a>

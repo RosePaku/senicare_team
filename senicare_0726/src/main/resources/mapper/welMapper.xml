@@ -13,7 +13,7 @@
 			<if test="s_opt == 'all'">
 		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
 			</if>
-			<if test="s_opt == 'btitle'">
+			<if test="s_opt == 'title'">
 		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
 			</if>
 			<if test="s_opt == 'content'">

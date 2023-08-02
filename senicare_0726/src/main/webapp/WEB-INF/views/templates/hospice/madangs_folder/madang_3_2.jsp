@@ -234,6 +234,15 @@
 						</div>
 						<!-- //이전다음글 -->
 						<script>
+							// 0. 댓글 박스
+							function commentBox() {
+								if (${sessionScope.id == null}) {
+									alert("먼저 로그인을 해주세요.");
+									location.href ="/members_folder/member_2";
+									return false;
+								}
+							}
+							
 							// 1. 댓글 저장
 							function commentBtn() {
 								
@@ -429,7 +438,7 @@
 											비밀글 여부 &nbsp;<input role="switch" type="checkbox" class="replynum">
 										</p>
 									</label>
-									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50"></textarea>
+									<textarea class="replyType" id="commentBox" val="" placeholder="댓글을 입력하세요(최대 50자)" maxlength="50" onclick="commentBox()"></textarea>
 								</li>
 								<li class="btn">
 									<a onclick="commentBtn()" class="replyBtn">등록</a>
