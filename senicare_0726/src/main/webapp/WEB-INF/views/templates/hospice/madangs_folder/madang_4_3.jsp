@@ -151,7 +151,7 @@
 
 	<!-- End Offered Services Area -->
 	<!-- start footer Area -->
-	<%@ include file="../senicare_sub_footer.jsp" %>
+	<%@ include file="../senicare_main_footer.jsp" %>
 	<!-- End footer Area -->
 
 	<!-- Optional JavaScript -->

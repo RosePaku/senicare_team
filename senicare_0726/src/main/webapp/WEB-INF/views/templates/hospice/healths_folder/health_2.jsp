@@ -73,7 +73,7 @@
 			<!-- 스타일 적용! 처음에 디스플레이 안.보.이.게 -->
 
 			<script>
-			
+			 (selectDemen());
 			</script>
 			<div style="display: flex; justify-content: space-around;">
 						<div class="col-lg-3 col-md-6 single-team mb-50">
@@ -431,7 +431,7 @@
 	<!-- End team Area -->
 
 	<!-- start footer Area -->
-	<%@ include file="../senicare_sub_footer.jsp" %>
+	<%@ include file="../senicare_main_footer.jsp" %>
 	<!-- End footer Area -->
 
 	<!-- Optional JavaScript -->

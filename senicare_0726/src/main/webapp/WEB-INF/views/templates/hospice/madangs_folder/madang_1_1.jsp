@@ -291,7 +291,7 @@
 
 	<!-- start footer Area -->
 	<!-- <div data-include-path="../senicare_sub_footer"></div> -->
-	<%@ include file="../senicare_sub_footer.jsp" %>
+	<%@ include file="../senicare_main_footer.jsp" %>
 	<!-- End footer Area -->
 
 
