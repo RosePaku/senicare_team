@@ -54,10 +54,9 @@ public class FreeController {
 	// 게시글 1개 + 댓글 가져오기
 	@RequestMapping("/madangs_folder/madang_1_2")
 	public String madang_1_2(PageDto pageDto, @RequestParam(defaultValue = "10") String rowPP, int bno, Model model) {
-		System.out.println("페이지디티오: " + pageDto);
 
 		// 게시글 1개(+이전글 다음글)
-		HashMap<String, Object> map = freeService.selectOne(bno);
+		HashMap<String, Object> map = freeService.selectOne(pageDto, bno);
 		// 댓글 가져오기
 		ArrayList<CommentDto> list = freeService.selectComAll(bno);
 		
@@ -99,7 +98,6 @@ public class FreeController {
 	@PostMapping("/free/deleteComOne")
 	@ResponseBody // ***AJAX와 짝짜꿍!!!!
 	public void deleteComOne(int cno) {
-		System.out.println("ajax에서 온 데이터:" +cno);
 		freeService.deleteOne(cno);
 		
 	}
@@ -110,7 +108,6 @@ public class FreeController {
 	public CommentDto updateComOne(CommentDto aCdto) {
 		// 댓글 수정하고 저장하기
 		CommentDto cdto = freeService.updateComOne(aCdto);
-		System.out.println(aCdto);
 		
 		return cdto;
 	}
@@ -119,7 +116,6 @@ public class FreeController {
 	@PostMapping("/free/loadImage")
 	@ResponseBody
 	public String[] loadImage(int bno) {
-		System.out.println(bno);
 		String[] arrImg = freeService.loadImage(bno); 
 		
 		return arrImg;
@@ -136,9 +132,9 @@ public class FreeController {
 	
 	// 게시글 수정하기
 	@GetMapping("/madangs_folder/madang_1_4")
-	public String updateBrdOne(int bno, Model model) {
+	public String updateBrdOne(PageDto pageDto, int bno, Model model) {
 		// 게시글 1개(+이전글 다음글) -- 수정페이지에서는 이전글,다음글 필요없지만 메소드 이미 만들었으니 사용하기! 
-		HashMap<String, Object> map = freeService.selectOne(bno);
+		HashMap<String, Object> map = freeService.selectOne(pageDto, bno);
 
 		// 이미지 배열로 가져오기
 		String[] arrImg = freeService.loadImage(bno); 
@@ -153,7 +149,6 @@ public class FreeController {
 	@PostMapping("/madangs_folder/madang_1_4")
 	public String madang_1_4(MadangDto mdto, List<MultipartFile> files) {
 		freeService.updateOne(mdto, files);
-		System.out.println("수정하기 테스트 컨트롤러:" + mdto);
 		
 		return "redirect:/madangs_folder/madang_1_1";
 	}

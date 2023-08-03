@@ -118,10 +118,10 @@
 										<div class="block search-condition">
 											<div class="form-group">
 												<label for="q_searchKeyTy" class="sr-only">항목</label> <select name="s_opt" id="q_searchKeyTy" class="select" style="width: 150px;">
-													<option value="all">-- 검색선택 --</option>
-													<option value="title">제목</option>
-													<option value="content">내용</option>
-													<option value="writer">등록자명</option>
+													<option value="all" <c:if test="${param.s_opt == 'all'}"> selected </c:if>>-- 검색선택 --</option>
+													<option value="title" <c:if test="${param.s_opt == 'title'}"> selected </c:if>>제목</option>
+													<option value="content" <c:if test="${param.s_opt == 'content'}"> selected </c:if>>내용</option>
+													<option value="writer" <c:if test="${param.s_opt == 'writer'}"> selected </c:if>>등록자명</option>
 												</select>
 											</div>
 											<div class="form-group">
@@ -131,7 +131,7 @@
 											<br>
 											<div class="form-group">
 												<label for="q_searchLoc" class="sr-only">지역</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" />전국&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" />전국&nbsp;&nbsp;&nbsp;&nbsp; </label>
 												<label class="locs"><input type="checkbox" name="s_loc" value="서울" class="form-control" />서울&nbsp;&nbsp;&nbsp;&nbsp;</label>
 												<label class="locs"><input type="checkbox" name="s_loc" value="부산" class="form-control" />부산&nbsp;&nbsp;&nbsp;&nbsp;</label>
 												<label class="locs"><input type="checkbox" name="s_loc" value="대구" class="form-control" />대구&nbsp;&nbsp;&nbsp;&nbsp;</label>
@@ -165,10 +165,10 @@
 													<div class="pull-right">
 														<label for="q_rowPerPage">페이지당 목록</label> <select name="rowPP" id="q_rowPerPage" class="form-control">
 															<option value="10">-행-</option>
-															<option value="10">10</option>
-															<option value="15">15</option>
-															<option value="50">50</option>
-															<option value="100">100</option>
+															<option value="10" <c:if test="${param.rowPP == '10'}"> selected </c:if>>10</option>
+															<option value="15" <c:if test="${param.rowPP == '15'}"> selected </c:if>>15</option>
+															<option value="50" <c:if test="${param.rowPP == '50'}"> selected </c:if>>50</option>
+															<option value="100" <c:if test="${param.rowPP == '100'}"> selected </c:if>>100</option>
 														</select>
 														<button type="submit" class="btn btn-primary " data-loading-text="<i class='icon-spinner7 spin'></i>">변경</button>
 													</div>
@@ -224,7 +224,7 @@
 										<c:forEach var="board" items="${list}">
 											<tr>
 												<td class="show-col text-center">${board.bno}</td>
-												<td class="subject"><a href="/madangs_folder/madang_2_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&s_loc=${s_loc}&rowPP=${rowPP}">${board.board_title} 
+												<td class="subject"><a href="/madangs_folder/madang_2_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&s_loc=${s_loc}&rowPP=${rowPP}">(${board.meet_loc}) ${board.board_title} 
 												<c:if test="${board.ccnt != 0}">
 													&nbsp;[${board.ccnt}]
 												</c:if>

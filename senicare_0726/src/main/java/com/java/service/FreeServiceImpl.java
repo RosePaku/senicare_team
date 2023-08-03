@@ -63,14 +63,14 @@ public class FreeServiceImpl implements FreeService {
 
 	// 게시글 1개 가져오기
 	@Override
-	public HashMap<String, Object> selectOne(int bno) {
+	public HashMap<String, Object> selectOne(PageDto pageDto, int bno) {
 		HashMap<String, Object> map = new HashMap<>();
 
 		MadangDto mdto = freeMapper.selectOne(bno);
-		MadangDto prevMdto = freeMapper.selectPrevOne(bno); // 이전글
-		MadangDto nextMdto = freeMapper.selectNextOne(bno); // 다음글
+		MadangDto prevMdto = freeMapper.selectPrevOne(pageDto, bno); // 이전글
+		MadangDto nextMdto = freeMapper.selectNextOne(pageDto, bno); // 다음글
 		freeMapper.updateBView(bno); // 조회수 1증가
-
+		
 		map.put("mdto", mdto);
 		map.put("prevMdto", prevMdto);
 		map.put("nextMdto", nextMdto);
@@ -201,7 +201,6 @@ public class FreeServiceImpl implements FreeService {
 			mdto.setBoard_file(bfile);
 			} // if
 		} // for
-		System.out.println("수정하기 테스트 서비스임플:" + mdto);
 		freeMapper.updateOne(mdto);
 	}
 		

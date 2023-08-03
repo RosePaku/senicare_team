@@ -22,9 +22,9 @@ public interface FreeMapper {
 	// 게시글 1개 가져오기
 	MadangDto selectOne(int bno);
 	// 이전글 가져오기
-	MadangDto selectPrevOne(int bno);
+	MadangDto selectPrevOne(@Param("pdto")PageDto pageDto, int bno);
 	// 다음글 가져오기
-	MadangDto selectNextOne(int bno);
+	MadangDto selectNextOne(@Param("pdto")PageDto pageDto, int bno);
 	// 조회수 1증가
 	void updateBView(int bno);
 	

@@ -73,12 +73,13 @@ public class EduServiceImpl implements EduService {
 
 	// 게시글 1개 가져오기
 	@Override
-	public HashMap<String, Object> selectOne(int bno) {
+	public HashMap<String, Object> selectOne(PageDto pageDto, int bno) {
+		
 		HashMap<String, Object> map = new HashMap<>();
 
 		MadangDto mdto = eduMapper.selectOne(bno);
-		MadangDto prevMdto = eduMapper.selectPrevOne(bno); // 이전글
-		MadangDto nextMdto = eduMapper.selectNextOne(bno); // 다음글
+		MadangDto prevMdto = eduMapper.selectPrevOne(pageDto, bno); // 이전글
+		MadangDto nextMdto = eduMapper.selectNextOne(pageDto, bno); // 다음글
 		eduMapper.updateBView(bno); // 조회수 1증가
 
 		map.put("mdto", mdto);

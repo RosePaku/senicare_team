@@ -11,7 +11,7 @@
       		  (SELECT B.*, COALESCE(CC.CCNT, NULL) AS CCNT FROM 
           		  (SELECT ROWNUM BNO, A.* FROM (SELECT * FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'free' AND AUTH_ID != 'admin'
 			<if test="s_opt == 'all'">
-		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
+		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%' OR AUTH_NICKNAME LIKE '%'||#{s_word}||'%')
 			</if>
 			<if test="s_opt == 'title'">
 		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
@@ -51,9 +51,9 @@
 	<select id="selectListCount" resultType="int" >
 		SELECT COUNT(*) FROM NOTICE_BOARD WHERE BOARD_CATEGORY = 'free'
 			<if test="s_opt == 'all'">
-		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%')
+		      	AND (BOARD_TITLE LIKE '%'||#{s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{s_word}||'%' OR AUTH_NICKNAME LIKE '%'||#{s_word}||'%')
 			</if>
-			<if test="s_opt == 'btitle'">
+			<if test="s_opt == 'title'">
 		      	AND BOARD_TITLE LIKE '%'||#{s_word}||'%'
 			</if>
 			<if test="s_opt == 'content'">
@@ -75,7 +75,20 @@
 		(SELECT LAG(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS PREV_BNO, 
 		       LEAD(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS NEXT_BNO,
 		       A.* FROM NOTICE_BOARD A
-		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin' ORDER BY BOARD_NO DESC)
+		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin'
+		    <if test="pdto.s_opt == 'all'">
+		      	AND (BOARD_TITLE LIKE '%'||#{pdto.s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{pdto.s_word}||'%' OR AUTH_NICKNAME LIKE '%'||#{pdto.s_word}||'%')
+			</if>
+			<if test="pdto.s_opt == 'title'">
+		      	AND BOARD_TITLE LIKE '%'||#{pdto.s_word}||'%'
+			</if>
+			<if test="pdto.s_opt == 'content'">
+		      	AND BOARD_CONTENTS LIKE '%'||#{pdto.s_word}||'%' 
+			</if>
+			<if test="pdto.s_opt == 'writer'">
+		      	AND AUTH_NICKNAME LIKE '%'||#{pdto.s_word}||'%' 
+			</if>
+		        ORDER BY BOARD_NO DESC)
 		WHERE BOARD_NO=#{bno})
 	</select>
 	<!-- 다음글 가져오기 -->
@@ -85,7 +98,20 @@
 		(SELECT LAG(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS PREV_BNO, 
 		       LEAD(BOARD_NO) OVER(ORDER BY BOARD_NO DESC) AS NEXT_BNO,
 		       A.* FROM NOTICE_BOARD A
-		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin' ORDER BY BOARD_NO DESC)
+		       WHERE BOARD_CATEGORY = 'free' AND AUTH_ID NOT LIKE 'admin'
+		    <if test="pdto.s_opt == 'all'">
+		      	AND (BOARD_TITLE LIKE '%'||#{pdto.s_word}||'%' OR BOARD_CONTENTS LIKE '%'||#{pdto.s_word}||'%' OR AUTH_NICKNAME LIKE '%'||#{pdto.s_word}||'%')
+			</if>
+			<if test="pdto.s_opt == 'title'">
+		      	AND BOARD_TITLE LIKE '%'||#{pdto.s_word}||'%'
+			</if>
+			<if test="pdto.s_opt == 'content'">
+		      	AND BOARD_CONTENTS LIKE '%'||#{pdto.s_word}||'%' 
+			</if>
+			<if test="pdto.s_opt == 'writer'">
+		      	AND AUTH_NICKNAME LIKE '%'||#{pdto.s_word}||'%' 
+			</if>
+		        ORDER BY BOARD_NO DESC)
 		WHERE BOARD_NO=#{bno})
 	</select>
 	<!-- 조회수 1증가 -->

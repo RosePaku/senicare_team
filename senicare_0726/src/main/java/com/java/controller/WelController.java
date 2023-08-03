@@ -53,9 +53,9 @@ public class WelController {
 	
 	// 게시글 1개 + 댓글 가져오기
 	@RequestMapping("/madangs_folder/madang_3_2")
-	public String madang_3_2(int bno, Model model) {
+	public String madang_3_2(PageDto pageDto, int bno, Model model) {
 		// 게시글 1개(+이전글 다음글)
-		HashMap<String, Object> map = welService.selectOne(bno);
+		HashMap<String, Object> map = welService.selectOne(pageDto, bno);
 		// 댓글 가져오기
 		ArrayList<CommentDto> list = welService.selectComAll(bno);
 		
@@ -134,9 +134,9 @@ public class WelController {
 	
 	// 게시글 수정하기
 	@GetMapping("/madangs_folder/madang_3_4")
-	public String updateBrdOne(int bno, Model model) {
+	public String updateBrdOne(PageDto pageDto, int bno, Model model) {
 		// 게시글 1개(+이전글 다음글) -- 수정페이지에서는 이전글,다음글 필요없지만 메소드 이미 만들었으니 사용하기! 
-		HashMap<String, Object> map = welService.selectOne(bno);
+		HashMap<String, Object> map = welService.selectOne(pageDto, bno);
 
 		// 이미지 배열로 가져오기
 		String[] arrImg = welService.loadImage(bno); 

@@ -111,9 +111,9 @@
 										<div class="block search-condition">
 											<div class="form-group">
 												<label for="q_searchKeyTy" class="sr-only">항목</label> <select name="s_opt" id="q_searchKeyTy" class="select" style="width: 150px;">
-													<option value="all">-- 검색선택 --</option>
-													<option value="title">제목</option>
-													<option value="content">내용</option>
+													<option value="all" <c:if test="${param.s_opt == 'all'}"> selected </c:if>>-- 검색선택 --</option>
+													<option value="title" <c:if test="${param.s_opt == 'title'}"> selected </c:if>>제목</option>
+													<option value="content" <c:if test="${param.s_opt == 'content'}"> selected </c:if>>내용</option>
 												</select>
 											</div>
 											<div class="form-group">

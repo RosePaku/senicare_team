@@ -16,7 +16,7 @@ public interface EduService {
 	HashMap<String, Object> selectAll(PageDto pageDto, String rowPP);
 
 	// 게시글 1개 가져오기
-	HashMap<String, Object> selectOne(int bno);
+	HashMap<String, Object> selectOne(PageDto pageDto, int bno);
 	
 	// 댓글 가져오기
 	ArrayList<CommentDto> selectComAll(int bno);

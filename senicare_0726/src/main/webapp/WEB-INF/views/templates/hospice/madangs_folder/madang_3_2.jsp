@@ -215,7 +215,7 @@
 											<td>(다음 글이 존재하지 않습니다.)</td>
 										</c:if>
 										<c:if test="${nextMdto.board_no != null}">
-											<td><a href="/madangs_folder/madang_3_2?bno=${nextMdto.board_no }">${nextMdto.board_title}</a></td>
+											<td><a href="/madangs_folder/madang_3_2?bno=${nextMdto.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&s_loc=${param.s_loc}">(${nextMdto.meet_loc}) ${nextMdto.board_title}</a></td>
 										</c:if>
 										<td>&nbsp;</td>
 									</tr>
@@ -225,7 +225,7 @@
 											<td>(이전 글이 존재하지 않습니다.)</td>
 										</c:if>
 										<c:if test="${prevMdto.board_no != null}">
-											<td><a href="/madangs_folder/madang_3_2?bno=${prevMdto.board_no }">${prevMdto.board_title}</a></td>
+											<td><a href="/madangs_folder/madang_3_2?bno=${prevMdto.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&s_loc=${param.s_loc}">(${prevMdto.meet_loc}) ${prevMdto.board_title}</a></td>
 										</c:if>
 										<td>&nbsp;</td>
 									</tr>

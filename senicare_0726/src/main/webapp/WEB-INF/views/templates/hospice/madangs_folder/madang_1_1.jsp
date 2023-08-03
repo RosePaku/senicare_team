@@ -107,12 +107,7 @@
 											</div>
 											<div class="form-group">
 												<label for="q_searchVal" class="sr-only">검색어</label>
-												<c:if test="${param.s_word == '' || param.s_word == null}">
-												<input type="text" name="s_word" id="q_searchVal" value="" class="form-control" placeholder="검색어를 입력하세요.">
-												</c:if>
-												<c:if test="${param.s_word != ''}">
-												<input type="text" name="s_word" id="q_searchVal" value="${param.s_word}" class="form-control" >
-												</c:if>
+												<input type="text" name="s_word" id="q_searchVal" value="${param.s_word }" class="form-control" placeholder="검색어를 입력하세요.">
 											</div>
 											<button type="button" class="btn btn-info btn-search" onclick="searchBtn()">검색</button>
 											<button type="button" class="btn btn-info" onclick="javascript:location.href='madang_1_1'">초기화</button>
@@ -225,7 +220,7 @@
 							<ul class="page-num">
 								<!-- 첫 페이지 이동 -->
 								<c:if test="${pageDto.page != pageDto.startPage}">
-									<a href="/madangs_folder/madang_1_1?page=1&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=1&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
 										<li class="first"></li>
 									</a>
 									<!-- 검색결과에 따라 하단 페이지 달라지니까! -->
@@ -236,7 +231,7 @@
 
 								<!-- 이전 페이지 이동 -->
 								<c:if test="${pageDto.page > 1}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.page -1}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.page -1}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
 										<li class="prev"></li>
 									</a>
 								</c:if>
@@ -247,7 +242,7 @@
 								<!-- 하단 페이지 번호 넣기 -->
 								<c:forEach begin="${pageDto.startPage}" end="${pageDto.maxPage}" step="1" var="num">
 									<c:if test="${num != pageDto.page}">
-										<a href="/madangs_folder/madang_1_1?page=${num}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+										<a href="/madangs_folder/madang_1_1?page=${num}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
 											<li class="num">
 												<div>${num}</div>
 											</li>
@@ -262,7 +257,7 @@
 
 								<!-- 다음 페이지 이동 -->
 								<c:if test="${pageDto.page < pageDto.maxPage}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.page +1}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.page +1}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
 										<li class="next"></li>
 									</a>
 								</c:if>
@@ -272,7 +267,7 @@
 
 								<!-- 끝 페이지 이동 -->
 								<c:if test="${pageDto.page != pageDto.maxPage}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.maxPage}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.maxPage}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
 										<li class="last"></li>
 									</a>
 								</c:if>

@@ -23,6 +23,6 @@ public class PageDto {
 	private String s_opt;
 	private String s_word;
 	private String[] s_loc;
-	private String locString = "전국"; // 버티컬바 구분 // 기본값은 전국 검색
-	private String locString2 = "전국"; // 쉼표 구분 // 기본값은 전국 검색
+	private String locString = "전체"; // 버티컬바 구분 // 기본값은 전체 검색
+	private String locString2 = "전체"; // 쉼표 구분 // 기본값은 전체 검색
 }

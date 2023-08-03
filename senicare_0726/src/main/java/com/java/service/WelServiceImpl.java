@@ -74,12 +74,18 @@ public class WelServiceImpl implements WelService {
 
 	// 게시글 1개 가져오기
 	@Override
-	public HashMap<String, Object> selectOne(int bno) {
+	public HashMap<String, Object> selectOne(PageDto pageDto, int bno) {
+		// 체크박스 배열값을 하나의 문자열로 변환( | 버티컬바 구분)
+		if (pageDto.getS_loc() != null) { // 체크박스 배열에 값 들어오면
+			pageDto.setLocString(String.join("|", pageDto.getS_loc())); // locString에 스트링 하나로 변환   
+			// locString을 MyBatis 매개변수로 전달
+		}
+		
 		HashMap<String, Object> map = new HashMap<>();
 
 		MadangDto mdto = welMapper.selectOne(bno);
-		MadangDto prevMdto = welMapper.selectPrevOne(bno); // 이전글
-		MadangDto nextMdto = welMapper.selectNextOne(bno); // 다음글
+		MadangDto prevMdto = welMapper.selectPrevOne(pageDto, bno); // 이전글
+		MadangDto nextMdto = welMapper.selectNextOne(pageDto, bno); // 다음글
 		welMapper.updateBView(bno); // 조회수 1증가
 
 		map.put("mdto", mdto);
