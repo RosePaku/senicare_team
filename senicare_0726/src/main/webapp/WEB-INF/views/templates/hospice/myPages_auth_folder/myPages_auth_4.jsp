@@ -16,7 +16,7 @@
 -->
 <html>
 	<head>
-		<title>내 정보_내가 쓴 글</title>
+		<title>내 정보_면접(채팅)</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
