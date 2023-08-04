@@ -53,7 +53,14 @@
 						<div class="inner">
 
 							<!-- Banner -->
-		
+							<section id="banner">
+								<div class="content">
+									<header>
+										<h1 class="header">내가 지원한 회사</h1>
+									</header>
+								</div>
+			
+							</section>
 
 							<!-- Section -->
 							<section>
@@ -63,19 +70,18 @@
 									
 								  </head>
 								  <body>
-									<h1 style="font-size: 60px; font-family: 'Nanum Gothin', sans-serif; font-weight: 500; margin-top: -30px; margin-bottom: 70px;">내가 지원한 회사</h1>
-									<h2 style="color: gray; text-align: center; font-family: 'Nanum Gothic';"> * 채용정보를 누르시면 채용공고 내용을 확인할 수 있습니다 *</h2>
+									<h2 class="infotext"> * 채용정보를 누르시면 채용공고 내용을 확인할 수 있습니다 *</h2>
 									<div class="table-container">
 										<table>
 										  <thead>
-											<tr style="height: 60px; vertical-align: middle; font-size: 30px; margin-top: 100px;">
+											<tr class="tblhead">
 											  <th style="width:50%;">채용정보</th>
-											  <th style="width:20%;">날짜</th>
-											  <th style="width:12%;">열람확인</th>
-											  <th style="width:13%;">지원취소</th>
+											  <th style="width:25%;">날짜</th>
+											  <th style="width:13%;">열람확인</th>
+											  <th style="width:12%;">지원취소</th>
 											</tr>
 										  </thead>
-										  <tbody style="height: 40px; vertical-align: middle; font-size: 20px; margin-top: 100px;">
+										 <tbody class="tblbody">
 											<!-- 이 부분은 실제 데이터를 받아와서 동적으로 생성될 예정입니다. -->
 										  </tbody>
 										</table>

@@ -37,6 +37,8 @@ public class FreeServiceImpl implements FreeService {
 		map.put("list", list);
 		map.put("notice", notice);
 		map.put("pageDto", pageDto);
+		map.put("s_opt", pageDto.getS_opt());
+		map.put("s_word", pageDto.getS_word());
 		
 
 		return map;

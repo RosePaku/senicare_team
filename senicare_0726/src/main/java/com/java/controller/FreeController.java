@@ -53,7 +53,7 @@ public class FreeController {
 	
 	// 게시글 1개 + 댓글 가져오기
 	@RequestMapping("/madangs_folder/madang_1_2")
-	public String madang_1_2(PageDto pageDto, @RequestParam(defaultValue = "10") String rowPP, int bno, Model model) {
+	public String madang_1_2(PageDto pageDto, int bno, Model model) {
 
 		// 게시글 1개(+이전글 다음글)
 		HashMap<String, Object> map = freeService.selectOne(pageDto, bno);

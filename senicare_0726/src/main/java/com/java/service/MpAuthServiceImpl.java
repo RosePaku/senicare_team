@@ -43,5 +43,12 @@ public class MpAuthServiceImpl implements MpAuthService {
 	public void updateOne(Auth auth) {
 		mpAuthMapper.updateOne(auth);
 	}
+	
+	// 회원 탈퇴하기
+	@Override
+	public void deleteUser(Auth auth) {
+		mpAuthMapper.deleteUser(auth);
+		
+	}
 
 }

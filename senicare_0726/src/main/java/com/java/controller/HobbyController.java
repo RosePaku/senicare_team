@@ -98,7 +98,6 @@ public class HobbyController {
 	@PostMapping("/hobby/deleteComOne")
 	@ResponseBody // ***AJAX와 짝짜꿍!!!!
 	public void deleteComOne(int cno) {
-		System.out.println("ajax에서 온 데이터:" +cno);
 		hobbyService.deleteOne(cno);
 		
 	}
@@ -109,7 +108,6 @@ public class HobbyController {
 	public CommentDto updateComOne(CommentDto aCdto) {
 		// 댓글 수정하고 저장하기
 		CommentDto cdto = hobbyService.updateComOne(aCdto);
-		System.out.println(aCdto);
 		
 		return cdto;
 	}
@@ -118,7 +116,6 @@ public class HobbyController {
 	@PostMapping("/hobby/loadImage")
 	@ResponseBody
 	public String[] loadImage(int bno) {
-		System.out.println(bno);
 		String[] arrImg = hobbyService.loadImage(bno); 
 		
 		return arrImg;
@@ -136,6 +133,7 @@ public class HobbyController {
 	// 게시글 수정하기
 	@GetMapping("/madangs_folder/madang_2_4")
 	public String updateBrdOne(PageDto pageDto, int bno, Model model) {
+		
 		// 게시글 1개(+이전글 다음글) -- 수정페이지에서는 이전글,다음글 필요없지만 메소드 이미 만들었으니 사용하기! 
 		HashMap<String, Object> map = hobbyService.selectOne(pageDto, bno);
 
@@ -144,14 +142,12 @@ public class HobbyController {
 		
 		model.addAttribute("mdto", map.get("mdto"));
 		model.addAttribute("arrImg", arrImg);
-		
 		return "madangs_folder/madang_2_4";
 	}
 	
 	// 게시글 수정 후 저장하기
 	@PostMapping("/madangs_folder/madang_2_4")
 	public String madang_2_4(MadangDto mdto, List<MultipartFile> files) {
-		
 		hobbyService.updateOne(mdto, files);
 			
 		return "redirect:/madangs_folder/madang_2_1";

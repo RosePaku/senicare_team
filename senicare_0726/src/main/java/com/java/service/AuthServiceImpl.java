@@ -31,8 +31,8 @@ public class AuthServiceImpl implements AuthService {
 
         Timestamp now = new Timestamp(System.currentTimeMillis());
         auth.setAuth_join_dt(now);
-        auth.setAuth_user_status("활동멤버");
-        auth.setAuth_user_type("개인회원");
+        auth.setAuth_user_status("1");
+        auth.setAuth_user_type("indi");
         authMapper.insert(auth);
 
     }

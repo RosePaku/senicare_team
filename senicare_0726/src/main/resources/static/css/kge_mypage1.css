@@ -18,12 +18,79 @@ input[type="radio"] {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    margin: 3px; /* 여백을 설정하여 가시성을 높임 */
+    margin: 2px; /* 여백을 설정하여 가시성을 높임 */
   }
   
   input[type="radio"]:checked::before {
     background-color: #333; /* 선택된 라디오 버튼의 배경색을 변경합니다. */
   }
+  
+.header {
+	color: #000;
+    font-size: 48px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+	margin-bottom: -50px;
+}
+
+.infotext {
+	font-size: 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+	color: gray;
+	text-align: center;
+} 
+
+.tblhead {
+	height: 60px;
+	vertical-align: middle;
+	font-size: 23px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+	margin-top: 100px;
+}
+
+.tblbody {
+	height: 40px;
+	vertical-align: middle;
+	font-size: 18px;
+	font-family: "Roboto", sans-serif;
+	margin-top: 100px;
+}
+
+.fbdtext {
+	display: inline-block;
+	vertical-align: sub;
+	color: #e14c4c;
+	font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+	margin-left: 20px;
+}
+
+.mybtn {
+	padding: 10;
+	margin: 50px 20px 0px;
+	background-color: #095ff3;
+	box-shadow: inset 0 0 0 2px #095ff3;
+	border-radius: 3%;
+	color:white; 
+	font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+
+.withdrawUser {
+	 width:450px;
+	 padding: 10;
+	 margin-top: 50px;
+	 background-color: #df1414;
+	 box-shadow: inset 0 0 0 2px #df1414;
+	 color:white;
+	 font-size: 20px;
+     font-family: "Roboto", sans-serif;
+     font-weight: 600;
+}
 
  
 

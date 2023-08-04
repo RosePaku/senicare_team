@@ -38,6 +38,7 @@
 	<link rel="stylesheet" href="../assets/css/personal.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 	
+	
 	<link href="../favicon.ico?ver=2" rel="favicon">
 </head>
 
@@ -55,11 +56,10 @@
 			<div class="inner">
 
 				<!-- Banner -->
-				<section id="banner">
+				<section id="banner" style="border-bottom: solid 2px rgba(210, 215, 217, 0.75);">
 					<div class="content">
 						<header>
-							<h1
-								style="font-size: 100px; font-family: 'Nanum Gothin', sans-serif; margin-bottom: -50px;">
+							<h1 style="color: #000; font-size: 48px; font-weight: 800; margin-bottom: -50px;">
 								지원자 정보 수정 및 등록</h1>
 						</header>
 					</div>
@@ -67,9 +67,7 @@
 				</section>
 
 				<!-- Section -->
-				<section>
-
-				</section>
+				
 				<!-- 삭제 -->
 			 <!-- 입력 페이지 -->
 			 <div id="sri_section" style="text-align: center;" >
@@ -78,11 +76,11 @@
 					<div id="join_wrapper" class="join_cont_wrap">
 						<div id="member_personal" class="member_cate">
 							<form name="frm" id="frm" method="post" action="">
-		
-								<h3 class="tit_join_member">
-									<p style="font-size: 20px; ">지원자 정보 입력</p>
-								</h3>
-								<h5 style="font-size: 18px;">지원자의 정보를 자유롭게 입력합니다.</h5>
+								<br>
+								<br>
+								<br>
+								<br>
+								<h5 style="	font-size: 20px; font-weight: 600; color: gray; text-align: center;">지원자의 정보를 자유롭게 입력합니다.</h5>
 								<div class="input_container">
 									<div class="left_area">
 										<fieldset class="fieldset_class1">

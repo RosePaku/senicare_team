@@ -160,7 +160,7 @@
 										<c:forEach var="board" items="${notice}">
 											<tr>
 												<td class="show-col text-center"><span class="table-notice">공지</span></td>
-												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${board.board_title}
+												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title}
 												<c:if test="${board.ccnt != 0}">
 													&nbsp;[${board.ccnt}] <!-- 제목옆에 댓글수 나타내기 -->
 												</c:if>
@@ -182,7 +182,7 @@
 										<c:forEach var="board" items="${list}">
 											<tr>
 												<td class="show-col text-center">${board.bno}</td>
-												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">${board.board_title} 
+												<td class="subject"><a href="/madangs_folder/madang_1_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title} 
 												<c:if test="${board.ccnt != 0}">
 													&nbsp;[${board.ccnt}]
 												</c:if>
@@ -220,7 +220,7 @@
 							<ul class="page-num">
 								<!-- 첫 페이지 이동 -->
 								<c:if test="${pageDto.page != pageDto.startPage}">
-									<a href="/madangs_folder/madang_1_1?page=1&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=1&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 										<li class="first"></li>
 									</a>
 									<!-- 검색결과에 따라 하단 페이지 달라지니까! -->
@@ -231,7 +231,7 @@
 
 								<!-- 이전 페이지 이동 -->
 								<c:if test="${pageDto.page > 1}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.page -1}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.page -1}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 										<li class="prev"></li>
 									</a>
 								</c:if>
@@ -242,7 +242,7 @@
 								<!-- 하단 페이지 번호 넣기 -->
 								<c:forEach begin="${pageDto.startPage}" end="${pageDto.maxPage}" step="1" var="num">
 									<c:if test="${num != pageDto.page}">
-										<a href="/madangs_folder/madang_1_1?page=${num}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
+										<a href="/madangs_folder/madang_1_1?page=${num}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 											<li class="num">
 												<div>${num}</div>
 											</li>
@@ -257,7 +257,7 @@
 
 								<!-- 다음 페이지 이동 -->
 								<c:if test="${pageDto.page < pageDto.maxPage}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.page +1}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.page +1}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 										<li class="next"></li>
 									</a>
 								</c:if>
@@ -267,7 +267,7 @@
 
 								<!-- 끝 페이지 이동 -->
 								<c:if test="${pageDto.page != pageDto.maxPage}">
-									<a href="/madangs_folder/madang_1_1?page=${pageDto.maxPage}&s_opt=${param.s_opt}&s_word=${param.s_word}&rowPP=${param.rowPP}">
+									<a href="/madangs_folder/madang_1_1?page=${pageDto.maxPage}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
 										<li class="last"></li>
 									</a>
 								</c:if>

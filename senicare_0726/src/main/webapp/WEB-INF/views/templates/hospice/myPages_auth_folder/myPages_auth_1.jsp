@@ -37,6 +37,7 @@
 	<!-- main css -->
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" href="../css/kge_mypage1.css">
 </head>
 
 <body>
@@ -56,9 +57,7 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1
-								style="font-size: 100px; font-family: 'Nanum Gothin', sans-serif; margin-bottom: -50px;">
-								내 정보</h1>
+							<h1 class="header">회원정보 수정</h1>
 						</header>
 					</div>
 
@@ -68,38 +67,29 @@
 				<section>
 
 					<head>
-						<title>회원정보 수정 페이지</title>
+						<!-- <title>회원정보 수정 페이지</title>
 
-						<link rel="stylesheet" type="../text/css" href="kge_mypage1.css">
+						<link rel="stylesheet" type="../text/css" href="kge_mypage1.css"> -->
 					</head>
 
 					<body>
 						<style>
-							label {
+							/* label {
 								font-size: 27px;
 							}
 
 							/* 원하는 글꼴 크기로 변경 */
 							input {
 								font-size: 20px;
-							}
-
-							input[type="radio"]:not(:checked)+label:before {
-								border: 1px solid gray;
-								border-radius: 50%;
-							}
+							} */
 						</style>
 
-						<h1
-							style="font-size: 60px; font-family: 'Nanum Gothin', sans-serif; font-weight: 500; margin-top: -30px; margin-bottom: 70px;">
-							회원정보 수정</h1>
 						<form action="/myPages_auth_folder/myPages_auth_1" name="authInfoFrm" method="post">
 							<label for="auth_id">아이디:</label>
 							<div style="display: inline-block; vertical-align: top;">
 								<input type="text" style="width: 400px;" id="auth_id" name="auth_id" value="${auth.auth_id}" readonly>
 							</div>
-							<div style="display: inline-block; vertical-align: top; color: red; margin-left: 20px;">*
-								수정불가 *</div>
+							<div class="fbdtext">* 수정불가 *</div>
 							<br>
 							<br>
 
@@ -107,8 +97,7 @@
 							<div style="display: inline-block; vertical-align: top;">
 								<input type="text" style="width:250px;" id="auth_name" name="auth_name" value="${auth.auth_name}" readonly>
 							</div>
-							<div style="display: inline-block; vertical-align: top; color: red; margin-left: 20px;">*
-								수정불가 *</div>
+							<div class="fbdtext">* 수정불가 *</div>
 							<br>
 							<br>
 							<label for="auth_password">비밀번호 변경:</label>
@@ -140,8 +129,7 @@
 							<div style="display: inline-block; vertical-align: top;">
 							<input type="text" style="width: 250px;" id="auth_nickname" name="auth_nickname" value="${auth.auth_nickname}" readonly>
 							</div>
-							<div style="display: inline-block; vertical-align: top; color: red; margin-left: 20px;">*
-								수정불가 *</div>
+							<div class="fbdtext">* 수정불가 *</div>
 							<br>
 							<br>
 							<label for="auth_birth">생년월일:</label>
@@ -360,12 +348,8 @@
 
 
 							<div style="display: flex; justify-content: center;">
-								<button
-									style="padding: 10; margin-top: 50px; margin-right: 40px; background-color: #095ff3; box-shadow: inset 0 0 0 2px #095ff3; color:white; font-size: 20px; font-family: 'Nanum Gothic', sans-serif;"
-									type="button" onclick="cancelBtn()">취소</button>
-								<button
-									style="padding: 10; margin-top: 50px; background-color: #095ff3; box-shadow: inset 0 0 0 2px #095ff3; color:white; font-size: 20px; "
-									type="button" onclick="updateUserInfo()">수정완료</button>
+								<button class="mybtn" type="button" onclick="cancelBtn()">취소</button>
+								<button class="mybtn" type="button" onclick="updateUserInfo()">수정완료</button>
 							</div>
 						</form>
 

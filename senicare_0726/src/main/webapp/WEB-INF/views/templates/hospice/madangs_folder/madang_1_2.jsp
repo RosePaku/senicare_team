@@ -480,7 +480,7 @@
 									</ul>
 								</c:if>
 
-
+								<!-- 관리자 X, 댓글쓴사람 X, 게시판작성자 X  -->
 								<c:if test="${sessionScope.id != 'admin' }">
 								<c:if test="${sessionScope.id != cdto.auth_id}">
 								<c:if test="${sessionScope.id != mdto.auth_id}">
@@ -520,6 +520,7 @@
 								</c:if>
 								</c:if>
 								
+								<!-- 관리자 X, 댓글쓴사람 X, 게시판작성자일때만  -->
 								<c:if test="${sessionScope.id != 'admin' }">
 								<c:if test="${sessionScope.id != cdto.auth_id}">
 								<c:if test="${sessionScope.id == mdto.auth_id}">

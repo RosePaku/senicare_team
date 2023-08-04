@@ -130,7 +130,7 @@
 
 							<c:forEach var="board" items="${list}">
 								<!-- 요기부터 -->
-								<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">
+								<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}">
 								<li class="gridList">
 									<!-- 이미지 영역 -->
 									<div class="cimg">
@@ -143,7 +143,7 @@
 												<c:if test="${today < board.board_created }">
 													<img class="bbsNewImage" src="/img/ico_new.gif" alt="New">
 												</c:if>
-												<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}&rowPP=${rowPP}">${board.board_title}
+												<a href="/madangs_folder/madang_4_2?bno=${board.board_no}&s_opt=${s_opt}&s_word=${s_word}">${board.board_title}
 													<c:if test="${board.ccnt != 0}">
 										              &nbsp;[${board.ccnt}]
 										            </c:if>

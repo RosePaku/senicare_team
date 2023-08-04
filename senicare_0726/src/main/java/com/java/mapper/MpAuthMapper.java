@@ -21,5 +21,8 @@ public interface MpAuthMapper {
 	
 	// 회원정보 수정하기
 	void updateOne(Auth auth);
+	
+	// 회원 탈퇴하기
+	void deleteUser(Auth auth);
 
 }

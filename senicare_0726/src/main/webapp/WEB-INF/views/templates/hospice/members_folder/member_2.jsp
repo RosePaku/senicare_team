@@ -38,6 +38,12 @@
 <body onload="showTab('personal')">
 
 
+<script>
+	if (${param.resultCode == 'f_login'}) {
+		alert("로그인에 실패했습니다.\n아이디와 비밀번호를 확인하세요.");
+	}
+</script>
+
 
 	<!--================Header Menu Area =================-->
 	<%@ include file="../senicare_main_header.jsp" %>
@@ -63,7 +69,6 @@
 	<section class="service_area section_gap1">
 		<div class="container1">
 			<div class="left-area"> <!-- 이거 공백 영역임 이거 사라지면 글 가운데가 아니라 왼쪽으로 몰림-->
-
 			</div>
 
 			<!-- 로그인 기능 -->

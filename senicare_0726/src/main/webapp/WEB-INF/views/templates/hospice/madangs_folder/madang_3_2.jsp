@@ -574,7 +574,6 @@
 						<div class="row block btn-group-wrap">
 							<div class="col-sm-12 btn-group">
 								<div class="pull-right">
-								
 									
 									<c:if test="${mdto.auth_id == sessionScope.id }">
 										<a href="/madangs_folder/madang_3_4?bno=${mdto.board_no}" class="btnType02 btn btn-info">
@@ -594,7 +593,7 @@
 										</a>
 									</c:if>
 									
-									<a href="/madangs_folder/madang_3_1?s_opt=${param.s_opt}&s_word=${param.s_word}&s_loc=${param.s_loc}&rowPP=${param.rowPP}" class="btnType02 btn btn-info">
+									<a href="/madangs_folder/madang_3_1?s_opt=${param.s_opt}&s_word=${param.s_word}&s_loc=${param.s_loc}" class="btnType02 btn btn-info">
 										<span>목록</span>
 									</a>
 								</div>

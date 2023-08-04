@@ -21,5 +21,16 @@
 		auth_phone_number=#{auth_phone_number}, auth_email=#{auth_email}, auth_address=#{auth_address}, auth_address_detail=#{auth_address_detail},
 		auth_under_disease=#{auth_under_disease} WHERE AUTH_ID=#{auth_id} 
 	</update>
+	
+	<update id="deleteUser">
+		UPDATE AUTH SET AUTH_DEL_DT=SYSDATE, AUTH_USER_STATUS=0,
+		<if test="reason != '기타'">
+		AUTH_DEL_REASON=#{reason}
+		</if>
+		<if test="reason == '기타'">
+		AUTH_DEL_REASON=#{etcReason}
+		</if>
+		WHERE AUTH_ID=#{auth_id}
+	</update>
 
 </mapper>

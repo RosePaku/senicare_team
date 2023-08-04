@@ -1,6 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <!--	
 	0724 작업사항_고은
@@ -18,8 +18,7 @@
 <head>
 <title>내 정보_내가 쓴 글</title>
 <meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 <link rel="stylesheet" href="../assets/css/personal.css" />
 <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
@@ -28,8 +27,7 @@
 <link rel="stylesheet" href="../css/bootstrap.css">
 <link rel="stylesheet" href="../vendors/linericon/style.css">
 <link rel="stylesheet" href="../css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="../vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="../vendors/owl-carousel/owl.carousel.min.css">
 <link rel="stylesheet" href="../vendors/lightbox/simpleLightbox.css">
 <link rel="stylesheet" href="../vendors/nice-select/css/nice-select.css">
 <link rel="stylesheet" href="../vendors/animate-css/animate.css">
@@ -37,6 +35,7 @@
 <!-- main css -->
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/responsive.css">
+<link rel="stylesheet" href="../css/kge_mypage1.css">
 </head>
 <body>
 
@@ -55,9 +54,7 @@
 				<section id="banner">
 					<div class="content">
 						<header>
-							<h1
-								style="font-size: 100px; font-family: 'Nanum Gothin', sans-serif; margin-bottom: -50px;">내가
-								쓴 글</h1>
+							<h1 class="header">내가 쓴 글</h1>
 						</header>
 					</div>
 
@@ -66,18 +63,13 @@
 				<!-- Section -->
 				<section>
 					<head>
-<title>내가 쓴 글 확인/삭제 페이지</title>
-<link rel="stylesheet" type="../text/css" href="kge_mypage1.css">
+<!-- <title>내가 쓴 글 확인/삭제 페이지</title>
+<link rel="stylesheet" type="../text/css" href="kge_mypage1.css"> -->
 					</head>
 					<body>
-						<h1
-							style="font-size: 60px; font-family: 'Nanum Gothin', sans-serif; font-weight: 500; margin-top: -30px; margin-bottom: 70px;">내가
-							쓴 글</h1>
-						<h2
-							style="color: gray; text-align: center; font-family: 'Nanum Gothic';">
-							* 제목을 누르시면 작성한 게시글로 이동합니다 *</h2>
+						<h2 class="infotext">* 제목을 누르시면 작성한 게시글로 이동합니다 *</h2>
 						<div class="table-container">
-						<script>
+							<script>
 							function checkAll() {
 								if ($("#deleteChks").is(":checked")) {
 									$("input[name=deleteChk]").prop("checked", true);
@@ -86,12 +78,11 @@
 								}
 							}
 						</script>
-						
-						
+
+
 							<table>
 								<thead>
-									<tr
-										style="height: 60px; vertical-align: middle; font-size: 30px; margin-top: 100px;">
+									<tr class="tblhead">
 										<th style="width: 10%;">번호</th>
 										<th style="width: 40%;">제목</th>
 										<th style="width: 20%;">작성 날짜</th>
@@ -99,16 +90,21 @@
 										<th style="width: 13%;">삭제</th>
 									</tr>
 								</thead>
-								<tbody
-									style="height: 40px; vertical-align: middle; font-size: 20px; margin-top: 100px;">
-									<c:forEach var="board" items="${list}">
-										<tr id="${board.board_no }">
-											<td>${board.board_no}</td>
+								<tbody class="tblbody">
+									<c:forEach var="board" items="${list}" varStatus="status">
+										<tr id="${board.board_no}">
+											<td>${fn:length(list)-status.index}</td>
 											<c:if test="${board.board_category == 'free'}">
 												<td><a href="/madangs_folder/madang_1_2?bno=${board.board_no}">${board.board_title}</a></td>
 											</c:if>
 											<c:if test="${board.board_category == 'hobby'}">
 												<td><a href="/madangs_folder/madang_2_2?bno=${board.board_no}">${board.board_title}</a></td>
+											</c:if>
+											<c:if test="${board.board_category == 'wel'}">
+												<td><a href="/madangs_folder/madang_3_2?bno=${board.board_no}">${board.board_title}</a></td>
+											</c:if>
+											<c:if test="${board.board_category == 'edu'}">
+												<td><a href="/madangs_folder/madang_4_2?bno=${board.board_no}">${board.board_title}</a></td>
 											</c:if>
 											<td>${board.board_created}</td>
 											<td>${board.board_view}</td>
@@ -163,18 +159,25 @@
 				<nav id="menu">
 					<ul>
 						<li></li>
-						<li><a href="../myPages_auth_folder/myPages_auth_1?auth_id=${sessionScope.id}">회원정보
-								수정</a></li>
-						<li><a href="../myPages_auth_folder/myPages_auth_2?auth_id=${sessionScope.id}">지원자
-								정보 수정</a></li>
-						<li><a
-							href="../myPages_auth_folder/myPages_auth_3?auth_id=${sessionScope.id}">내가
-								쓴 글</a></li>
-						<li><a href="../myPages_auth_folder/myPages_auth_4?auth_id=${sessionScope.id}">면접(채팅)</a></li>
-						<li><a href="../myPages_auth_folder/myPages_auth_5?auth_id=${sessionScope.id}">내가
-								지원한 회사</a></li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_1?auth_id=${sessionScope.id}">회원정보 수정</a>
+						</li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_2?auth_id=${sessionScope.id}">지원자 정보 수정</a>
+						</li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_3?auth_id=${sessionScope.id}">내가 쓴 글</a>
+						</li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_4?auth_id=${sessionScope.id}">면접(채팅)</a>
+						</li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_5?auth_id=${sessionScope.id}">내가 지원한 회사</a>
+						</li>
 						<!-- <li><a href="../myPages_auth_folder/myPages_auth_6">자가테스트 기록</a></li> -->
-						<li><a href="../myPages_auth_folder/myPages_auth_7?auth_id=${sessionScope.id}">회원탈퇴</a></li>
+						<li>
+							<a href="../myPages_auth_folder/myPages_auth_7?auth_id=${sessionScope.id}">회원탈퇴</a>
+						</li>
 						<li></li>
 					</ul>
 				</nav>
@@ -208,10 +211,8 @@
 	<script src="../js/custom.js"></script>
 	<script src="../js/page_jiin_header_footer.js"></script>
 	<script src="../js/"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Counter-Up/1.0.0/jquery.counterup.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
 
 
 

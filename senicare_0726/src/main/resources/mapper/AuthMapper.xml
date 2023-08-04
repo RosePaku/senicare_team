@@ -5,8 +5,7 @@
     <select id="select" resultType="com.java.dto.Auth">
         SELECT *
         FROM auth
-        WHERE auth_id = #{auth_id} AND auth_password = #{auth_password}
-        
+        WHERE auth_id = #{auth_id} AND auth_password = #{auth_password} AND AUTH_USER_STATUS = 1
     </select>
 
 

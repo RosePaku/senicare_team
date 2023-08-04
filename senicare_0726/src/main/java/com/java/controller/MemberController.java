@@ -146,6 +146,7 @@ public class MemberController {
 	// 로그인 인증
 	@PostMapping("/login")
 	public String login(Auth auth, Model model) {
+		
 		System.out.println(auth.getAuth_id());
 		System.out.println(auth.getAuth_password());
 
@@ -155,12 +156,14 @@ public class MemberController {
 			session.setAttribute("login", 1);
 			session.setAttribute("id", auth.getAuth_id());
 			System.out.println("auth.getAuth_nickname():" + session.getAttribute("sessionNickName"));
+			System.out.println(auth);
+			System.out.println(auth.getAuth_user_status());
 			return "redirect:/?resultCode=" + resultCode;
 
 		} else {
 			System.out.println("controller resultCode2 : " + resultCode);
 			model.addAttribute("resultCode", resultCode); // f_login
-			return "redirect:/fail";
+			return "redirect:/members_folder/member_2?resultCode=" + resultCode; // 다시 로그인 페이지로
 		}
 
 	}

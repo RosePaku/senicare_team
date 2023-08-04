@@ -45,7 +45,6 @@ public class WelController {
 		model.addAttribute("s_opt", map.get("s_opt"));
 		model.addAttribute("s_word", map.get("s_word"));
 		model.addAttribute("s_loc", map.get("s_loc"));
-		model.addAttribute("rowPP", rowPP);
 		model.addAttribute("today", today);
 		
 		return "madangs_folder/madang_3_1";
@@ -97,7 +96,6 @@ public class WelController {
 	@PostMapping("/wel/deleteComOne")
 	@ResponseBody // ***AJAX와 짝짜꿍!!!!
 	public void deleteComOne(int cno) {
-		System.out.println("ajax에서 온 데이터:" +cno);
 		welService.deleteOne(cno);
 		
 	}
@@ -108,7 +106,6 @@ public class WelController {
 	public CommentDto updateComOne(CommentDto aCdto) {
 		// 댓글 수정하고 저장하기
 		CommentDto cdto = welService.updateComOne(aCdto);
-		System.out.println(aCdto);
 		
 		return cdto;
 	}
@@ -117,7 +114,6 @@ public class WelController {
 	@PostMapping("/wel/loadImage")
 	@ResponseBody
 	public String[] loadImage(int bno) {
-		System.out.println(bno);
 		String[] arrImg = welService.loadImage(bno); 
 		
 		return arrImg;

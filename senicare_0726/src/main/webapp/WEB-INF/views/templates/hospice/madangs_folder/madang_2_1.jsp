@@ -1,6 +1,8 @@
+	<%@page import="javax.swing.text.Document"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!-- 취미/친목 게시판 리스트 페이지 2023.07.24 시작 (영섭) -->
 <!-- 취미/친목 게시판 리스트 페이지 2023.07.24 완료 (영섭) -->
 <!doctype html>
@@ -108,7 +110,6 @@
 									$("#s_locs").prop("checked",false);
 								}
 							});
-								
 						</script>
 						<div class="col-md-9 contents">
 							<div class="block text-center">
@@ -131,24 +132,24 @@
 											<br>
 											<div class="form-group">
 												<label for="q_searchLoc" class="sr-only">지역</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" />전국&nbsp;&nbsp;&nbsp;&nbsp; </label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="서울" class="form-control" />서울&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="부산" class="form-control" />부산&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="대구" class="form-control" />대구&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="인천" class="form-control" />인천&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="광주" class="form-control" />광주&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="대전" class="form-control" />대전&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="울산" class="form-control" />울산&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="세종" class="form-control" />세종&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경기" class="form-control" />경기&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="강원" class="form-control" />강원&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="충북" class="form-control" />충북&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="충남" class="form-control" />충남&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전북" class="form-control" />전북&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="전남" class="form-control" />전남&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경북" class="form-control" />경북&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="경남" class="form-control" />경남&nbsp;&nbsp;&nbsp;&nbsp;</label>
-												<label class="locs"><input type="checkbox" name="s_loc" value="제주" class="form-control" />제주&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전국" class="form-control"  id="s_locs" onclick="checkAll()" <c:if test="${fn:contains(s_loc, '전체')}"> checked </c:if>/>전국&nbsp;&nbsp;&nbsp;&nbsp; </label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="서울" class="form-control" <c:if test="${fn:contains(s_loc, '서울')}"> checked </c:if>/>서울&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="부산" class="form-control" <c:if test="${fn:contains(s_loc, '부산')}"> checked </c:if>/>부산&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="대구" class="form-control" <c:if test="${fn:contains(s_loc, '대구')}"> checked </c:if>/>대구&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="인천" class="form-control" <c:if test="${fn:contains(s_loc, '인천')}"> checked </c:if>/>인천&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="광주" class="form-control" <c:if test="${fn:contains(s_loc, '광주')}"> checked </c:if>/>광주&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="대전" class="form-control" <c:if test="${fn:contains(s_loc, '대전')}"> checked </c:if>/>대전&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="울산" class="form-control" <c:if test="${fn:contains(s_loc, '울산')}"> checked </c:if>/>울산&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="세종" class="form-control" <c:if test="${fn:contains(s_loc, '세종')}"> checked </c:if>/>세종&nbsp;&nbsp;&nbsp;&nbsp;</label><br>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경기" class="form-control" <c:if test="${fn:contains(s_loc, '경기')}"> checked </c:if>/>경기&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="강원" class="form-control" <c:if test="${fn:contains(s_loc, '강원')}"> checked </c:if>/>강원&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="충북" class="form-control" <c:if test="${fn:contains(s_loc, '충북')}"> checked </c:if>/>충북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="충남" class="form-control" <c:if test="${fn:contains(s_loc, '충남')}"> checked </c:if>/>충남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전북" class="form-control" <c:if test="${fn:contains(s_loc, '전북')}"> checked </c:if>/>전북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="전남" class="form-control" <c:if test="${fn:contains(s_loc, '전남')}"> checked </c:if>/>전남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경북" class="form-control" <c:if test="${fn:contains(s_loc, '경북')}"> checked </c:if>/>경북&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="경남" class="form-control" <c:if test="${fn:contains(s_loc, '경남')}"> checked </c:if>/>경남&nbsp;&nbsp;&nbsp;&nbsp;</label>
+												<label class="locs"><input type="checkbox" name="s_loc" value="제주" class="form-control" <c:if test="${fn:contains(s_loc, '제주')}"> checked </c:if>/>제주&nbsp;&nbsp;&nbsp;&nbsp;</label>
 											</div>
 											
 											<button type="button" class="btn btn-info btn-search" onclick="searchBtn()">검색</button>

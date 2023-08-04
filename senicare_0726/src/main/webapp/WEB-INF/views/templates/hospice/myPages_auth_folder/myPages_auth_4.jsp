@@ -35,6 +35,8 @@
 	<!-- main css -->
 	<link rel="stylesheet" href="../css/style.css">
 	<link rel="stylesheet" href="../css/responsive.css">
+	<link rel="stylesheet" type="text/css" href="../css/kge_mypage1.css">
+	
 	<style>
 		body {
 			font-family: Arial, sans-serif;
@@ -119,6 +121,9 @@
 	 
 		</style>
 	</head>
+	<script>
+		alert("not yet");
+	</script>
 	<body>
 
 	<!--================Header Menu Area =================-->
@@ -136,7 +141,7 @@
 							<section id="banner">
 								<div class="content">
 									<header>
-										<h1 style="font-size: 100px; font-family: 'Nanum Gothin', sans-serif; margin-bottom: -50px;">면접 (채팅)</h1>											
+										<h1 class="header">면접 (채팅)</h1>											
 									</header>							
 								</div>
 								

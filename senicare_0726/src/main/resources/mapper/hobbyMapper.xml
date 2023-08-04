@@ -189,7 +189,7 @@
 	
 	<!-- 게시글 수정 후 저장하기 -->
 	<update id="updateOne">
-		UPDATE NOTICE_BOARD SET BOARD_TITLE=#{board_title}, BOARD_CONTENTS=#{board_contents}, BOARD_MODIFIED=SYSDATE, BOARD_FILE=#{board_file} WHERE BOARD_NO=#{board_no}
+		UPDATE NOTICE_BOARD SET BOARD_TITLE=#{board_title}, BOARD_CONTENTS=#{board_contents}, BOARD_MODIFIED=SYSDATE, BOARD_FILE=#{board_file}, MEET_LOC=#{meet_loc} WHERE BOARD_NO=#{board_no}
 	</update>
 	
 	

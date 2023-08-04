@@ -95,7 +95,6 @@ public class EduController {
 	@PostMapping("/edu/deleteComOne")
 	@ResponseBody // ***AJAX와 짝짜꿍!!!!
 	public void deleteComOne(int cno) {
-		System.out.println("ajax에서 온 데이터:" +cno);
 		eduService.deleteOne(cno);
 		
 	}
@@ -106,7 +105,6 @@ public class EduController {
 	public CommentDto updateComOne(CommentDto aCdto) {
 		// 댓글 수정하고 저장하기
 		CommentDto cdto = eduService.updateComOne(aCdto);
-		System.out.println(aCdto);
 		
 		return cdto;
 	}
@@ -115,7 +113,6 @@ public class EduController {
 	@PostMapping("/edu/loadImage")
 	@ResponseBody
 	public String[] loadImage(int bno) {
-		System.out.println(bno);
 		String[] arrImg = eduService.loadImage(bno); 
 		
 		return arrImg;

@@ -34,6 +34,7 @@
 		<link rel="stylesheet" href="../css/responsive.css">
 		<link rel="stylesheet" href="../assets/css/personal.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+		<link rel="stylesheet" href="../css/kge_mypage1.css">
 	</head>
 	<body>
 
@@ -51,7 +52,7 @@
 							<section id="banner">
 								<div class="content">
 									<header>										
-										<h1 style="font-size: 100px; font-family: 'Nanum Gothin', sans-serif; margin-bottom: -50px;">내 정보</h1>											
+										<h1 class="header">회원탈퇴</h1>											
 									</header>							
 								</div>
 								
@@ -60,8 +61,8 @@
 							<!-- Section -->
 							<section>
 								<head>
-									<title>회원탈퇴 페이지</title>																									
-									<link rel="stylesheet" type="../text/css" href="kge_mypage1.css">
+									<!-- <title>회원탈퇴 페이지</title>																									
+									<link rel="stylesheet" type="../text/css" href="kge_mypage1.css"> -->
 								  </head>
 
 								  <body>
@@ -69,15 +70,16 @@
 									input {font-size: 20px;}
 									input[type="radio"]:not(:checked) + label:before {
 			   						border: 1px solid gray; border-radius: 50%;} </style>	
-
-									<h1 style="font-size: 60px; font-family: 'Nanum Gothin', sans-serif; font-weight: 500; margin-top: -30px; margin-bottom: 70px;">회원탈퇴</h1>
-								    <label for="password">비밀번호 확인:</label>
+									
+									<form action="/myPages_auth_folder/myPages_auth_7" name="withdrawFrm" method="post">
+									
+								      <label for="password">비밀번호 확인:</label>
 									  <div style="display: inline-block; vertical-align: top;">
 									  <input type="password" style="width: 400px;" id="password" placeholder="비밀번호를 입력하세요">
 									  </div>
 									  <br>
 									  <br>
-									  <label for="unregister-reason">회원탈퇴 사유:</label>
+									  <label for="unregister-reason">회원탈퇴 사유:</label><br>
 									  <input type="radio" name="unregister-reason" id="no-service" value="원하는 서비스가 없어서" checked>
 									  <label for="no-service" style="font-size: 20px; color:black; font-weight: 600;">원하는 서비스가 없어서</label>	
 									  <br>									  
@@ -87,13 +89,15 @@
 									  <input type="radio" name="unregister-reason" id="found-othersite" value="더 좋은 사이트를 찾아서">
 									  <label for="found-othersite" style="font-size: 20px; color:black; font-weight: 600;">더 좋은 사이트를 찾아서</label>	
 									  <br>
-									  <input type="radio" name="unregister-reason" id="etc" value="기타">
+									  <input type="radio" name="unregister-reason" id="etc" value="기타" onclick="etcBtn()">
 									  <label for="etc" style="font-size: 20px; color:black; font-weight: 600;">기타</label>	
-									  <input type="text" style="width: 500px; margin-left: 70px;" id="etc-reason" placeholder="기타 사유를 입력하세요 (필수)" required>
+									  <input type="text" style="width: 500px;" id="etc-reason" placeholder="기타 사유를 입력하세요 (필수)" required onclick="etcReason()">
 
 									  <div style="display: flex; justify-content: center;">
-										<button style="width:450px; padding: 10; margin-top: 50px; background-color: red; box-shadow: inset 0 0 0 2px red; color:white; font-size: 20px;" type="button" onclick="withdrawUser()">회원탈퇴</button>
+										<button class="withdrawUser" type="button" onclick="withdrawUser()">회원탈퇴</button>
 									  </div>
+									  
+									</form>
 														
 								  </body>
 								  </section>
@@ -106,7 +110,43 @@
 					<script src="../assets/js/skel.min.js"></script>
 					<script src="../assets/js/util.js"></script>
 					<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-					<script src="../assets/js/main.js"></script>							
+					<script src="../assets/js/main.js"></script>
+					<script>
+						function etcReason() {
+							$("input:radio[name='unregister-reason']:radio[value='기타']").prop('checked', true); // 선택하기
+						}
+						
+						function etcBtn() {
+							$("#etc-reason").focus();
+						}
+						
+						function withdrawUser() {
+							if ('${auth.auth_password}' != $("#password").val()) {
+								alert("비밀번호가 일치하지 않습니다.");
+								return false;
+							}
+							
+							if (confirm("정말로 시니케어 사이트를 영구탈퇴하시겠습니까?")) {
+								$.ajax({
+									url: "/myPages_auth_folder/myPages_auth_7",
+									type: "post",
+									data: {"auth_id":"${sessionScope.id}",
+										   "reason":$('input:radio[name="unregister-reason"]:checked').val(),
+										   "etcReason":$('#etc-reason').val()},
+									success: function(data) {
+										alert("회원님의 정보가 삭제되었습니다.");
+										
+										location.href="/"; // 메인페이지로
+									},
+									error: function() {
+										alert("실패");
+									}
+								});
+								
+								// 메인으로 돌아가기
+							}
+						}
+					</script>							
 
 						</div>
 					</div>
