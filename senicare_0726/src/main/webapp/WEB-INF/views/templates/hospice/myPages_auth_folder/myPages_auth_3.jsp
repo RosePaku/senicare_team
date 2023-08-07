@@ -130,9 +130,10 @@
 									data: {"bno":bno},
 								success: function(data) {
 									
-									$("#"+bno).remove(); // ???
+									$("#"+bno).remove();
 									
 									alert("게시글이 삭제되었습니다.");
+									location.reload(); // 삭제 후 게시글 번호 갱신
 								},
 								error: function() {
 									alert("실패");
