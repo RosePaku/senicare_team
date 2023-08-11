@@ -28,5 +28,11 @@ public interface HosMapper {
 
 	// 검색 데이터 가져오기
 	ArrayList<HosDto> searchData(HosDto hosDto);
+
+	
+	static int selectListCount(PageDto pageDto) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 	
 }
