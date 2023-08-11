@@ -6,32 +6,38 @@
 	
 	 <!-- 전체 데이터 가져오기 -->
 	 <select id="selectAll" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%'
+	 	<!-- SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' -->
+	 	SELECT * FROM HOS_DATA
 	 </select>
 	 
 	 <!-- 검색 데이터 가져오기 -->
 	 <select id="searchData" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HOSNM LIKE '%'||#{hosnm}||'%'
+	 	<!-- SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HOSNM LIKE '%'||#{hosnm}||'%' -->
+	 	SELECT * FROM HOS_DATA WHERE HOSNM LIKE '%'||#{hosnm}||'%' OR ADDR LIKE '%'||#{hosnm}||'%' OR TEL LIKE '%'||#{hosnm}||'%'  
 	 </select>
 	 
 	 <!-- 병원 데이터만 가져오기 -->
 	 <select id="selectHos" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE CLNM NOT LIKE '%약국%' AND CLNM NOT LIKE '%요양%' AND SGGNM LIKE '%구로%'
+	 	<!-- SELECT * FROM HOS_DATA WHERE CLNM NOT LIKE '%약국%' AND CLNM NOT LIKE '%요양%' AND SGGNM LIKE '%구로%' -->
+	 	SELECT * FROM HOS_DATA WHERE CLNM NOT LIKE '%약국%' AND CLNM NOT LIKE '%요양%'
 	 </select>
 	 
 	 <!-- 약국 데이터만 가져오기 -->
 	 <select id="selectPharm" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%약국%' AND SGGNM LIKE '%구로%'
+	 	<!-- SELECT * FROM HOS_DATA WHERE CLNM LIKE '%약국%' AND SGGNM LIKE '%구로%' -->
+	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%약국%'
 	 </select>
 	 
 	 <!-- 요양병원 데이터만 가져오기 -->
 	 <select id="selectNurs" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%요양%' AND SGGNM LIKE '%구로%'
+	 	<!-- SELECT * FROM HOS_DATA WHERE CLNM LIKE '%요양%' AND SGGNM LIKE '%구로%' -->
+	 	SELECT * FROM HOS_DATA WHERE CLNM LIKE '%요양%'
 	 </select>
 	 
 	 <!-- 데이터 1개 가져오기 -->
 	 <select id="selectOne" resultType="com.java.dto.HosDto">
-	 	SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HNO=#{hno}
+	 	<!-- SELECT * FROM HOS_DATA WHERE SGGNM LIKE '%구로%' AND HNO=#{hno} -->
+	 	SELECT * FROM HOS_DATA WHERE HNO=#{hno}
 	 </select>
 	 
 

@@ -25,12 +25,6 @@ public interface HosMapper {
 
 	// 데이터 1개 가져오기
 	ArrayList<HosDto> selectOne(int hno);
-	
-	// 페이징(미완성)
-	static int selectListCount(PageDto pageDto) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	// 검색 데이터 가져오기
 	ArrayList<HosDto> searchData(HosDto hosDto);
